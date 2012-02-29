@@ -1,0 +1,434 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML5: Audio &amp; Video</title>
+
+<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel="stylesheet"> 
+<link rel="stylesheet" href="images/screen.css" media="projection, screen"/> 
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <li class="button cancel" id="back">Back</li>
+            <li class="button done" id="next">Next</li>
+        </ul>
+    </nav>
+</header>
+
+<div id="presentation">
+<div id="presentation-counter"></div>
+
+<div id="slides">
+<!-- PRESENTATION -->
+
+<div class="slide intro"> 
+     <header><h1>Audio And Video</h1></header>
+</div>
+
+
+<div class="slide normal">
+<header><h1>HTML4 == Plugins</h1></header>
+<section class="content"> 
+<ul>
+	<li>Silverlight&trade;</li>
+    <li>Quicktime&trade;</li>
+    <li>Flash&trade;</li>
+    </ul>
+    <pre>&lt;object classid=&quot;clsid:D27CDB6E-AE6D-11cf-96B8-444553540000&quot; 
+ codebase=&quot;http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,16,0&quot; 
+ width=&quot;320&quot; height=&quot;400&quot;&gt;
+      &lt;param name=&quot;movie&quot; value=&quot;movie.swf&quot;&gt;
+      &lt;param name=&quot;quality&quot; value=&quot;high&quot;&gt;
+      &lt;param name=&quot;menu&quot; value=&quot;true&quot;&gt;
+      &lt;param name=&quot;LOOP&quot; value=&quot;false&quot;&gt;
+    &lt;/object&gt;</pre>
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>Codecs</h1></header>
+<section class="content"> 
+<p>CODEC == <strong>CO</strong>mpressor/<strong>DEC</strong>ompressor</p>
+</section>
+</div>
+
+  
+  <div class="slide">
+      <header>
+         <h1>Audio &amp; Video</h1>
+      </header>
+      <section class="content" style="margin-top: -20px;">
+          
+            <pre contenteditable>&lt;<strong>audio</strong> id="audio" src="sound.mp3" <strong>controls</strong>&gt;&lt;/audio&gt;</pre>
+            <pre contenteditable>&lt;<strong>video</strong> id="video" src="movie.webm" <strong>autoplay</strong> <strong>controls</strong>&gt;&lt;/video&gt;</pre>
+            <div id="video-column">
+              <input type="button" class="button"  id="reflection-button" onClick="addReflection()" value="Add CSS reflection to video">
+              <video class="video-stream" x-webkit-airplay="allow" data-youtube-id="QH2-TGUlwu4" src="http://o-o.preferred.mia05s03.v3.lscache8.c.youtube.com/videoplayback?sparams=id%2Cexpire%2Cip%2Cipbits%2Citag%2Csource%2Cratebypass%2Ccp&amp;itag=43&amp;ip=64.0.0.0&amp;signature=9A8210B6FDB3C66401AC60A885E3361AAFB41A64.488DCA2163131DCF845F8D4682C2D0E7D4465BBF&amp;sver=3&amp;ratebypass=yes&amp;source=youtube&amp;expire=1322654400&amp;key=yt1&amp;ipbits=8&amp;cp=U0hRR1ZQUl9FSkNOMV9OSlZFOkVSLUlHeml4QXVz&amp;id=407dbe4c6525c2ee"width="390" id="clip" controls="" style="" poster="http://i2.ytimg.com/vi/QH2-TGUlwu4/hqdefault.jpg" ></video>
+               <!--<video width="390" id="clip" controls="" style="" poster="http://i2.ytimg.com/vi/QH2-TGUlwu4/hqdefault.jpg" >
+               <source src="http://v3.lscache8.c.youtube.com/videoplayback?sparams=id%2Cexpire%2Cip%2Cipbits%2Citag%2Cratebypass%2Coc%3AU0hQRlZOT19FSkNOMF9OSFND&amp;itag=43&amp;ip=0.0.0.0&amp;signature=38C8D8BCF90A23376366578C0FD2218735CD75A8.D3A566631CB6FFD10C8441CE9283D5B6E84B04B2&amp;sver=3&amp;ratebypass=yes&amp;expire=1311631200&amp;key=yt1&amp;ipbits=0&amp;id=407dbe4c6525c2ee" type="video/webm; codecs=&quot;vp8, vorbis&quot;">
+                <source src="http://v3.lscache8.c.youtube.com/videoplayback?sparams=id%2Cexpire%2Cip%2Cipbits%2Citag%2Cratebypass%2Coc%3AU0hQRlNPUV9FSkNOMF9LSVVD&amp;itag=43&amp;ip=0.0.0.0&amp;signature=87A1F1D3714A30AAFED2F2D16AE49AE0F7262E67.5837A6979117F1565BC57A45498B8C850A21B5A9&amp;sver=3&amp;ratebypass=yes&amp;expire=1311343200&amp;key=yt1&amp;ipbits=0&amp;id=407dbe4c6525c2ee" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
+                <source src="http://v3.lscache8.c.youtube.com/videoplayback?sparams=id%2Cexpire%2Cip%2Cipbits%2Citag%2Cratebypass%2Coc%3AU0hQRlNPUV9FSkNOMF9LSVVD&amp;itag=43&amp;ip=0.0.0.0&amp;signature=87A1F1D3714A30AAFED2F2D16AE49AE0F7262E67.5837A6979117F1565BC57A45498B8C850A21B5A9&amp;sver=3&amp;ratebypass=yes&amp;expire=1311343200&amp;key=yt1&amp;ipbits=0&amp;id=407dbe4c6525c2ee" type="video/ogg; codecs=&quot;theora, vorbis&quot;">
+                Your browser does not support the video tag
+              </video>-->
+              <div class="media-buttons">
+                <input type="button" class="button"  id="play-button" onClick="PlayVideo()" ;="" value="Play">
+                <input type="button" class="button"  id="pause-button" onClick="PauseVideo()" ;="" value="Pause" disabled="">
+                <input type="button" class="button"  id="mute" onClick="MuteUnMute()" value="Mute">
+              </div>
+            </div>
+            
+            <div id="audio-column" class="center">
+              <audio id="audio-clip" width="250" controls src="http://files.myopera.com/tagawa/blog/Ode-to-IE6.ogg" type="audio/ogg">
+                Your browser does not support the audio tag
+              </audio>
+              <div class="media-buttons">
+                <input type="button" class="button"  id="audio-play-button" onClick="PlayAudio()" value="Play">
+                <input type="button" class="button"  id="audio-pause-button" onClick="PauseAudio()" value="Pause" disabled="">
+                <input type="button" class="button"  id="audio-mute" onClick="MuteUnMuteAudio()" value="Mute">
+              </div>
+              <p><small><small>
+Nyan Cat from  <a href="http://www.youtube.com/watch?v=QH2-TGUlwu4">Saranj00n</a><br><a href="http://my.opera.com/tagawa/blog/ode-to-ie6">Ode to IE6</a></small></small></p>
+            </div>
+  <pre style="clear:both">document.getElementById("audio").<strong>muted</strong> = false;<br>document.getElementById("video").<strong>play</strong>();</pre>
+          </section>
+    <script defer="">
+            var videoClip = document.getElementById('clip');
+            var playButton = document.getElementById('play-button');
+            var pauseButton = document.getElementById('pause-button');
+
+            function PlayVideo() {
+              videoClip.play();
+              playButton.disabled = true;
+              pauseButton.disabled = false;
+            }
+
+            function PauseVideo() {
+              videoClip.pause();
+              playButton.disabled = false;
+              pauseButton.disabled = true;
+            }
+
+            function MuteUnMute() {
+              document.getElementById('mute').value = videoClip.muted ? 'Mute' : 'Unmute';
+              videoClip.muted = videoClip.muted ? false : true;
+            }
+
+            function OnFinished() {
+              playButton.disabled = false;
+              pauseButton.disabled = true;
+            }
+
+            function addReflection() {
+              videoClip.style.webkitBoxReflect = videoClip.style.webkitBoxReflect !== '' ? '' : "below 0px -webkit-gradient(linear, 0% 0%, 0% 100%, from(transparent), color-stop(0.55, transparent), to(white))";
+            }
+          </script>
+
+          <script defer="">
+            var audioClip = document.getElementById('audio-clip');
+            var audioPlayButton = document.getElementById('audio-play-button');
+            var audioPauseButton = document.getElementById('audio-pause-button');
+            audioClip.addEventListener('ended', OnAudioFinished, false);
+
+            function PlayAudio() {
+              audioClip.play();
+              audioPlayButton.disabled = true;
+              audioPauseButton.disabled = false;
+            }
+
+            function PauseAudio() {
+              audioClip.pause();
+              audioPlayButton.disabled = false;
+              audioPauseButton.disabled = true;
+            }
+
+            function MuteUnMuteAudio() {
+              document.getElementById('audio-mute').value = audioClip.muted ? 'Mute' : 'Unmute';
+              audioClip.muted = audioClip.muted ? false : true;
+            }
+
+            function OnAudioFinished() {
+              audioPlayButton.disabled = false;
+              audioPauseButton.disabled = true;
+            }
+          </script>
+  </div> 
+  
+  
+  
+     <div class="slide">
+      <header>
+         <h1>&lt;audio&gt;
+         </h1>
+      </header>
+      <section class="content">
+    <div style="float: left;"><p>Attributes</p>
+     <ul>
+     <li>autoplay</li> 
+     <li>preload = none | metadata | auto </li>
+     <li>controls</li>
+     <li>loop</li> 
+     <li>mediagroup = string</li>
+     <li>src (<b>required!</b>)</li>
+     <li>muted?</li>
+     <li>buffer?</li>
+     </ul></div>
+     <p>Children</p>
+     <ul>
+     <li>&lt;track&gt;</li>
+     </ul>
+     
+      </section>
+  </div> 
+  
+
+  
+  <div class="slide object" style="padding:0; overflow:hidden">
+      <object data="http://westciv.com/tools/audio/" style="height: 100%;
+width: 100%;
+overflow:scroll; text-align:center "> 
+             
+     </object>
+     <a href="http://westciv.com/tools/audio/" class="objectlink">www.westciv.com</a> 
+  </div>
+  
+  
+  
+  
+  
+     <div class="slide">
+      <header>
+         <h1>&lt;video&gt;
+         </h1>
+      </header>
+      <section class="content">
+      <div style="float:left">
+      <p>Attributes</p>
+     <ul>
+     <li>autoplay</li> 
+     <li>preload = none | metadata | auto </li>
+     <li>controls</li>
+     <li>loop</li> 
+     <li><b>poster</b></li>
+     <li>height</li>
+     <li>width</li>
+     <li>muted</li>
+     <li>mediagroup = string</li>
+     <li>src (<b>required!</b>)</li>
+     </ul>
+     </div>
+     <ul>
+     <li>autobuffer?</li>
+     <li>buffer?</li>
+     </ul>
+     <p>Children</p>
+     <ul>
+     <li>&lt;track&gt;</li>
+     </ul
+      ></section>
+  </div>
+       <div class="slide">
+      <header>
+         <h1>&lt;video&gt; example code
+         </h1>
+      </header>
+      <section class="content">
+
+<pre contenteditable>&lt;video src="movie.ogg"&gt;&lt;/video&gt;</pre>
+</section>
+</div>
+
+
+
+     <div class="slide">
+      <header>
+         <h1>&lt;video&gt; example code
+         </h1>
+      </header>
+      <section class="content">
+
+<pre contenteditable><strong>&lt;video src="movie.ogg"</strong> loop autoplay controls autobuffer 
+   preload=&quot;metadata&quot; poster=&quot;poster.jpg&quot;&gt;
+   &lt;<strong>track</strong> kind=&quot;caption&quot; src=&quot;captions.srt&quot;/>
+      Alternative Text explaining content of video
+&lt;/video&gt;</pre>
+</section>
+</div>
+  
+ 
+ 
+     <div class="slide">
+      <header>
+         <h1>&lt;video&gt; example code
+         </h1>
+      </header>
+      <section class="content">
+      <pre contenteditable>&lt;<strong>video</strong> loop autoplay controls autobuffer 
+      preload=&quot;metadata&quot; poster=&quot;poster.jpg&quot;&gt;
+&lt;<strong>source</strong> src=&quot;movie.ogg&quot;  type='video/ogg; codecs="theora, vorbis"'&gt;
+&lt;<strong>source</strong> src=&quot;movie.mp4&quot; type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'&gt;
+&lt;<strong>source</strong> src=&quot;movie.webm&quot; type='video/webm; codecs="vorbis,vp8"'&gt;
+    &lt;<strong>track</strong> kind=&quot;caption&quot; src=&quot;captions.srt&quot;/>
+&lt;/video&gt;</pre>
+
+</section>
+</div>
+
+
+     <div class="slide">
+      <header>
+         <h1>&lt;video&gt; example code
+         </h1>
+      </header>
+      <section class="content">
+      <pre contenteditable>&lt;video loop autoplay controls autobuffer 
+      preload=&quot;metadata&quot; poster=&quot;poster.jpg&quot;&gt;
+&lt;source src=&quot;movie.ogg&quot;  type='video/ogg; codecs="theora, vorbis"'&gt;
+&lt;source src=&quot;movie.mp4&quot; type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'&gt;
+&lt;source src=&quot;movie.webm&quot; type='video/webm; codecs="vorbis,vp8"'&gt;
+&lt;object classid=&quot;clsid:D27CDB6E-AE6D-11cf-96B8-444553540000&quot; codebase=&quot;http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,16,0&quot; width=&quot;320&quot; height=&quot;400&quot;&gt;
+      &lt;param name=&quot;movie&quot; value=&quot;movie.swf&quot;&gt;
+      &lt;param name=&quot;quality&quot; value=&quot;high&quot;&gt;
+      &lt;param name=&quot;menu&quot; value=&quot;true&quot;&gt;
+      &lt;param name=&quot;LOOP&quot; value=&quot;false&quot;&gt;
+        What browser are you using?
+    &lt;/object&gt;
+    &lt;track kind=&quot;caption&quot; src=&quot;captions.srt&quot;/>
+&lt;/video&gt;</pre>
+
+</section>
+</div>
+   
+  <div class="slide object" style="padding:0; overflow:hidden">
+      <object data="http://westciv.com/tools/video/" style="height: 100%;
+width: 100%;
+overflow:scroll; text-align:center "> 
+             
+     </object>
+     <a href="http://westciv.com/tools/video/" class="objectlink">www.westciv.com</a> 
+  </div> 
+  
+  
+  
+    <div class="slide">
+      <header>
+         <h1>&lt;track&gt;
+         </h1>
+      </header>
+      <section class="content">
+        <p> &lt;track&gt; </p>
+        <ul>
+          <li>child of a &lt;video&gt; or &lt;audio&gt; </li>
+          <li>links to a timed track or time-based data. </li>
+          <li>kind = subtitles| captions| descriptions| chapters | metadata, </li>
+          <li>Accessibility</li>
+        </ul>
+        <pre contenteditable>&lt;track kind=captions src=captions.srt&gt;</pre>
+      </section>
+  </div>
+
+
+
+
+
+
+<div class="slide normal">
+<header><h1>Video/Audio Codecs And Browser Support</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+
+
+
+<div class="slide normal">
+<header><h1>Events</h1></header>
+<section class="content"> 
+<dl class="deprecated listed">
+<dt>play</dt>
+<dd>ﬁred when the media is played</dd>
+
+<dt>pause</dt>
+<dd>ﬁred when the media is paused</dd>
+
+<dt>timeupdate</dt>
+<dd>ﬁred when the current playback position has changed
+</dd>
+<dt>volumechange</dt>
+<dd>ﬁred when the volume of the media has changed
+</dd>
+<dt>ratechange</dt>
+<dd>ﬁred when the playback rate of the media has changed
+</dd>
+<dt>ended</dt>
+<dd>ﬁred when the media has ﬁnished playing
+</dd>
+<dt>seeking</dt>
+<dd>ﬁred when the end user is seeking in the media
+</dd>
+<dt>seeked</dt>
+<dd>ﬁred when the seeking attribute has changed to fals
+</dd>
+</dl>
+</section>
+</div>
+
+
+<div class="slide normal">
+<header><h1>Methods &amp; Properties</h1></header>
+<section class="content">
+<dl>
+<dt>play()</dt>
+<dd>Play the media</dd>
+<dt>pause()</dt>
+<dd>pause the media</dd>
+<dt>canPlayType()</dt>
+<dd>Check if browser can play media resource type<br>
+Use to capacity check</dd>
+</dl>
+<pre>document.getElementById("audio").<strong>muted</strong> = false;
+document.getElementById("video").<strong>play</strong>(); </pre>
+</section>
+</div>
+
+
+
+<div class="slide normal">
+<header><h1>Customizing Audio/Video Controls</h1></header>
+<section class="content"> 
+<pre>var audioClip = document.getElementById('audio-clip');
+var audioPlayButton = document.getElementById('audio-play-button');
+var audioPauseButton = document.getElementById('audio-pause-button');
+audioClip.addEventListener('ended', OnAudioFinished, false);
+
+function PlayAudio() {
+  audioClip.play();
+  audioPlayButton.disabled = true;
+  audioPauseButton.disabled = false;
+}
+function PauseAudio() {
+  audioClip.pause();
+  audioPlayButton.disabled = false;
+  audioPauseButton.disabled = true;
+}
+function MuteUnMuteAudio() {
+  document.getElementById('audio-mute').value = audioClip.muted ? 'Mute' : 'Unmute';
+  audioClip.muted = audioClip.muted ? false : true;
+}
+function OnAudioFinished() {
+  audioPlayButton.disabled = false;
+  audioPauseButton.disabled = true;
+}
+</pre>
+
+</section>
+</div>
+
+<!-- END of PRESENTATION -->
+</div><!-- slides -->
+</div><!-- presentation -->
+<script src="images/slide.js"></script>
+</body>
+</html>

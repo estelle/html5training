@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS: Specificity</title>
+
+<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel="stylesheet"> 
+<link rel="stylesheet" href="images/screen.css" media="projection, screen"/>
+<style>
+.specificity .id {
+	background-image:url(images/shark.gif);
+}
+.specificity .class {
+	background-image:url(images/fish.png);	
+}
+.specificity .element {
+	background-image:url(images/plankton.png);	
+}
+</style> 
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <li class="button cancel" id="back">Back</li>
+            <li class="button done" id="next">Next</li>
+        </ul>
+    </nav>
+</header>
+
+<div id="presentation">
+<div id="presentation-counter"></div>
+
+<div id="slides">
+<!-- PRESENTATION -->
+   
+    
+
+
+    
+
+<div class="slide intro"> 
+     <header><h1>Specificity</h1></header> 
+</div>
+  
+<!-- Specificity -->
+<div class="slide normal"> 
+     <header><h1>Understanding Specificity</h1></header> 
+     <section class="content"> 
+     <ul class="specificity">
+     	<li class="id">ID</li>
+        <li class="class">Class</li>
+        <li class="element">Element</li>
+     </ul>
+     <ul class="specificity nonspec">
+     	<li>1-0-0</li>
+        <li>0-1-0</li>
+        <li>0-0-1</li>
+     </ul>
+     <p><a href="http://www.standardista.com/wp-content/uploads/2012/01/specifishity1.pdf" target="_blank">PDF</a><br>
+     <a href="files/11_specificity.html" target="play">Examples</a></p>
+     </section>
+ </div> 
+
+<!-- Specificity PDF --> 
+<div class="slide" style="padding: 0;"> 
+     <object data="http://www.standardista.com/wp-content/uploads/2012/01/specifishity1.pdf" style="width:100%; height:100%; overflow:scroll"></object>
+</div>
+
+<!-- Specificity Notes -->
+<div class="slide normal"> 
+     <header><h1>Specificity: The less than obvious</h1></header> 
+     <section class="content">
+ <p>The * selector, or global selector, has no value.</p>
+ <pre contenteditable>* {} 0-0-0 </pre>
+
+<p>Combinators, like ~, >, and + have no value</p>
+<pre contenteditable>ul li {} 0-0-2
+ul > li {} 0-0-2</pre>
+
+<p>:not has no value, but parameter selector does</p>
+<pre contenteditable>.myClass:not(p) {} 0-1-1</pre>
+
+<p>Specificity is not inheritance</p>
+     </section>
+</div>
+   
+<div class="slide intro"> 
+     <header><h1>Media Queries</h1></header>
+    <h1><a href="css_media.html">Next ➹</a></h1>
+</div>
+
+    
+    
+  
+  </div> 
+  </div>
+  <script src="images/slide.js"></script>
+  </body> 
+</html>

@@ -1,0 +1,682 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML5</title>
+
+<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel="stylesheet"> 
+<link rel="stylesheet" href="images/screen.css" media="projection, screen"/> 
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <li class="button cancel" id="back">Back</li>
+            <li class="button done" id="next">Next</li>
+        </ul>
+    </nav>
+</header>
+
+<div id="presentation">
+<div id="presentation-counter"></div>
+
+<div id="slides">
+<!-- PRESENTATION -->
+<div class="slide intro">
+<header><h1>The State of HTML5</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>HTML</h1></header>
+<section class="content"> 
+<ul>
+	<li>Linking</li>
+    <li>Connecting</li>
+</ul>
+<p>Connecting to rich media, not just static documents</p>
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>What is HTML5?</h1></header>
+<section class="content"> 
+<ul>
+	<li>New elements &amp; Attributes</li>
+    <li>WAI-ARIA</li>
+    <li>Web Forms 2.0 with validation</li>
+    <li>&lt;video> &amp; &lt;audio></li>
+    <li>&lt;canvas> &amp; SVG</li>
+    <li>Web storage</li>
+    <li>Ofﬂine applications</li>
+    <li>Geolocation</li>
+    <li>Drag &amp; Drop</li>
+    <li>Web Workers</li>
+    <li>Native round corners &amp; gradients</li>
+    <li>Animation &amp; Transitions</li>
+</ul>
+</section>
+</div>
+
+
+
+<div class="slide" id="components">
+      <section class="content">
+      <div class="col">
+      <div class="even">
+      <p>CSS</p>
+      <ul><li>
+        <span>@font-face Web fonts</span></li>
+        <li>
+        calc() in CSS</li>
+        <li>
+        Generated content</li>
+        <li>
+        Gradients</li>
+        <li>display values</li>
+        <li>
+          Mulitiple backgrounds</li>
+        <li>background image properties</li>
+        <li>
+        Border images</li>
+        <li>
+        Border-radius </li>
+        <li>
+        Box-shadow</li>
+        <li>
+        Box-sizing</li>
+        <li>
+        New Colors</li>
+        <li>Alphatransparency</li>
+        <li>
+        Media Queries</li>
+        <li>
+        Multiple column layout</li><li>
+        object-fit/object-position</li><li>
+          <span>Opacity</span></li>
+        <li>CSS3 
+        selectors</li>
+        <li>
+        Text-shadow</li>
+        <li>
+        Transforms</li>
+        <li>
+        Transitions</li>
+        <li> 3D Transforms</li>
+        <li> Animation</li>
+        <li>
+        Word-wrap</li>
+        <li>
+        Flexible Box Layout Module</li>
+        <li>Grid Layout</li>
+        <li>
+        rem (root em) units</li>
+        <li>
+        Masks</li><li>
+        Reflections</li><li>
+        text-stroke<span></span></li>
+        <li>
+        Text-overflow</li>
+        </ul>
+        </div>
+        </div>
+        <div class="col">
+        <div>
+        <p>
+        HTML5</p>
+        <ul>
+        <li>Semantic elements</li>
+        <li>Audio element</li>
+        <li>Canvas</li>
+        <li>contenteditable attribute</li>
+        <li>dataset &amp; data-* attributes</li>
+        <li>Details &amp; Summary elements</li>
+        <li>Drag and Drop</li>
+        <li>HTML5 form features</li>
+        <li>Form validation</li>
+        <li>Datalist element</li>
+        <li>Progress &amp; Meter</li>
+        <li>New semantic elements</li><li>
+        Offline web applications</li><li>
+        Ruby annotation</li><li>
+        Session history management</li><li>
+        Text API for Canvas</li><li>
+        Toolbar/context menu</li><li>
+          <span>Video element</span></li>
+        <li>
+        WebGL - 3D Canvas graphics
+        </li>
+        </ul>
+        </div>
+        <div class="even" style="border-bottom-left-radius:0; border-bottom-right-radius:0;">
+        <p>
+        JS API</p>
+        <ul><li>
+        Cross-document messaging</li><li>
+        Cross-Origin Resource Sharing</li><li>
+          <span>File API</span></li>
+        <li>
+        Geolocation</li>
+        <li>
+        Hashchange event</li>
+        <li>
+        IndexedDB</li>
+        
+        <li>
+     
+        JSON parsing</li>
+        </ul>
+        </div>
+        
+        </div>
+        <div class="col">
+        <div class="even" style="border-top-left-radius:0; border-top-right-radius:0;">
+        <ul><li>
+        Server-sent DOM events</li><li>
+        Web Notifications</li><li>
+        Web Sockets</li><li>
+        Web Storage</li><li>
+        Web Workers</li><li>
+        Stream API</li><li>
+        Web SQL Database</li><li>
+        SVG
+        </li>
+        </ul>
+        </div>
+        <div>
+        <p>
+        Other</p>
+        <ul><li>
+        classList (DOMTokenList )</li><li>
+        Data URLs</li><li>
+        getElementsByClassName</li><li>
+        MathML</li>
+        <li>
+        MPEG-4/H.264/WebM/VP8/Ogg/Theora video formats</li><li>
+        querySelector/querySelectorAll</li><li>
+        Touch events</li><li>
+        WAI-ARIA Accessibility features</li>
+        <li>
+        Font Formats</li><li>
+        XHTML served as application/xhtml+xml</li><li>
+        XMLHttpRequest 2</li><li>
+        XHTML+SMIL animation</li>
+      </ul>
+      </div>
+      </div>
+      </section>
+  </div>
+
+<div class="slide normal">
+<header><h1>What is HTML5?</h1></header>
+<section class="content">  
+<ul class="column">
+        <li>Semantic elements</li>
+        <li>Audio element</li>
+        <li>Canvas</li>
+        <li>contenteditable attribute</li>
+        <li>dataset &amp; data-* attributes</li>
+        <li>Details &amp; Summary elements</li>
+        <li>Drag and Drop</li>
+        <li>HTML5 form features</li>
+        <li>Form validation</li>
+        <li>Datalist element</li>
+        <li>Progress &amp; Meter</li><li>
+        Offline web applications</li><li>
+        Ruby annotation</li><li>
+        Session history management</li><li>
+        Text API for Canvas</li><li>
+        Toolbar/context menu</li><li>
+          <span>Video element</span></li>
+        <li>
+        WebGL - 3D Canvas graphics
+        </li>
+        </ul>
+</section>
+</div>
+
+
+<div class="slide normal">
+<header><h1>History And Major Actors</h1></header>
+<section class="content">
+<ul>
+	<li>Browsers
+    	<ul>
+        	<li>Implementation can lead to specification</li>
+            <li>Refusal to implement kills the chance of becoming a specification</li>
+        </ul>
+    </li>
+    <li>W3C
+    	<ul>
+        	<li></li>
+            <li>World Wide Web Consortium</li>
+            <li>Tim Berners-Lee</li>
+        </ul>
+    </li>
+    <li>WHATWG
+    	<ul>
+        	<li>Founded 2004</li>
+            <li>Web Hypertext Application Technology Working Group</li>
+            <li>Ian Hickson - now at Google</li>
+        </ul>
+    </li>
+</ul> 
+</section>
+</div>
+
+
+<div class="slide normal">
+<header><h1>HTML5 Design Principles</h1></header>
+<section class="content">
+ <ul>
+  <li>Compatibility
+    <ul>
+      <li>Don't break the web (Support v1 &amp; Degrade gracefully)</li>
+      <li> Standardize existing practices  </li>
+    </ul>
+  </li>
+  <li>Utility
+    <ul>
+      <li>Address current and future problems</li>
+      <li>Make sure it works for authors (over browsers)</li>
+      <li>Security</li>
+      <li>Separate layers (content v. presentation v. behavior)</li>
+    </ul>
+  </li>
+  <li>Interoperability
+    <ul>
+      <li>All browsers should implement (and error) identically </li>
+      <li>minimal complexity
+      </li>
+    </ul>
+  </li>
+  <li>Universal Access
+    <ul>
+      <li>Media works across different platforms, devices, and media.      </li>
+      <li>Internationalization</li>
+      <li> Accessibility</li>
+    </ul>
+  </li>
+  </ul>
+</section>
+</div>
+
+<div class="slide intro">
+<header><h1>Getting Started With HTML5</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>Browser Support</h1></header>
+<section class="content">
+<ul>
+	<li>Browser Support</li>
+	<li>Feature Detection</li>
+	<li>Support For Legacy Browsers</li>
+	<li>Graceful Degradation</li>
+	<li>Emulation</li>
+	<li>Developer Tools</li>
+</ul> 
+</section>
+</div>
+
+<div class="slide object" style="padding:0; overflow:hidden">
+     <object data="http://caniuse.com" style="height:100%; width:100%;">
+     <header>
+      <h1>CanIUse.com</h1>
+     </header> 
+     <section>
+     <a href="http://caniuse.com" target="resource">CanIUse.com</a>
+     </section>
+     </object>
+     <a href="http://www.caniuse.com/" class="objectlink">www.caniuse.com</a> 
+    </div>
+
+
+
+<div class="slide object" style="padding:0; overflow:hidden">
+     <object data="http://modernizr.com" style="height:100%; width:100%;">
+     <header>
+      <h1>modernizr.com</h1>
+     </header> 
+     <section>
+     <a href="http://modernizr.com" target="resource">modernizr.com</a>
+     </section>
+     </object>
+     <a href="http://www.modernizr.com/" class="objectlink">www.modernizr.com</a> 
+    </div>
+
+
+
+<div class="slide normal">
+<header><h1>Support For Legacy Browsers</h1></header>
+<section class="content">  
+<p>IE6-8 does not style elements that don't exist, so create the elements!</p>
+      <pre contenteditable>&lt;!--[if IE]&gt; 
+&lt;script type="text/javascript"&gt; 
+(function(){ 
+  var html5elmeents ="article|aside|audio|canvas|...|video";
+  html5elmeents.split('|'); 
+  for(var i = 0; i &lt; html5elmeents.length; i++){
+    document.createElement(html5elmeents[i]); 
+  } 
+})(); 
+&lt;/script&gt; 
+&lt;![endif]--&gt;  </pre>
+</section>
+</div>
+
+<div class="slide object" style="padding:0; overflow:hidden">
+      <object data="http://www.html5boilerplate.com/" style="height: 100%;
+width: 100%;
+overflow:scroll; text-align:center "> 
+             
+     </object>
+     <a href="http://www.html5boilerplate.com/" class="objectlink">www.html5boilerplate.com</a> 
+  </div>
+
+<div class="slide object" style="padding:0; overflow:hidden">
+      <object data="http://www.html5please.com/" style="height: 100%;
+width: 100%;
+overflow:scroll; text-align:center "> 
+             
+     </object>
+     <a href="http://www.html5please.com/" class="objectlink">www.html5please.com</a> 
+  </div>
+  
+
+<div class="slide intro">
+	<header><h1>HTML5: <br/>Getting Started</h1></header>
+    <h1><a href="elements.html">Go ➹</a></h1> 
+</div>
+
+<div class="slide intro"> 
+     <header><h1>Forms</h1></header>
+    <h1><a href="forms.html">Go ➹</a></h1> 
+</div>
+
+<div class="slide intro"> 
+     <header><h1>Audio And Video</h1></header>
+    <h1><a href="media.html">Go ➹</a></h1> 
+</div>
+
+<div class="slide intro">
+<header><h1>CSS3</h1></header>
+    <h1><a href="css.html">Go ➹</a></h1>  
+</div>
+
+
+
+<div class="slide intro">
+<header><h1>HTML5 Canvas</h1></header>
+    <h1><a href="canvas.html">Go ➹</a></h1>
+</div>
+
+
+<div class="slide intro">
+<header><h1>Data Storage</h1></header>
+
+    <h1><a href="data.html">Go ➹</a></h1>
+</div>
+
+<div class="slide normal">
+<header><h1>Problems With The Existing Cookie-based Model</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>Hacks Prior To HTML5</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>New Storage Options</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>Web Storage</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>Web SQL Storage</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>Browser Support</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide intro">
+<header><h1>HTML5 Offline Applications</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>The Need For Offline Mode</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>The Manifest File</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>The applicationCache Events</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>Deployments And Updates</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>Browser Support</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide intro">
+<header><h1>HTML5 Geolocation</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>Introduction To Geolocation</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>Privacy Considerations</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>Many Ways To Get User Location</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>Two Main Methods</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>The Position Object</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>Handling Errors</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>The PositionOptions Object</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>Browser Support</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide intro">
+<header><h1>HTML5 Web Workers</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>The Current JavaScript Execution Model</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>Introduction To Web Workers</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>Usage Of Web Workers</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>Communication APIs</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>Handling Errors</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>Browser Support</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide intro">
+<header><h1>HTML5 Messaging APIs</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>Cross-document Messaging</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>Dealing With The Origin Concept</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>XMLHttpRequest Level 2</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>Cross-document XMLHttpRequest</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>Progress Events</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>Server-sent Event</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>Browser Support</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide intro">
+<header><h1>HTML5 Web Sockets</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>Overview Of Web Communication Options</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>The History (Comet)</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>Overview Of Web Sockets API And Protocol</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>Advantages Of Web Sockets</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<div class="slide normal">
+<header><h1>Browser Support</h1></header>
+<section class="content"> 
+</section>
+</div>
+
+<!-- END of PRESENTATION -->
+</div><!-- slides -->
+</div><!-- presentation -->
+<script src="images/slide.js"></script>
+</body>
+</html>
