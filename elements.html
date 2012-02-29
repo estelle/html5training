@@ -1,0 +1,635 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML5: Getting Started</title>
+
+<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel="stylesheet"> 
+<link rel="stylesheet" href="images/screen.css" media="projection, screen"/> 
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <li class="button cancel" id="back">Back</li>
+            <li class="button done" id="next">Next</li>
+        </ul>
+    </nav>
+</header>
+
+<div id="presentation">
+<div id="presentation-counter"></div>
+
+<div id="slides">
+<!-- PRESENTATION -->
+<div class="slide intro">
+<header><h1>HTML5: <br/>Getting Started</h1></header>
+</div>
+<div class="slide normal">
+<header><h1>HTML5: Getting Started</h1></header>
+<section class="content">
+<ul>
+	<li>HTML5 DOCTYPE</li>
+    <li>Page Encoding</li>
+    <li>HTML5 Markup</li>
+    <li>New And Updated Elements</li>
+    <li>Structural Elements</li>
+    <li>New Attributes</li>
+    <li>Deprecated Elements And Attributes</li>
+   </ul>
+</section>
+</div>
+
+
+<div class="slide">
+      <header>
+         <h1>HTML5 Components
+         </h1>
+      </header>
+      <section class="content columns2">
+        <ul>
+        <li>Doctype</li>
+        <li>Character Set</li>
+        <li>Type Attribute</li>
+        <li>Semantic elements</li>
+        <li>&lt;figure> &amp; &lt;figcaption></li>
+        <li>&lt;details> &amp; &lt;summary></li>
+        <li>Ruby annotation</li>
+        <li>contenteditable attribute</li>
+        <li>dataset &amp; data-* attributes</li>
+        <li>HTML5 form features</li>
+        <li>Form validation</li>
+        <li>&lt;datalist&gt; element</li>
+        <li>&lt;progress> &amp; &lt;meter></li>
+        <li>&lt;audio> element</li>
+        <li>&lt;video> element</li>
+        <li>&lt;canvas></li>
+        <li>WebGL - 3D Canvas graphics</li>
+        </ul>
+      </section>
+  </div>  
+  
+     <!-- <div class="slide" style="padding:0; overflow:hidden;"> 
+    
+    
+     <object data="http://html5readiness.com/" style="height: 780px;
+width: 940px;
+overflow:hidden; "> 
+     </object> 
+     
+ 
+  </div> -->
+  
+     <div class="slide"><header>
+         <h1>Old v. New Doctype
+         </h1>
+      </header>
+      <section class="content">
+        <style>
+		</style>
+       <pre contenteditable class="">&lt;!DOCTYPE html<span class="boo"> PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; 
+   &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;</span>&gt;
+&lt;html<span class="boo">  xmlns=&quot;http://www.w3.org/1999/xhtml&quot;</span>&gt;
+&lt;head&gt;
+&lt;meta<span class="boo">  http-equiv=&quot;Content-Type&quot; content=&quot;text/html;</span> charset=UTF-8<span class="boo"> &quot; </span>/&gt;
+&lt;title&gt;<b id="newdoctitle">XHTML1 Strict Document</b>&lt;/title&gt;
+&lt;script<span class="boo">  type=&quot;text/javascript&quot;</span> src=&quot;boo.js&quot;&gt;&lt;/script&gt;
+&lt;link<span class="boo">  type=&quot;text/css&quot;</span> rel=&quot;stylesheet&quot; href=&quot;a.css&quot;/&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;<input type="button" class="button"  onclick="newDoctype(this)" value="Change" style=" float:right"></pre>
+</section>
+<script defer>
+function newDoctype(el){
+	if(el.parentNode.className=='booOff'){
+		el.parentNode.className='booshow';
+		document.getElementById('newdoctitle').innerHTML = 'XHTML1 Strict Document';
+		
+	} else {
+		el.parentNode.className='booOff';
+		document.getElementById('newdoctitle').innerHTML = 'HTML5 Document';
+	}
+}
+</script>
+  </div>  
+-
+     <div class="slide"><header>
+         <h1>New Syntax
+         </h1>
+      </header>
+      <section class="content">
+<pre contenteditable>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;HTML5 Document&lt;/title&gt;
+&lt;script src=&quot;boo.js&quot;&gt;&lt;/script&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;a.css&quot;/&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<ul class="notes">
+<li>Short DTD</li>
+<li>Short Charset</li>
+<li>No &lsquo;type&rsquo; attribute</li>
+</ul>
+</section>
+  </div> 
+  
+  
+     
+  <div class="slide">
+      <header>
+         <h1>Minimalistic Syntax
+         </h1>
+      </header>
+      <section class="content">
+      <pre contenteditable>
+&lt;!DOCTYPE html&gt;
+&lt;meta charset=UTF-8&gt;
+&lt;title&gt;Document Intentionally Blanks&lt;/title&gt;
+</pre>
+
+      <pre contenteditable>
+&lt;!DOCTYPE html&gt;
+&lt;title&gt;Tweetable Docoument&lt;/title&gt;
+&lt;p&gt;Tweetable HTML5&lt;/p&gt;
+</pre>
+
+
+<ul class="notes">
+<li>Short DTD</li>
+<li>Short Charset</li>
+<li>No &lsquo;type&rsquo; attribute</li>
+<li>&lt;body&gt; and &lt;head&gt; are inferred.</li>
+</ul>
+      </section>
+  </div> 
+  
+     <div class="slide" id="semels">
+      <header>
+         <h1>Non-Semantic Elements
+         </h1>
+      </header>
+    <section class="content">
+    
+        <div>
+            <div class="divheader">&lt;div id="header"&gt;</div>
+            <div class="divnav">&lt;div id="nav"&gt;</div>
+            <div  class="divmain">
+                <div class="divaside">&lt;div id="sidebar"&gt;</div>
+                &lt;div id="content"&gt;
+                    <div class="divarticle">&lt;div class="article"&gt;
+                        <div class="divsection">&lt;div class="section"&gt;</div>
+                        <div class="divsection">&lt;div class="section"&gt;</div>
+                    </div>
+                </div>
+            <div class="divfooter">&lt;div class="footer"&gt;</div>
+        </div>
+    </section>
+  </div> 
+  
+  
+   <div class=" slide" id="semels">
+      <header>
+         <h1>Semantic Elements</h1>
+      </header>
+    <section class="content">
+        <div>
+            <div class="divheader">&lt;header&gt;</div>
+            <div class="divnav">&lt;nav&gt;</div>
+            <div  class="divmain">
+                <div class="divaside">&lt;aside&gt;</div>
+                &lt;div id="content"&gt;
+                    <div class="divarticle">&lt;article&gt;
+                      <div class="divsection">&lt;section&gt;</div>
+                        <div class="divsection">&lt;section&gt;</div>
+                    </div>
+                </div>
+            <div class="divfooter">&lt;footer&gt;</div>
+        </div>
+    </section>
+  </div> 
+  
+     <div class="slide">
+      <header>
+         <h1>hgroup
+         </h1>
+      </header>
+      <section class="content">
+      
+      <pre contenteditable>
+&lt;hgroup&gt;
+   &lt;h1&gt;This is my header&lt;/h1&gt;
+   &lt;h2&gt;This is my subtitle&lt;/h2&gt;
+&lt;hgroup&gt;
+      </pre>
+      </section>
+  </div> 
+  
+     <div class="slide">
+      <header>
+         <h1>figure &amp; figcaption
+         </h1><figure id="figureex"><a href="http://www.sitepoint.com/books/htmlcss1/"><img src="http://www.sitepointstatic.com/images/books/htmlcss1/3dcover-flat.png" alt="HTML5 &amp; CSS3 for the Real World"></a><figcaption>My Book</figcaption></figure>
+      </header>
+      <section class="content">
+        <pre contenteditable style="float:left;">&lt;figure&gt;
+  &lt;img src=&quot;htmlcss1.png&quot; 
+    alt=&quot;HTML5 &amp;amp; CSS3 for the Real World&quot;/&gt;
+  &lt;figcaption&gt;
+     My Book
+  &lt;/figcaption&gt;
+&lt;/figure&gt; <input type="button" class="button" value="Add Style" onClick="toggleFigureClass(event);"/></pre>
+
+
+      </section>
+      <script defer>
+	  function toggleFigureClass(event){
+		  var el = document.getElementById('figureex');
+		  if (el.className == 'styled') {
+				el.className =''; 
+				event.target.value = 'Add Style'; 
+		  } else {
+			    el.className = 'styled';
+				event.target.value = 'Remove Style'; 
+		  }
+	  }
+	  </script>
+  </div> 
+  
+     <div class="slide">
+      <header>
+         <h1>Details &amp; Summary</h1>
+         </h1>
+      </header>
+<section class="content">
+  
+      <pre contenteditable>&lt;details&gt;
+   &lt;summary&gt;5 of 5 stars from three reviews&lt;/summary&gt;
+   &lt;ul&gt;
+      &lt;li&gt;5 stars from Amazon&lt;/li&gt;
+      &lt;li&gt;5 stars from Costco&lt;/li&gt;
+      &lt;li&gt;5 stars from Barns &amp;amp; Noble&lt;/li&gt;
+   &lt;/ul&gt;
+&lt;/details&gt;</pre>
+</section>
+<p>Example: Click below</p>
+<details>
+   <summary>5 of 5 stars from three reviews</summary>
+   <ul>
+      <li>5 stars from Amazon</li>
+      <li>5 stars from Costco</li>
+      <li>5 stars from Barns &amp; Noble</li>
+   </ul>
+</details>
+<ul class="icons" style="clear: both;">
+         <li class="chrome">Chrome 12</li>
+         <li class="safari bad">Safari</li>
+         <li class="firefox bad">Firefox 7</li>
+         <li class="opera bad">Opera 11</li>
+         <li class="ie bad">IE 10</li>
+     </ul>
+  </div> 
+  
+   <div class="slide">
+      <header>
+         <h1>New Elements
+         </h1>
+      </header>
+      <section class="content columns3">
+        <ul>
+          <li>article</li>
+          <li>
+            aside</li>
+          <li>
+            audio</li>
+          <li>
+            canvas</li>
+          <li>
+            command</li>
+          <li>
+            datalist</li>
+          <li>
+            details</li>
+          <li>
+            embed</li>
+          <li>
+            figcaption</li>
+          <li>
+            figure</li>
+          <li>
+            footer</li>
+          <li>
+            header</li>
+          <li>
+            hgroup</li>
+          <li>
+            keygen</li>
+          <li>
+            mark</li>
+          <li>
+            meter</li>
+          <li>
+            nav</li>
+          <li>
+            output</li>
+          <li>
+            progress</li>
+          <li>
+            rp</li>
+          <li>
+            rt</li>
+          <li>
+            ruby</li>
+          <li>
+            section</li>
+          <li>
+            source</li>
+          <li>
+            summary</li>
+          <li>
+            time</li>
+          <li>
+            video</li>
+          <li>
+            wbr</li>
+        </ul>
+      </section>
+  </div> 
+<div class="slide">
+      <header>
+         <h1>Changed Elements</h1>
+      </header>
+     <section class="content">
+     <div class="columns2">
+        <ul>
+         <li>&lt;a&gt; </li>
+         <li>&lt;small&gt; </li>
+         <li>&lt;s&gt; </li>
+         <li>&lt;cite&gt; </li>
+         <li>&lt;i&gt; </li>
+         <li>&lt;b&gt; </li>
+         <li>&lt;u&gt;</li>
+         <li>&lt;hr&gt;</li>
+         <li>&lt;menu&gt; </li>
+         <li>&lt;input&gt; </li>
+         <li>&lt;meta&gt; </li>
+        </ul>
+     </div>
+     </section>
+  </div>
+  
+     <div class="slide">
+      <header>
+         <h1>Supporting Old Browsers
+         </h1>
+      </header>
+      
+      <section class="content">
+      <p>IE6-8 does not style elements that don't exist, so create the elements!</p>
+      <pre contenteditable>&lt;!--[if IE]&gt; 
+&lt;script type="text/javascript"&gt; 
+(function(){ 
+  var html5elmeents ="article|aside|audio|canvas|...|video";
+  html5elmeents.split('|'); 
+  for(var i = 0; i &lt; html5elmeents.length; i++){
+    document.createElement(html5elmeents[i]); 
+  } 
+})(); 
+&lt;/script&gt; 
+&lt;![endif]--&gt;  </pre>
+      </section>
+  </div> 
+  
+<div class="slide object" style="padding:0; overflow:hidden">
+     <object data="http://modernizr.com" style="height:100%; width:100%;">
+     <header>
+      <h1>modernizr.com</h1>
+     </header> 
+     <section>
+     <a href="http://modernizr.com" target="resource">modernizr.com</a>
+     </section>
+     </object>
+     <a href="http://www.modernizr.com/" class="objectlink">www.modernizr.com</a> 
+    </div>
+  
+<div class="slide object" style="padding:0; overflow:hidden">
+      <object data="http://www.html5boilerplate.com/" style="height: 100%;
+width: 100%;
+overflow:scroll; text-align:center "> 
+             
+     </object>
+     <a href="http://www.html5boilerplate.com/" class="objectlink">www.html5boilerplate.com</a> 
+  </div>
+  
+  
+   
+     <div class="slide">
+      <header>
+         <h1>Ruby annotation
+         </h1>
+      <p style="text-align:left; margin-top: -2px;">"Ruby" are short runs of text alongside the base text, typically used in East Asian documents to indicate pronunciation or to provide a short annotation. </p>
+      </header>
+      <section class="content" style="margin-top: -38px;">
+      <ul>
+      	<li><img src="http://dev.w3.org/csswg/css3-ruby/images/licence.png" alt="" style="float:right"/>&lt;ruby&gt; <span class="notes">container for the next 2 elements</span></li>
+      	<li>&lt;rt&gt; <span class="notes">ruby text</span></li>
+      	<li>&lt;rp&gt; <span class="notes">ruby parenthesis</span></li>
+        </ul>
+        <pre contenteditable><b>display:</b> ruby | ruby-base | ruby-text | 
+   ruby-base-container | ruby-text-container;
+
+<b>ruby-align</b>: <strong>auto</strong> | start | left | center | end | right | 
+   distribute-letter | distribute-space | line-edge;
+
+<b>ruby-overhang</b>: auto | start | end | <strong>none</strong>;
+
+<b>ruby-position</b>: before | after | right | inline;
+
+<b>ruby-span</b>: attr(x) | <strong>none</strong>;</pre>
+       
+      </section>
+  </div>
+
+  
+  
+  
+  
+      <div class="slide">
+      <header>
+         <h1>New Attributes
+         </h1>
+      </header>
+      <section class="content">
+      <ul>
+      	<li>tabindex <b class="notes imp">/* now applicable to any element (-1)</b></li>
+      	<li>hidden <b class="notes imp">/* no longer relevant */</b></li>	
+        <li class="bad">contextMenu <b class="notes imp">contextmenu="menuID"</b></li>
+        <li>spellCheck <b class="notes imp">/* denotes errors */</b></li>
+        <li>data-* <b class="notes imp">/* anything you want, accessible via dataset */</b></li>
+      	<li>ContentEditable <b class="notes imp">/* you can edit. accessible via the DOM */</b></li>
+        <li>draggable <b class="notes imp">/* with the drag &amp; drop API */</b></li>
+        <li>dropzone <b class="notes imp">/* with the drag &amp; drop API */</b></li>
+        <li>microdata attributes <b class="notes imp">/* like microformats */</b></li>
+        <li>ARIA <b class="notes imp">/* accessibility */</b></li>
+      </ul>
+      </section>
+  </div> 
+  
+     <div class="slide">
+      <header>
+         <h1>tabindex
+         </h1>
+      </header>
+      <section class="content">
+      <pre contenteditable>&ltp tabindex="-1">Focusable with Javascript&lt;/p></pre>
+      <ul>
+      <li>Every element can have tabindex</li>
+      <li>BUT: Maintaining source order is important</li>
+      <li>Only give a tabindex of -1</li>
+      <li>REASON: Enables element to be focusable with JS<br>
+without changing &lsquo;tab&raquo; order</li>
+      </ul>
+      </section>
+  </div> 
+  
+     <div class="slide">
+      <header>
+         <h1>contentEditable (&amp; spellcheck)
+         </h1>
+      </header>
+      <section class="content">
+      <pre contenteditable>&lt;pre contenteditable>Look. I am editable&gt;/pre></pre>
+      <pre contenteditable>I am editable</pre>
+      <p contenteditable spellcheck style="font-family:Arial, Helvetica, sans-serif">This paragrph has an error.</p>
+      
+      <textarea spellcheck=true>This paragrph has an error.</textarea>
+      
+      <ul class="icons" style="clear: both;">
+         <li class="chrome">Chrome</li>
+         <li class="safari ">Safari</li>
+         <li class="firefox">Firefox 2</li>
+         <li class="opera ">Opera</li>
+         <li class="ie ">IE</li>
+         <li class="txt">Not supported on Mobile. </li>
+     </ul>
+     <pre contenteditable>spellcheck="true | false"</pre>
+      </section>
+  </div> 
+     <div class="slide">
+      <header>
+         <h1>data-* attributes
+         </h1>
+         <p class="notes">Define your own DOM manipulable data attributes</p>
+      </header>
+      
+      <section class="content">
+        
+        <pre contenteditable>&lt;div id="card27" <b>data-cardID</b>="27" <b>data-row</b>="3" <b>data-col</b>="2"&gt;&lt;/div&gt;</pre>
+        <pre contenteditable>var info = document.querySelector('#card27');
+var cardinfo = [];
+for (var key in info.<b>dataset</b>) {
+  cardinfo.push(key, ': ', info.<b>dataset</b>[key], ',');
+}
+var currentCard = cardinfo.join('');</pre>
+        <p>Result:</p>
+        <pre contenteditable>currentCard == 'cardID: 27, row: 3, col: 2'</pre>
+        <pre contenteditable>var cardID = info.getAttribute('data-cardID'); //27</pre>
+        <p><small>All browsers support "data-*", but full support of 'dataset started with IE10, FF6, Safari 5.1, Chrome 7, Opera 11.1</small></p>
+     
+      </section>
+  </div>
+  
+   
+<div class="slide">
+      <header>
+         <h1>Microdata
+         </h1>
+      <p>Google processes RDFa, Microformats and Microdata.</p>
+      </header>
+      <section class="content"> 
+      <pre style="float:left">  itemid
+  itemprop
+  itemref
+  itemscope
+  itemtype</pre>
+<pre style="float: right;">person       url
+nickname     affiliation(org)
+photo        friend
+title        contact
+role         acquaintance
+             address(adr)</pre>
+      <pre style="clear: both">&lt;div itemscope itemtype="<a href="http://data-vocabulary.org/">http://data-vocabulary.org/</a>Person">  
+ &lt;img src="estelle.gif" itemprop="photo">  
+  &lt;p>Name: &lt;i itemprop="name">Estelle Weyl&lt;/i>
+  &lt;p>Title: &lt;i itemprop="title">Speaker, UI Engineer&lt;/i>   
+  &lt;p>Blog: &lt;a href="http://standardista.com" itemprop="affliation">Standardista</a>.   
+  &lt;p itemprop="address" itemscope  
+    itemtype="http://data-vocabulary.org/Address">Address:   
+    &lt;i itemprop="locality">San Carlos&lt;/i>,  
+    &lt;i itemprop="region">CA&lt;/i>&lt;/p>  
+&lt;/div></pre>  
+      
+      </section>
+  </div> 
+  
+    <div class="slide">
+      <header>
+         <h1>WAI-ARIA (examples)
+         </h1>
+      </header>
+      <section class="content">
+      <div style="float: right"><a href="http://www.w3.org/TR/wai-aria/">W3C specs</a></div>
+      <ol>
+        <li>Roles
+          <ul>
+            <li>
+            &lt;div role=&quot;menubar&quot;&gt;&lt;/div&gt;</li>
+            <li>&lt;div role=&quot;search&quot;&gt;&lt;/div&gt;</li>
+            <li>&lt;div role=&quot;navigation&quot;&gt;</li>
+            <li>role=application | menuitem | menuitemradio</li>
+          </ul>
+        </li>
+        <li>Live Regiouns
+          <ul>
+            <li>&lt;div aria-live=&quot;assertive | polite | off"&gt;</li>
+          </ul>
+        </li>
+        <li>Widget Accessibility Attributes
+          <ul>
+            <li>aria-haspopup | 
+             aria-disabled
+            ="true | false"</li>
+            <li>aria-controls | aria-describedby = &quot;id&quot;</li>
+            <li>aria-checked</li>
+          </ul>
+        </li>
+        <li>Tab index
+          <ul>
+            <li>&lt;div tabindex=&quot;-1&quot;&gt;</li>
+          </ul>
+        </li>
+        </ol>
+      </section>
+  </div>  
+
+
+
+
+
+<div class="slide intro"> 
+     <header><h1>Forms</h1></header>
+    <h1><a href="forms.html">Go ➹</a></h1> 
+</div>
+
+<!-- END of PRESENTATION -->
+</div><!-- slides -->
+</div><!-- presentation -->
+<script src="images/slide.js"></script>
+</body>
+</html>

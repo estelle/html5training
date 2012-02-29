@@ -1,0 +1,1152 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8"> 
+ 
+    <title>HTML5 Web Forms</title>
+    
+    <style>
+		.example li {clear:both; list-style-type:none;}
+		.example label, .example input {width: 200px; float: left;}
+	</style>
+  
+<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel="stylesheet"> 
+<link rel="stylesheet" href="images/screen.css" media="projection, screen"/> 
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <li class="button cancel" id="back">Back</li>
+            <li class="button done" id="next">Next</li>
+        </ul>
+    </nav>
+</header>
+
+<div id="presentation">
+<div id="presentation-counter"></div>
+
+<div id="slides">
+<!-- PRESENTATION -->
+       <div class="slide intro">
+        <header>
+         <hgroup> 
+          <h1>Web Forms 2.0</h1> 
+          <h2>New form elements &amp; <br>
+Attributes in HTML5</h2>
+         </hgroup> 
+        </header> 
+       </div> 
+ 
+<div class="slide normal">
+        <header>
+          <h1>HTML Form</h1>
+        </header> 
+        <section class="content">
+        	<form action="#" class="example">
+            <ul>
+            	<li><label for="xname">Name</label><input type="text" id="xname"/></li>
+            	<li><label for="xemail">Email</label><input type="text" id="xemail"/></li>
+            	<li><label for="xdob">Birthday</label><input type="text" id="xdob"/></li>
+            	<li><label for="xage">Age</label><input type="text" id="xage"/></li>
+            	<li><label for="xphone">Phone</label><input type="text" id="xphone"/></li>
+            	<li><label for="xrange">Satisfaction</label><input type="text" id="xrange"/></li>
+            	<li><label for="xtweet">Twitter Handle</label><input type="text" id="xtweet"/></li>
+                <li>
+                <input type="submit" value="submit"></li>
+            </form>
+          </section>
+       </div> 
+      
+      
+        <div class="slide normal">
+        <header>
+          <h1>HTML5 Form</h1>
+        </header> 
+        <section class="content">
+        	<form action="#" class="example">
+            <ul>
+            	<li><label for="yname">Name</label><input type="text" id="yname"/></li>
+            	<li><label for="yemail">Email</label><input type="email" id="yemail"/></li>
+            	<li><label for="ydob">Birthday</label><input type="date" id="ydob"/></li>
+            	<li><label for="yage">Age</label><input type="number" id="yage"/></li>
+            	<li><label for="yphone">Phone</label><input type="tel" id="yphone"/></li>
+            	<li><label for="yrange">Satisfaction</label><input type="range" id="yrange"/></li>
+            	<li><label for="ytweet">Twitter Handle</label><input type="text" id="ytweet"/></li>
+                
+                <li>
+                <input type="submit" value="submit"></li>
+                </ul>
+            </form>
+          </section>
+       </div> 
+       
+        <div class="slide normal">
+        <header>
+          <h1>HTML5 Form on Steroids </h1>
+        </header> 
+        <section class="content">
+        	<form action="#" class="example">
+            <ul>
+            	<li><label for="zname">Name</label><input type="text" class="classed" required placeholder=" Name" id="zname"/></li>
+            	<li><label for="zemail">Email</label><input type="email"  class="classed"  multiple placeholder="email addresses" required id="zemail"/></li>
+            	<li><label for="zdob">Birthday</label><input type="date"  class="classed"  required placeholder="01/01/84" id="zdob"/></li>
+            	<li><label for="zage">Age</label><input type="number"  class="classed"  required min="21" max="105" id="zage"/></li>
+            	<li><label for="zphone">Phone</label><input type="tel" class="classed"  pattern="\d{3}-\d{3}-\d{4}" placeholder="XXX-XXX-XXXX" id="zphone"/></li>
+            	<li><label for="zrange">Satisfaction</label><input type="range" id="zrange" min="0" max="10" step="1"/></li>
+            	<li><label for="ztweet">Twitter Handle</label><input type="text"  class="classed"  pattern="@\w*" placeholder="@twitter_handle" required id="ztweet"/></li>
+                <li>
+                <input type="submit" value="submit"></li>
+                                </ul>
+            </form>
+          </section>
+       </div> 
+      
+      <div class="slide intro">
+        <header>
+          <h1>Why?</h1>
+        </header> 
+        <section class="content">
+            <p>
+            <img src="images/tel_phone.png" alt="tel input type on iphone" style="float:right;"/> 
+            <img src="images/url_phone.png" alt="url input type on iphone and android" style="float:right;"/> 
+            <img src="images/email_phone.png" alt="email input type on iphone" style="float:right;"/> 
+            </p>
+          </section>
+       </div> 
+        
+
+        <div class="slide intro">
+        <header>
+          <h1>Why?</h1>
+        </header> 
+        <section class="why">
+            <p>
+            <img src="images/why_notvalid_email.gif"/> 
+            <img src="images/why_notvalid_required.gif"/>
+            <img src="images/why_custom_message.gif"/> 
+            <img src="images/why_date.gif" style="float:right"/>  
+            <img src="images/why_custom_look.gif"/> 
+            </p>
+          </section>
+       </div>
+      
+      
+        <div class="slide normal"> 
+          <header><h1>HTML 4 &lt;Input&gt; Types</h1></header> 
+          <section class="content grow"> 
+             <ul class="column">
+                 <li>button</li>
+                <li>checkbox</li>
+                <li>file*</li>
+                <li>hidden</li>
+                <li>image</li>
+                <li>password</li>
+                <li>radio</li>
+                <li>reset</li>
+                <li>submit</li>
+                <li>text</li>
+            </ul>
+            <footer>* disabled on iPad, iPhone, iPod Touch</footer>
+          </section>
+        </div>
+      
+    
+      
+      
+        <div class="slide normal"> 
+          <header><h1>&lt;input&gt; types new in HTML5</h1></header>
+          <section class="content grow"> 
+          <ul class="column">
+          		<li>color</li>
+                <li>date </li>
+                <li>datetime </li>
+                <li>datetime-local </li>
+                <li>email </li>
+                <li>month </li>
+                <li>number </li>
+                <li>range </li>
+                <li>search</li>
+                <li>tel</li>
+                <li>time </li>
+                <li>url</li>
+                <li>week</li>
+          </ul>
+          </section>
+        </div> 
+          
+      <div class="slide normal"> 
+          <header><h1> &lt;input&gt; attributes in HTML 4</h1></header> 
+          <section class="content grow"> 
+            <ul class="column">
+              <li>name  </li>
+              <li>disabled*    </li>
+              <li>type    </li>
+              <li>maxlength    </li>
+              <li>readonly    </li>
+              <li>size    </li>
+              <li>value    </li>
+              <li>alt    </li>
+              <li>src    </li>
+              <li>height    </li>
+              <li>width    </li>
+              <li>checked*    </li>
+              <li><del>align</del>** </li>
+            </ul>
+            <footer><ul><li>* pseudoclasses can target with :disabled and :checked</li>
+            <li>** align is deprecated. Use CSS.</li></ul></footer>
+          </section>
+        </div>
+  
+      
+      
+      <div class="slide normal"> 
+          <header><h1> New &lt;input&gt; attributes in HTML5</h1></header> 
+          <section class="content"> 
+            <ul class="column">
+                  <li>form</li>
+                  <li>readonly    </li>
+                  <li>autocomplete    </li>
+                  <li>autofocus    </li>
+                  <li>list    </li>
+                  <li>pattern    </li>
+                  <li>required*    </li>
+                  <li>placeholder    </li>
+                  <li>multiple    </li>
+                  <li>list    </li>
+                  <li>min    </li>
+                  <li>max    </li>
+                  <li>step    </li>
+                  <li>formaction    </li>
+                  <li>formenctype    </li>
+                  <li>formmethod    </li>
+                  <li>formtarget    </li>
+                  <li>formnovalidate </li>
+            </ul>
+            <footer><ul>
+            <li>* pseudoclass :required can target.</li>
+            <li>Others: Use attribute selector to target</li>
+            </ul>
+            </footer>
+          </section>
+        </div>
+      
+    
+      
+        <div class="slide grow"> 
+          <header><h1>Other form elements</h1></header>
+          <section class="content">
+          <div style="float: left; width: 45%;"> 
+          <p>Old Elements</p>
+          <ul>
+                <li>&lt;form&gt;</li>
+                <li>&lt;fieldset&gt;</li>
+                <li>&lt;legend&gt;</li>
+                <li>&lt;textarea&gt;</li>
+                <li>&lt;label&gt;</li>
+                <li>&lt;select&gt;</li>
+                <li>&lt;option&gt;</li>
+                <li>&lt;optgroup&gt;</li>
+          </ul>
+          </div>
+          <div style="float: left; margin-right: 100px"> 
+          <p>New Elements</p>
+          <ul>
+                <li>&lt;datalist&gt;</li>
+                <li>&lt;output&gt;</li>
+                <li>&lt;meter&gt;</li>
+                <li>&lt;progress&gt;</li>
+                <li>&lt;keygen&gt;</li>
+          </ul>
+          </div>
+          </section>
+        </div> 
+      
+      
+        <div class="slide"> 
+          <header><h1>Labels</h1></header>
+          <section class="content"> 
+          <pre contenteditable>
+&lt;label for=&quot;inputID&quot;&gt;Label: &lt;/label&gt; <br />
+&lt;input id=&quot;inputID&quot; name=&quot;inputName&quot; type=&quot;text&quot; /&gt;</pre>
+<p>or</p>
+<pre contenteditable>
+&lt;label&gt;Label: &lt;input name=&quot;inputName&quot; type=&quot;text&quot; /&gt;&lt;/label&gt;<br /></pre>
+            <p>The value of the <em>for</em> attribute should match the value of the input's <em>id</em> attribute</p>
+            <hr/>
+            <p>Click on the label to activate the form element:</p>
+            <ul>
+            <li><label for="test1">Radio Button 1</label>
+            <input type="radio" name="radio1" id="test1"/></li>
+            <li><label for="test1v">Radio Button 2</label>
+            <input type="radio" name="radio1" id="test1v"/>
+            </li><li><label for="test2">Checkbox</label>
+            <input type="checkbox" id="test2"/>
+            </li><li><label for="test3">Password</label>
+            <input type="password" id="test3"/></li></ul>
+          </section>
+        </div> 
+      
+      
+       <div class="slide"> 
+          <header><h1>Attribute Soup</h1></header>
+          <section class="content"> 
+<pre contenteditable>&lt;label for=&quot;name&quot;&gt;Name: &lt;/label&gt; 
+&lt;input id=&quot;name&quot; name=&quot;inputName&quot; 
+  placeholder=&quot;placeholder text&quot; 
+  pattern=&quot;\w{6,9}&quot; 
+  required
+  autofocus
+  type=&quot;text&quot;/&gt;</pre>
+          
+          <form><label for="attributeSoup">Label: </label> 
+		<input id="attributeSoup" name="attributeSoup" class="classed" placeholder="placeholder text" pattern="\w{6,9}" required type="text"/></form>
+  
+  <p><small>Note that the following CSS is used in our live examples:</small></p>
+  
+  <pre contenteditable>input:focus:invalid { background-color: lightPink;}
+input:valid { background-color:lightGreen }
+input:required {border: 2px solid red;}
+input:optional {border: 2px solid green;}</pre>
+          </section>
+        </div> 
+    
+ <div class="slide normal" style="padding:0;">         
+ <object data="http://wufoo.com/html5/#attributes/" style="height: 780px;
+width: 940px;
+overflow:hidden; ">
+<img src="images/wufooiattributes.gif" alt="HTML5 Form attributes and browser support"/>
+<p><a href="http://wufoo.com/html5/#attributes/">http://wufoo.com/html5/#attributes/</a></object>  
+        </div>            
+      
+        <div class="slide"> 
+          <header><h1><em>placeholder</em> attribute</h1></header>
+          <section class="content"> 
+<pre contenteditable>&lt;label for=&quot;inputID&quot;&gt;Label: &lt;/label&gt; 
+&lt;input id=&quot;inputID&quot; name=&quot;inputName&quot; 
+  <strong><em>placeholder=&quot;placeholder text&quot;</em></strong> 
+  pattern=&quot;\w{6,9}&quot; 
+  required
+  autofocus
+  type=&quot;text&quot;/&gt;</pre>
+  <form><label for="xinputID">Label: </label> 
+<input id="xinputID" name="xinputName" 
+  placeholder="placeholder text" 
+  pattern="\w{6,9}" 
+  required
+  type="text"/></form>
+  <footer>
+  <ul class="icons"> 
+  		<li class="firefox">Firefox</li>
+  	   <li class="safari"> Safari</li> 
+       <li class="chrome">Chrome</li>
+       <li class="opera">Opera</li>
+       <li class="ie new">IE10 b2</li>
+ </ul>
+ </footer>
+          </section>
+        </div> 
+  
+         <div class="slide"> 
+          <header><h1><em>pattern</em> attribute</h1></header>
+          <section class="content"> 
+<pre contenteditable>&lt;label for=&quot;inputID&quot;&gt;Label: &lt;/label&gt; 
+&lt;input id=&quot;inputID&quot; name=&quot;inputName&quot; 
+  placeholder=&quot;\w{6,9}&quot; 
+  <strong><em>pattern=&quot;\w{6,9}&quot;</em></strong> 
+  required
+  autofocus
+  type=&quot;text&quot;/&gt;</pre>
+  <p><label for="inputID2">6 to 9 characters: </label> 
+
+<input id="inputID2" name="inputName" class="classed"
+  placeholder="\w{6,9}" 
+  pattern="\w{6,9}" 
+  required
+  type="text"/></p>
+              <footer>
+              
+                <ul class="icons"> 
+                   <li class="safari"> Safari</li> 
+                   <li class="chrome">Chrome</li>
+                   <li class="opera">Opera</li>
+                   <li class="firefox">Firefox</li>
+                   <li class="ie new">IE10 b2</li>
+                   
+             </ul>
+             </footer>
+          </section>
+        </div> 
+        
+        
+        
+        
+        
+         <div class="slide required"> 
+          <header><h1><em>required</em> attribute</h1></header>
+          <section class="content"> 
+<pre contenteditable>&lt;label for=&quot;inputID&quot;&gt;Label: &lt;/label&gt; 
+&lt;input id=&quot;inputID&quot; name=&quot;inputName&quot; 
+  placeholder=&quot;placeholder text&quot; 
+  pattern=&quot;\w{6,9}&quot;
+ <strong><em> required</em></strong> 
+  type=&quot;text&quot;/&gt;</pre>
+  <p>
+<input id="requiredAttribute" name="inputName"  class="classed"
+  placeholder="no pattern" 
+  required
+  type="text"/>
+  <input id="requiredAttribute" name="inputName"  class="classed"
+  placeholder="has pattern" 
+  pattern="\w{6,9}" 
+  required
+  type="text"/></p>
+  <pre contenteditable>input[required] {border: 1px dashed #f00;} <strong> or </strong>
+input:required {border: 1px dashed #f00;}</pre>
+<p><small>FF: &quot;Please fill out this field&quot;</small></p>
+  <footer>
+  
+  <ul class="icons"> 
+  		<li class="firefox">Firefox</li>
+  	   <li class="safari bad"> Safari</li> 
+       <li class="chrome">Chrome</li>
+       <li class="opera">Opera</li>
+       <li class="ie new">IE10 b2</li>
+ </ul>
+  
+  </footer>
+          </section>
+        </div> 
+      
+      
+      
+      
+         <div class="slide grow"> 
+          <header><h1>Targeting in CSS without Touching HTML!</h1></header>
+          <section class="content column">
+            <ul>
+                <li>:default</li>
+                <li>:valid</li>
+                <li>:invalid</li>
+                <li>:in-range</li>
+                <li>:out-of-range</li>
+                <li>:required</li>
+                <li>:optional</li>
+                <li>:read-only</li>
+                <li>:read-write</li>
+            </ul>
+            <ul>
+            	<li>input[type=checkbox]</li>
+				<li>input[required]</li>
+				<li>input:not([required])<br>
+                <br>
+                <br>
+                <br><br><br>
+                <br>
+                <br>
+                </li>
+            </ul>
+            
+          </section>
+        </div> 
+      
+     
+      
+ <div class="slide"> 
+          <header><h1><em>autofocus</em> attribute</h1></header>
+          <section class="content"> 
+<pre contenteditable>&lt;label for=&quot;inputID&quot;&gt;Label: &lt;/label&gt; 
+&lt;input id=&quot;inputID&quot; name=&quot;inputName&quot; 
+  placeholder=&quot;placeholder text&quot; 
+  pattern=&quot;\w{6,9}&quot;
+  required
+  <strong><em>autofocus</em></strong> 
+  type=&quot;text&quot;/&gt;</pre>
+  <p><label for="autofocusAttribute">Has Focus? </label> 
+
+<input id="autofocusAttribute" name="inputName"  class="classed"
+  placeholder="\w{6,9}" 
+  pattern="\w{6,9}" 
+  required autofxocus
+  type="text"/></p>
+<p>only one element can have the autofocus attribute</p>
+<pre contenteditable>$('[autofocus]').last().focus();</pre>
+  <footer>
+     <ul class="icons"> 
+  	   <li class="safari"> Safari</li> 
+       <li class="chrome">Chrome</li>
+       <li class="opera">Opera</li>
+  	   <li class="firefox">Firefox</li>
+       <li class="ie new">IE10 b2</li>
+       
+ </ul>
+  
+  
+  </footer>
+          </section>
+        </div>
+      
+  <div class="slide"> 
+          <header><h1><em>type</em> attribute</h1></header>
+          <section class="content"> 
+<pre contenteditable>&lt;label for=&quot;inputID&quot;&gt;Label: &lt;/label&gt; 
+&lt;input id=&quot;inputID&quot; name=&quot;inputName&quot; 
+  placeholder=&quot;placeholder text&quot; 
+  pattern=&quot;\w{6,9}&quot;
+  required
+  autofocus
+  <strong><em>type=&quot;text&quot;</em></strong> /&gt;</pre>
+  <p><label for="tyoeAttribute">Appearance? </label> 
+
+<input id="typeAttribute" name="inputName"  class="classed"
+  placeholder="\w{6,9}" 
+  pattern="\w{6,9}" 
+  required 
+  type="text"/></p>
+  <footer>
+  
+     <ul class="icons"> 
+  	   <li class="safari"> Safari</li> 
+       <li class="chrome">Chrome</li>
+       <li class="opera">Opera</li>
+  	   <li class="firefox">Firefox</li>
+       <li class="ie">IE</li>
+       
+ </ul><p>All browsers understand the attribute, but not all values</p></footer>
+          </section>
+        </div>     
+ 
+ 
+ 
+    <div class="slide"> 
+          <header><h1><em>form</em> attribute</h1></header>
+          <section class="content"> 
+<pre contenteditable>&lt;label for=&quot;inputID&quot;&gt;Label: &lt;/label&gt; 
+&lt;input id=&quot;inputID&quot; name=&quot;inputName&quot; 
+  placeholder=&quot;placeholder text&quot; 
+  pattern=&quot;\w{6,9}&quot;
+  required
+  autofocus
+  <strong><em>form=&quot;notMyParentForm&quot;</em></strong>
+  type=&quot;text&quot; /&gt;</pre>
+  <p>Note: <code>form=&quot;&quot;</code> disassociates a form element from its parent form.</p>
+  <ul class="icons"> 
+  	   <li class="safari iffy"> Safari</li> 
+       <li class="chrome">Chrome</li>
+       <li class="opera">Opera</li>
+  	   <li class="firefox new">Firefox</li>
+       <li class="ie no">IE</li>
+       
+ </ul>
+  <footer>
+  
+     </footer>
+          </section>
+        </div>     
+
+
+
+    <div class="slide normal"> 
+          <header><h1>HTML 4 values of the <em>type</em> attribute</h1></header>
+          <section class="content"> 
+<ul>
+<li>button <small>does nothing. use button or js</small></li>
+<li>checkbox <small>unchecked not submitted with form</small></li>
+<li>file <small>disabled in iPhone/iOS</small></li>
+<li>hidden</li>
+<li>image <small>works like &lt;button&gt;</small></li>
+<li>password <small>use post, not get</small></li>
+<li>radio</li>
+<li>reset <small>can lead to bad user experience</small></li>
+<li>submit</li>
+<li>text <small>default</small></li></ul>
+  <footer style="margin-top: -40px;">   <ul class="icons"> 
+  	   <li class="safari"> Safari</li> 
+       <li class="chrome">Chrome</li>
+       <li class="opera">Opera</li>
+  	   <li class="firefox">Firefox</li>
+       <li class="ie">IE</li>
+       
+ </ul><p style="margin-top: -40px;"><strong>All</strong> browsers understand these values.</p></footer>
+          </section>
+        </div>  
+        
+ 
+ 
+     <div class="slide normal"> 
+          <header><h1>13 New input types in HTML5</h1></header>
+          <section class="content grow"> 
+<ul class="column">
+<li>color </li>
+<li>url</li>
+<li>tel </li>
+<li>email</li>
+<li>number</li>
+<li>range</li>
+<li>search </li>
+<li>date </li>
+<li>datetime </li>
+<li>datetime-local</li>
+<li>month </li>
+<li>time</li>
+<li>week
+</li></ul>
+  <footer>
+     <ul class="icons"> 
+  	   <li class="safari half"> Safari</li> 
+       <li class="chrome half">Chrome</li>
+       <li class="opera">Opera</li>
+  	   <li class="firefox iffy">Firefox</li>
+       <li class="ie iffy new">IE10 b2</li>
+     </ul>
+  
+  <p style="margin-top:-20px">Mixed browser support for all of these.</p></footer>
+          </section>
+        </div>            
+    
+<div class="slide normal" style="padding:0;">         
+ <object data="http://wufoo.com/html5/#types/" style="height: 780px;
+width: 940px;
+overflow:hidden; ">
+<img src="images/wufooinputtypes.gif" alt="html5 input types and browser support">
+<p>http://wufoo.com/html5/#types/</p></object>  
+        </div>       
+         
+      <div class="slide normal"> 
+          <header><h1>color</h1></header>
+          <section class="content"> 
+           <pre contenteditable>&lt;input name="color" 
+<strong><em>type="color"</em></strong> /&gt;</pre>
+<input name="color0" type="color" /> 
+<input name="color2" type="color" required placeholder="required" class="classed"/>
+          <pre contenteditable>&lt;input id="color" name="color" 
+<strong><em>type="color"</em></strong>       
+placeholder="#FFFFFF" 
+pattern="#[0-9A-Fa-f]{6}"
+required /&gt;</pre>
+<input 
+id="color" 
+name="color" 
+type="color"
+placeholder="#FFFFFF" 
+pattern="#[0-9A-Fa-f]{6}"
+required
+ class="classed" />
+
+  <footer>
+   <ul class="icons"> 
+  	   <li class="safari iffy"> Safari</li> 
+       <li class="chrome no">Chrome</li>
+       <li class="opera">Opera</li>
+  	   <li class="firefox no">Firefox</li>
+       <li class="ie no">IE10 b2</li>
+     </ul>
+  
+  </footer>
+          </section>
+        </div>         
+
+
+        <div class="slide normal"> 
+          <header><h1>url</h1></header>
+          <section class="content"> 
+           <pre contenteditable>&lt;input  name="website" <strong><em>type="url"</em></strong> /&gt;</pre>
+<input name="website" type="url" required class="classed" /> <ul class="icons"> 
+  	   <li class="safari"> Safari</li> 
+       <li class="chrome">Chrome</li>
+       <li class="opera">Opera</li>
+  	   <li class="firefox">Firefox</li>
+       <li class="ie new">IE10 b2</li>
+     </ul>
+
+ <small>Any prefix (http:// or even g:// accepted) </small>
+          <pre contenteditable>&lt;input 
+id="website" 
+name="url" 
+type="url"
+placeholder="http://www.domain.com" 
+pattern="(http|https|ftp)\:\/\/[a-zA-Z0-9\-\.\/]*"/&gt;</pre>
+<input 
+id="rul" 
+name="url" 
+type="url"
+placeholder="http://www.domain.com" 
+pattern="(http|https|ftp)\:\/\/[a-zA-Z0-9\-\.\/]*"  class="classed" />
+
+          </section>
+        </div> 
+
+   
+        <div class="slide normal"> 
+          <header><h1>url</h1></header>
+          <section class="content"> 
+          <img src="images/url_phone.png" width="454" height="428" alt="URL input type in iphone and android" style="margin:auto; display:block"/>
+          <p>different dynamic keyboards displayed based on input type.  </section>
+        </div>   
+   
+   
+   
+         <div class="slide normal"> 
+          <header><h1>tel</h1></header>
+          <section class="content">
+          <img src="images/tel_phone.png" alt="tel input type on iphone" style="float:right;"/> 
+           <pre contenteditable>&lt;input name="telephone" <strong><em>type="tel"</em></strong> /&gt;</pre>
+<input name="telephone" type="tel" />
+<p>Custom Keyboard. No validation.</p>
+          <pre contenteditable>&lt;input 
+id="phone" name="phone" type="tel"
+placeholder="415-555-1212" 
+pattern="\d{3}\-\d{3}\-\d{4}"/&gt;</pre>
+<input 
+id="phone" 
+name="phone" 
+type="tel"
+placeholder="415-555-1212"  
+class="classed"
+pattern="\d{3}\-\d{3}\-\d{4}" />
+
+  <footer><ul class="icons"> 
+  	   <li class="safari iffy"> Safari</li> 
+       <li class="chrome">Chrome</li>
+       <li class="opera">Opera</li>
+  	   <li class="firefox">Firefox</li>
+       <li class="ie new">IE10 b2</li>
+     </ul></footer>
+          </section>
+        </div> 
+
+
+       
+                 <div class="slide normal"> 
+          <header><h1>email</h1></header>
+          <section class="content">
+          <img src="images/email_phone.png" alt="email input type on iphone" style="float:right;"/> 
+           <pre contenteditable>&lt;input  name="address" <strong><em>type="email"</em></strong> /&gt;</pre>
+<input name="eaddress" type="email" style="width:500px;" required 
+class="classed"/>
+<p>Keyboard changes &amp; validation!</p>
+
+<pre contenteditable>&lt;input id="email" name="email" 
+<strong><em>type="email"</em></strong>
+placeholder="you@domain.com" 
+<strong><em>multiple</em></strong> /&gt;</pre>
+
+<label for="email">Email: </label>
+<input id="email" name="email" type="email" placeholder="you@domain.com" 
+  multiple 
+  required 
+class="classed"/>
+  <footer>
+     <ul class="icons" style="margin: -5px 0 -10px 0;"> 
+  	   <li class="safari iffy"> Safari</li> 
+       <li class="chrome">Chrome</li>
+       <li class="opera">Opera</li>
+  	   <li class="firefox">Firefox</li>
+       <li class="ie new">IE10 b2</li>
+     </ul>
+<small>multiple' emails separated with commas</small>	</footer>
+          </section>
+        </div> 
+   
+<div class="slide normal"> 
+          <header><h1>number</h1></header>
+          <section class="content">
+          <div style="width: 58%; float: left">
+           	<pre contenteditable style="white-space:nowrap; overflow:visible">&lt;input name="n" <strong><em>type="number"</em></strong>/&gt;
+            </pre>
+		<input name="n" type="number"/>
+		  </div>
+			
+            <div style="float:right; width: 40%">
+<p style="clear: both;">'number' specific attributes:</p>
+<ul><li>min</li><li>max</li><li>step</li></ul>
+</div>
+
+
+<pre contenteditable style="clear:both">&lt;input id="nickels" 
+<strong><em>type="number"</em></strong>
+placeholder="0, 5, 10 &hellip;"  
+pattern="[0-9]*[05]" 
+<strong><em>min="0" 
+max="1000" 
+step="5"</em></strong> /&gt;
+</pre> 
+
+
+<label for="nickel">Number divisible by 5: </label> 
+<input id="nickel" type="number" placeholder="0, 5, 10 &hellip;"  pattern="[0-9]*[05]" min="0" max="1000" step="5" required  class="classed"/> 
+
+          </section> 
+<footer>
+<ul class="icons"> 
+  	   <li class="safari iffy"> Safari</li> 
+       <li class="chrome">Chrome</li>
+       <li class="opera">Opera</li>
+  	   <li class="firefox no">Firefox</li>
+       <li class="ie no">IE10 b2</li>
+     </ul>
+</footer>
+
+<ul>
+<li>Supporting browsers have enhanced UI</li>
+<li>Safari associates :valid, but dooesn't validate.</li></ul>	
+    
+          </div>
+          
+           <div class="slide"> 
+          <header><h1>range</h1></header>
+          <section class="content"> 
+          <pre contenteditable>&lt;input id="range" name="range" 
+<strong><em>type="range"</em> </strong>
+placeholder="0 to 10" 
+pattern="[0-9]|10" 
+min="0" max="10" 
+step="1"/&gt;
+</pre>
+<input id="range" name="range" 
+type="range" 
+placeholder="0 to 10" 
+pattern="[0-9]|10" 
+min="0" max="10" 
+step="1" onChange="document.querySelector('#rangeit').innerHTML = (document.querySelector('#range').value);"/>  <small onClick="document.querySelector('#rangeit').innerHTML = (document.querySelector('#range').value);">Current Value: <output id="rangeit"></output></small>
+
+ <pre contenteditable>&lt;input id="range" name="range" 
+<strong><em>type="range"</em>  </strong>
+min="0" max="100" 
+step="5"/&gt;
+</pre>
+<input id="range2" name="range" 
+type="range" 
+placeholder="0 to 100" 
+min="0" max="100" 
+step="5" onChange="document.querySelector('#rangeit2').innerHTML = document.querySelector('#range2').value;"/>  <small onClick="document.querySelector('#rangeit2').innerHTML = document.querySelector('#range2').value;">Current Value: <output id="rangeit2"></output></small>
+
+        <footer>  
+          <ul class="icons"> 
+  	   <li class="safari"> Safari</li> 
+       <li class="chrome">Chrome</li>
+       <li class="opera">Opera</li>
+  	   <li class="firefox no">Firefox</li>
+       <li class="ie no">IE</li>
+     </ul>
+     </footer>
+        </section> 
+     </div>
+      
+      
+        <div class="slide"> 
+          <header><h1>search</h1></header>
+          <section class="content"> 
+          <pre contenteditable>&lt;input 
+id="search" 
+name="search" 
+<strong><em>type="search"</em></strong> 
+placeholder="search terms"/&gt;
+  </pre><input 
+  id="search" name="search" type="search" 
+  placeholder="search terms" />
+<ul class="icons"> 
+  	   <li class="safari"> Safari</li> 
+       <li class="chrome">Chrome</li>
+       <li class="opera">Opera</li>
+  	   <li class="firefox iffy">Firefox</li>
+       <li class="ie new iffy">IE10 b2</li>
+     </ul>
+     
+<small>Warning: if you stylize the input, the 'delete' may not show</small>
+
+          </section>
+        </div> 
+      
+      
+      
+      
+        <div class="slide"> 
+          <header><h1>date &amp; time </h1></header>
+          <section class="content"> 
+          <table>
+          	<tr><td>date 		</td><td>	2010-11-03</td><td><input type="date" /></td></tr>
+            <tr><td>datetime 	</td><td>	2010-11-03 19:00</td><td><input type="datetime" /></td></tr>
+            <tr><td>datetime-local</td><td>	2010-11-03 19:00</td><td><input type="datetime-local" /></td></tr>
+            <tr><td>month 		</td><td>	2010-11</td><td><input type="month" /></td></tr>
+            <tr><td>time		</td><td>	19:00</td><td><input type="time" /></td></tr>
+            <tr><td>week		</td><td>	2010-W44</td><td><input type="week" /></td></tr>
+            </table>
+		<footer>
+            <ul class="icons"> 
+               <li class="safari"> Safari</li> 
+               <li class="chrome">Chrome</li>
+               <li class="opera">Opera</li>
+               <li class="firefox no">Firefox</li>
+               <li class="ie no">IE</li>
+         </ul>
+     </footer>
+          </section>
+        </div> 
+      
+      
+      
+         
+        <div class="slide"> 
+          <header><h1>Useful Dates</h1></header>
+          <section class="content"> 
+          <pre contenteditable>&lt;input id="DOB" name="DOB" 
+ <strong><em>type="date"</em></strong> 
+ placeholder="YYYY-MM-DD" 
+ pattern="\d{4}\-\d{2}\-\d{2}"
+ <strong><em>min="1900-01-01"</em></strong> /&gt; </pre>
+ <p><label for="dob">Date of Birth: </label>
+ <input id="dob" name="dob" 
+ type="date" 
+ placeholder="YYYY-MM-DD" 
+ min="1900-01-01"
+ pattern="\d{4}\-\d{2}\-\d{2}"
+ class="classed"
+ required /> </p> 
+ 
+
+          </section>
+        </div> 
+      
+       <div class="slide"> 
+          <header><h1>Added date functionality</h1></header>
+          <section class="content"> 
+          <pre contenteditable>&lt;input  name="time" id="time"
+ <strong><em>type="time" 
+ min="09:00" 
+ max="17:00"
+ step="900" </em></strong>
+ placeholder="12:00" 
+ required /&gt; </pre>
+ <p><label for="time">Apointment time: </label>
+ <input type="time" min="09:00" max="17:00" name="time" id="time" 
+ step="900" 
+ placeholder="12:00" 
+ class="classed" 
+ required />  </p> 
+ <ul class="icons"> 
+  	   <li class="safari"> Safari</li> 
+       <li class="chrome">Chrome</li>
+       <li class="opera">Opera</li>
+  	   <li class="firefox no">Firefox</li>
+       <li class="ie no">IE</li>
+     </ul>
+          </section>
+        </div> 
+      
+      
+      
+        <div class="slide"> 
+          <header><h1>HTML5 Form Element Attributes</h1></header>
+          <section class="content column"> 
+          <ul>
+          <li>required</li>
+          <li>min</li>
+          <li>max</li>
+          <li>step</li>
+          <li>placeholder</li>
+          <li>pattern</li>
+          <li>autofocus</li>
+          <li>autocomplete</li>
+          <li>form</li>
+          <li>list</li>
+          </ul>
+          <ul>
+         
+          <li>type</li>
+          <li>readonly</li>
+          <li>disabled</li>
+          <li>maxlength</li>
+          <li>size<br/><br/><br/><br/><br/><br/><br/></li></ul>
+          
+          </section>
+        </div>
+
+     
+         <div class="slide"> 
+          <header><h1>Validation</h1></header>
+          <section class="content"> 
+          
+          <pre contenteditable>var validityObject = document.getElementById['form_control'].validity;</pre>
+          
+<ul style="float: left; width: 16em;">
+<li>validityObject.valueMissing
+            </li>
+
+<li>validityObject.typeMismatch</li>
+
+<li>validityObject.patternMismatch</li>
+
+<li>validityObject.tooLong</li>
+
+<li>validityObject.rangeUnderflow 
+            </li>
+ 
+<li>validityObject.rangeOverflow</li>
+
+<li>validityObject.stepMismatch</li>
+
+<li>validityObject.valid </li>
+
+<li>validityObject.customError</li>
+</ul><div style="float:left; text-align: right; width: 200px">
+          <img src="images/why_notvalid_required.gif" style="float:clear:both"/> 
+          <img src="images/why_notvalid_email.gif" style="margin-top: 40px;clear: both"/>
+          </div>
+          </section>
+        </div>
+        <div class="slide"> 
+          <header><h1>Custom Error message</h1></header>
+          <section class="content"> 
+         
+            <pre contenteditable>function validate() {
+  var input = document.getElementById('b');
+  var validityState_object = input.validity;
+  if(validityState_object.valueMissing) {
+     input.setCustomValidity('Please set an age (required)');	
+  } else if (input.rangeUnderflow) {
+    input.setCustomValidity('Your value is too low');
+  } else if (input.rangeOverflow) {
+    input.setCustomValidity('Your value is too high');
+  } else {
+    input.setCustomValidity('');
+  }
+}          
+          </pre><img src="images/why_custom_message.gif" style="float:right; height: 100px"/> 
+          </section>
+        </div>
+        
+         <div class="slide"> 
+          <header><h1>Styling</h1></header>
+          <section class="content"> 
+<pre contenteditable>::-webkit-validation-bubble  {}
+::-webkit-validation-bubble-arrow-clipper  {}
+::-webkit-validation-bubble-arrow {}
+::-webkit-validation-bubble-message {}</pre>       
+   <p>
+            <img src="images/why_custom_look.gif"/> </p>       
+          </section>
+        </div>
+        
+          <div class="slide normal">
+      	<header><h1><em>list</em> attribute and &lt;datalist&gt;</h1></header>
+        <section class="content">
+        <pre contenteditable>
+&lt;label for=&quot;url&quot;&gt;Web Address: &lt;/label&gt;
+&lt;input id=&quot;url&quot; type=&quot;url&quot; name=&quot;url1&quot; placeholder=&quot;www.domain.com&quot; required  list=&quot;datalist1&quot; /&gt;
+  
+&lt;datalist id=&quot;datalist1&quot;&gt;
+  &lt;option value=&quot;http://www.standardista.com&quot; /&gt;
+  &lt;option value=&quot;http://www.oreilly.com&quot; /&gt;
+  &lt;option value=&quot;http://www.evotech.net&quot; /&gt;
+&lt;/datalist&gt;</pre>
+
+
+<p><label for="url">Web Address: </label>
+<input id="url" type="url" name="url1" placeholder="www.domain.com" required  list="datalist1" /></p>
+<p>
+<label for="url2">Web Address2: </label>
+<input id="url2" type="url" name="url2" placeholder="www.domain.com" list="datalist1" /></p>
+  
+<datalist id="datalist1">
+  <option value="http://www.standardista.com" />
+  <option value="http://www.oreilly.com" />
+  <option value="http://www.evotech.net" />
+</datalist>
+
+<ul class="icons"> 
+  	   <li class="safari no bad"> Safari</li> 
+       <li class="chrome no bad">Chrome</li>
+       <li class="opera">Opera</li>
+  	   <li class="firefox">Firefox</li>
+       <li class="ie new">IE10 b2</li>
+     </ul>
+
+        </section>
+      </div>
+
+
+ <div class="slide normal">
+      	<header><h1>&lt;meter&gt;, &lt;progress&gt; &amp; &lt;output&gt;</h1></header>
+      <section class="content">
+      <!-- breaks the browser 
+      <pre contenteditable>&lt;meter value=75 min=0 max=100 &gt;75% full&lt;/meter&gt;</pre>
+<p>Gas tank: 
+	<meter value="75" min="0" max="100">75% full</meter> 
+</p>
+<pre contenteditable>&lt;progress&gt;loading...&lt;/progress&gt;</pre>
+<p>Please wait: <progress>loading...</progress> </p>
+<pre contenteditable>&lt;<b>progress</b> value="75" <b>max</b>="100"&gt;75% complete&lt;/<b>progress</b>&gt;</pre>
+<p>Download is: <progress value="75" max="100">75% complete</progress> </p>
+<pre contenteditable>&lt;<b>output</b>&gt;</pre>
+<ul class="icons" style="margin-top:0;"> 
+  	   <li class="safari half"> Safari</li> 
+       <li class="chrome">Chrome</li>
+       <li class="opera">Opera</li>
+  	   <li class="firefox half">Firefox</li>
+       <li class="ie no">IE</li>
+     </ul>
+     -->
+      
+      
+      </section>
+</div> 
+
+    
+   <div class="slide normal">
+      	<header><h1>Mo' &lt;meter&gt;</h1></header>
+        <!-- breaks browser 
+      <section class="content" style="margin: 20px 10px">
+      <pre contenteditable>&lt;meter value=90 min=0 max=100 low=20 high=98&gt;75%&lt;/meter&gt;</pre>
+<p>Gas tank: <meter id="meter1" value="90" min="0" max="100" low="20" high="98">90% full</meter> 
+<input type=range min=0 max=100 value=90 id="meter1range" onChange="effect('meter1', 'meter1range')"/> <output id="meter1val"></output></p>
+ 
+<pre contenteditable>&lt;meter value=75 min=0 max=100 low=20 high=98&gt;75%&lt;/meter&gt;</pre>
+<p>Grades: <meter id="meter2" value="75" min="0" max="100" low="60" high="100" optimum="100">75%</meter> 
+<input type=range min=0 max=100 value=75 id="meter2range" onChange="effect('meter2', 'meter2range')"/> <output id="meter2val"></output></p>
+
+
+<pre contenteditable>&lt;meter min=50 max=200 low=90 high=119 optimum=100>&lt;/meter&gt;</pre>
+<p>Blood Pressure: <meter id="meter3" value="125" min="50" max="200" low="90" high="119" optimum="100">125</meter> 
+<input type=range min=0 max=200 value=125 id="meter3range" onChange="effect('meter3', 'meter3range')"/> <output id="meter3val"></output></p>
+ 
+ <script defer>
+ function effect(meter, meterrange) {
+	var currVal = document.getElementById(meterrange).value;
+	document.getElementById(meter).value =  currVal;
+	document.getElementById(meter+ "val").innerHTML = currVal;
+	
+ }
+ </script>
+--></section>
+      </div>
+     
+  
+
+
+<div class="slide normal">
+<header>
+<h1>Speech Input
+</h1>
+</header>
+<section class="content">
+<pre contenteditable>&lt;input type="text" x-webkit-speech /&gt;</pre>
+<input type="text" x-webkit-speech />
+</section>
+</div> 
+      
+<div class="slide intro"> 
+     <header><h1>Audio &amp; Video</h1></header>
+    <h1><a href="media.html">Go ➹</a></h1> 
+</div>    
+     
+     
+      
+    
+   </div>
+  </div> 
+    
+<script src="images/slide.js"></script>
+
+  </body></html>
