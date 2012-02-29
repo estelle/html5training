@@ -6,6 +6,11 @@
 
 <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel="stylesheet"> 
 <link rel="stylesheet" href="images/screen.css" media="projection, screen"/> 
+<style>#flag {
+      width: 320px; 
+      height: 220px;
+      margin: auto;
+      }</style>
 </head>
 <body>
 
@@ -25,10 +30,63 @@
 <!-- PRESENTATION -->
 <div class="slide intro">
 <header><h1>HTML5 Canvas</h1></header>
-<section class="content"> 
+<section class="content">
+<canvas id="flag" width="320" height="220">
+  You don't support Canvas. If you did, you would see a flag
+</canvas>
+
 </section>
 </div>
 
+<div class="slide normal"> 
+     <header><h1>The HTML Side</h1></header> 
+     <section class="content"> 
+     <pre>&lt;canvas id="flag" width="320" height="220">
+  You don't support Canvas. If you did, you would see a flag
+&lt;/canvas></pre>
+     </section>
+ </div>
+ 
+<div class="slide normal"> 
+     <header><h1>The CSS Side</h1></header> 
+     <section class="content"> 
+     <pre>#flag {
+      width: 320px; 
+      height: 220px;
+      margin: auto;
+      }
+</pre>
+     </section>
+ </div>
+ 
+<div class="slide normal"> 
+     <header><h1>The JS Side</h1></header> 
+     <section class="content"> 
+     <pre>var el= document.getElementById("flag");
+
+  if (el && el.getContext) { 
+  var context = el.getContext('2d');
+      if(context){
+          context.fillStyle   = "#ffffff"; 
+          context.strokeStyle = "#CCCCCC"; 
+          context.lineWidth   = 1;
+          context.shadowOffsetX = 5;
+          context.shadowOffsetY = 5;
+          context.shadowBlur    = 4;
+          context.shadowColor   = 'rgba(0, 0, 0, 0.4)';
+          context.strokeRect(10, 10, 300, 200);
+          context.fillRect(10, 10, 300, 200);
+          context.shadowColor='rgba(0,0,0,0)';
+          context.fillStyle = "#d60818";
+          context.arc(160, 107, 60, 0, Math.PI*2, false);
+          context.fill();
+
+      }
+  }</pre>
+     </section>
+ </div>
+ 
+ 
 <div class="slide normal">
 <header><h1>Overview Of Graphics In The Browser</h1></header>
 <section class="content"> 
@@ -140,5 +198,33 @@
 </div><!-- slides -->
 </div><!-- presentation -->
 <script src="images/slide.js"></script>
+<script defer>
+function doFlag(){
+	console.log('work');
+var el= document.getElementById("flag");
+
+  if (el && el.getContext) { 
+  var context = el.getContext('2d');
+      if(context){
+          context.fillStyle   = "#ffffff"; 
+          context.strokeStyle = "#CCCCCC"; 
+          context.lineWidth   = 1;
+          context.shadowOffsetX = 5;
+          context.shadowOffsetY = 5;
+          context.shadowBlur    = 4;
+          context.shadowColor   = 'rgba(0, 0, 0, 0.4)';
+          context.strokeRect(10, 10, 300, 200);
+          context.fillRect(10, 10, 300, 200);
+          context.shadowColor='rgba(0,0,0,0)';
+          context.fillStyle = "#d60818";
+          context.arc(160, 107, 60, 0, Math.PI*2, false);
+          context.fill();
+
+      }
+  }
+}
+doFlag();
+
+</script>
 </body>
 </html>
