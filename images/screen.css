@@ -47,7 +47,7 @@ body {
 }
 
 #next, #back {z-index: 1000; position: absolute; top:0; left:0; list-style-type:none;}
-#back {left:auto; right: 0;}
+#next {left:auto; right: 0;}
 #presentation {
   position: absolute;
   height: 100%;
@@ -437,7 +437,7 @@ dl.inline dd{
 	font-size: 180%;	
 }
 
-.new {color: #C7573A; background-color: #fff; padding: 3px 8px;}
+.new:not(li) {color: #C7573A; background-color: #fff; padding: 3px 8px;}
 ul.columns {
 	-webkit-column-count: 4;
 	font-size: 80%;
@@ -571,10 +571,10 @@ margin: 0;
 		#semels .divarticle {width: 69%;float: right;}
 		.divfooter {clear:both;}
 		
-form input:focus:invalid { background-color: lightPink;}
-form input:valid { background-color:lightGreen }
+form input:focus:invalid:not([type=submit]):not([type=range]):not([type=search])  { background-color: lightPink;}
+form input:valid:not([type=submit]):not([type=range]):not([type=search]) { background-color:lightGreen }
 form input:required {border: 2px solid red;}
-form input:optional {border: 2px solid green;}
+form input:optional:not([type=submit]):not([type=range]):not([type=search]) {border: 2px solid green;}
 #forminputs ul {width: 45%; float:left; margin:0;}
 #forminputs li {list-style-type: none;}
 

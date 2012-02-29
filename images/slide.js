@@ -393,7 +393,7 @@ var slides = function() {
         function(e) { _t.go(e.state); }, false);
 		
 	doc.getElementById('back').addEventListener('click', 
-		function(e) {alert('fish');_t.prev();}, false);
+		function(e) {_t.prev();}, false);
 		
 	doc.getElementById('next').addEventListener('click', 
 		function(e) {_t.next();}, false);
