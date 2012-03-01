@@ -178,6 +178,334 @@
 </section>
 </div>
 
+-->
+<div class="slide">
+      <header>
+         <h1>History API
+         </h1><p>Load data &amp;  change browser address bar (without reloading)</p>
+      </header>
+      <section class="content">
+<pre contenteditable>
+window.history.<b>pushState(data, title, url)</b> 
+<span class="notes">/* Pushes data into history, with title, and, if provided, the URL.*/<br>
+</span>
+window.history.<b>replaceState(data, title, url)</b> 
+<span class="notes">/* Updates current history entry to given data, with title, and, if provided, URL */</span></pre>
+       
+<pre contenteditable>window.history.<b>length</b> <span class="notes">/* number of entries in session history */</span>
+
+window.history.<b>state</b> <span class="notes">/* current state */</span>
+
+window.history.go( &Delta; )</b> <span class="notes">/*  back or forward &Delta; steps */</span>
+
+window.history.<b>back()</b> <span class="notes">/* Goes back one step &Delta;== -1*/</span>
+
+window.history.<b>forward()</b> <span class="notes">/* Goes forward one step &Delta; = 1*/</span></pre>
+       </pre>
+      </section>
+  </div> 
+
+
+  
+<div class="slide">
+  <header>
+     <h1>Drag and Drop</h1>
+  </header>
+  <section class="content">
+<pre contenteditable>document.addEventListener(<em>'dragstart'</em>, function(event) {
+  event.<b>dataTransfer.setData</b>('text', 'Customized text');
+  event.<b>dataTransfer.effectAllowed</b> = 'copy';
+}, false);
+</pre>
+            <ul id="drag-zone" style="width: 30%; float:left">
+              <li><img src="http://www.sitepointstatic.com/images/books/htmlcss1/3dcover-flat.png" alt="HTML5 &amp; CSS3 for the Real World" style="width: 160px" draggable></li>
+              <li><p draggable contenteditable>Drag this text or the image above to the right. You can even change this text. </p></li>
+            </ul>
+            <div  style="width: 60%; float:right; overflow:hidden">
+            <pre id="drop-zone">Drop Area</pre>
+            <div id="drop-data"></div>
+             <ul class="icons" style="clear: both;">
+                 <li class="chrome">Chrome 8</li>
+                 <li class="safari">Safari</li>
+                 <li class="firefox">Firefox 3.5 </li>
+                 <li class="opera bad">Opera 12?</li>
+                 <li class="ie">IE</li>
+                 <li class="txt">mobile: only Android</li>
+             </ul>
+            </div>
+            <script defer>
+            (function() {
+              var dragZone = document.getElementById('drag-zone');
+              var dropZone = document.getElementById('drop-zone');
+              dragZone.addEventListener('dragstart', function(event) {
+                if (event.target.className) { 
+                  event.target.style.border = "1px solid #888";
+                }
+                return true;
+              }, true);
+              dragZone.addEventListener('dragend', function(event) {
+                if (event.target.className) { // img case
+                  event.target.style.border = "1px solid #888";
+                }
+                else { // text case
+                  event.target.parentNode.style.border = "1px solid #888";
+                }
+                return true;
+              }, true);
+              dropZone.addEventListener('dragenter', function(event) {
+                if (event.preventDefault) event.preventDefault();
+                event.dataTransfer.dropEffect = 'copy';
+                this.className = 'hovering';
+                return false;
+              }, false);
+              dropZone.addEventListener('dragover', function(event) {
+                if (event.preventDefault) event.preventDefault(); // allows us to drop
+                event.dataTransfer.dropEffect = 'copy';
+                return false;
+              }, false);
+              dropZone.addEventListener('dragleave', function(event) {
+                if (event.preventDefault) event.preventDefault(); // allows us to drop
+                this.className = '';
+                return false;
+              }, false);
+              dropZone.addEventListener('drop', function(event) {
+                if (event.preventDefault) event.preventDefault();
+                var imgPassed = null;
+                var dropdata = document.querySelector('#drop-data');
+                var types = event.dataTransfer.types;
+                document.querySelector('#drop-data').textContent = '';
+                this.innerHTML = '';
+                for (var i = 0; i < types.length; i++) {
+                  if (types[i] == 'Files') {
+                    var files = event.dataTransfer.files;
+                    for (var j = 0; j < files.length; j++) {
+                      dropdata.textContent += 'File Name: '+files[j].fileName;
+                      dropdata.textContent += 'File Size: '+files[j].fileSize;
+                    }
+                  }
+                  else {
+                    if (typeof event.dataTransfer.getData(types[i]) !== 'undefined') {
+                      dropdata.innerHTML += '<p><em class="datatypes">'+types[i]+'</em>: <br />'+event.dataTransfer.getData(types[i]).replace(/</g, '&lt;') + '</p>';
+                    }
+                  }
+
+                  if (types[i] == 'text/uri-list') {
+                    imgPassed = event.dataTransfer.getData('text/uri-list');
+                  }
+                }
+                if (imgPassed) {
+                  var cEl = document.createElement('canvas');
+                  cEl.width = 120;
+                  cEl.height = 180;
+                  var ctx = cEl.getContext('2d');
+                  var img_buffer = document.createElement('img');
+                  img_buffer.src = imgPassed;
+                  img_buffer.style.display = 'none';
+                  document.body.appendChild(img_buffer); // this line only needed in safari
+                  img_buffer.onload = function() { ctx.drawImage(img_buffer,0,0,100,140); }
+                  this.appendChild(cEl);
+                } else {
+                  if (event.dataTransfer.getData('text')) {
+                    this.innerHTML = event.dataTransfer.getData('text');
+                  }
+                  else if (event.dataTransfer.getData('text/plain')) {
+                    this.innerHTML = event.dataTransfer.getData('text/plain');
+                  }
+                }
+                return false;
+              }, false);
+            })();
+            </script>
+  </section>
+</div> 
+  
+
+
+     <div class="slide">
+      <header>
+         <h1>File API</h1>
+      </header>
+      <section class="content">
+        <ul>
+          <li>Import from the filesystem or the web.</li>
+          <li>Create new files from scratch.</li>
+          <li>Manipulate existing file data.</li>
+          <li>Store file data on the client.</li>
+          <li>Publish files back to the web.</li>
+        </ul>
+        <ul class="icons" style="clear: both;">
+         <li class="chrome">Chrome 6</li>
+         <li class="safari bad">Safari</li>
+         <li class="firefox">Firefox 3.6 </li>
+         <li class="opera">Opera 11.1</li>
+         <li class="ie new">IE 10</li>
+         <li class="txt">mobile: only Android</li>
+     </ul>
+        <p>Tutorial: <a href="http://www.htmlfivewow.com/">Talk from Google I/O</a></p>
+      </section>
+  </div> 
+  
+  
+  <div class="slide">
+      <header>
+         <h1>File API</h1>
+      </header>
+      <section class="content"> 
+<pre contenteditable>  &lt;input type="file" id="files" accept="image/*" multiple&gt;
+document.querySelector('#files').onchange = function(e) {
+  var files = e.target.files; // FileList of File objects.
+
+  for (var i = 0, f; f = files[i]; ++i) {
+    console.log(f.name, f.type, f.size,
+                f.lastModifiedDate.toLocaleDateString());
+  }
+}; </pre>
+<p>
+      <input type="file" id="filereader-files" class="hidden-input" multiple accept="image/*">
+      <input type=button id="file-select" class="button" value="Select image files">  </p>
+      <pre contenteditable><output id="filereader-list"></output></pre>
+  
+<div><output id="filereader-list"></output></div>
+<script>
+/*******************************************************************************
+ * FILEREADER - from Google
+ ******************************************************************************/
+document.querySelector('#file-select').addEventListener('click', function(e) {
+  document.querySelector('#filereader-files').click();
+}, false);
+
+document.querySelector('#filereader-files').onchange = function(e) {
+  var files = e.target.files; // FileList
+
+  var output = [];
+  for (var i = 0, f; f = files[i]; ++i) {
+    output.push('<li><b>', f.name, '</b> (',
+        f.type || 'n/a', ') - ', f.size, ' bytes, last modified: ',
+        f.lastModifiedDate.toLocaleDateString(), '</li>');
+  }
+  document.querySelector('#filereader-list').innerHTML =
+      '' + output.join('') + '<br/>';
+};
+</script>
+  </section>
+  </div>
+  
+  
+  
+  
+   <div class="slide">
+  <header>
+     <h1>JS Events and Methods
+     </h1>
+  </header>
+  <section class="content">
+ <pre contenteditable>var elements = document.getElementsByClassName(className)</pre>
+ <ul class="icons" style="clear: both;">
+         <li class="chrome">Chrome 6</li>
+         <li class="safari">Safari</li>
+         <li class="firefox">Firefox 3 </li>
+         <li class="opera">Opera</li>
+         <li class="ie new">IE 9</li>
+         <li class="txt">mobile: all</li>
+  </ul>
+  
+ <pre contenteditable>var element = document.querySelector(selectors);
+var element = $(selectors)[0];
+
+var elements = document.querySelectorAll(selectors);
+var elements = $(selectors);</pre>
+<p>Where 'selectors' is a comma separated list of CSS selectors</p>
+  <ul class="icons" style="clear: both;">
+         <li class="chrome">Chrome 6</li>
+         <li class="safari">Safari</li>
+         <li class="firefox">Firefox 3 </li>
+         <li class="opera">Opera</li>
+         <li class="ie">IE 8</li>
+         <li class="txt">mobile: all</li>
+  </ul>
+  </section>
+</div>
+
+   <div class="slide">
+      <header>
+         <h1>classList
+         </h1>
+      </header>
+      <section class="content">
+        <pre contenteditable>&lt;article id=&quot;main&quot; class="blogpost popup"&gt;&lt;/article&gt;</pre>
+        <pre contenteditable>var el = document.getElementById('main').<b>classList</b>;
+var el = document.querySelector('#main').<b>classList</b>;
+el.<b>add</b>('bgimage');<br>el.<b>remove</b>('blogpost');
+el.<b>toggle</b>('popup');
+console.log(el.<b>contains</b>('popup')); // false
+console.log(el.<b>contains</b>('blogpost')); // false
+console.log(el.<b>classList</b>.toString() == el.className); // true</pre>
+        <p>Result:</p>
+        <pre contenteditable>&lt;article id="main" class="bgimage"&gt;&lt;/article&gt;</pre>
+       <ul class="icons" style="clear: both;">
+         <li class="chrome">Chrome</li>
+         <li class="safari new">Safari 5.1</li>
+         <li class="firefox">Firefox </li>
+         <li class="opera">Opera</li>
+         <li class="ie bad">IE 10</li>
+         <li class="txt">mobile: Android 3, Opera 11.1</li>
+  </ul>
+      </section>
+  </div>  
+  
+  
+  
+  
+  <div class="slide" id="notifications-api">
+        
+          <header><h1>Notifications</h1></header>
+          <section>
+          <pre contenteditable>if (window.<b>webkitNotifications.checkPermission</b>() == 0) {
+  window.webkitNotifications.createNotification(picture, title, 
+      content).<b>show</b>();
+} else {
+  window.<b>webkitNotifications.requestPermission</b>();
+}</pre>
+        <div id="notifications-message">
+          <p>
+            <input type="button" class="button" id="request-permission" value="Allow / Reset Notifications"/>
+          </p>
+          
+         
+          <input type="button" class="button" id="show-notification" value="Show notifications"/>
+        </div>
+
+          <script defer="">
+          document.getElementById('request-permission').addEventListener('click', function() {
+            window.webkitNotifications.requestPermission();
+          }, false);
+
+          document.getElementById('show-notification').addEventListener('click', function() {
+            shownNotice();
+          }, false);
+
+         
+		  
+		  function shownNotice(){
+			if (window.webkitNotifications.checkPermission() == 0) {
+			console.log('hi');
+                // note the show()
+                window.webkitNotifications.createNotification('http://standardista.com', 'Estelle Weyl', 'Tthat\'s all we have for you today folks').show();
+              } else {
+				  
+                alert('You have to select "Set notification permissions for this page" first notifications to work.');
+                return;
+              }  
+		  }
+
+        
+          </script>
+
+          </section>
+        </div>
+  
+  
+
 <!-- END of PRESENTATION -->
 </div><!-- slides -->
 </div><!-- presentation -->
