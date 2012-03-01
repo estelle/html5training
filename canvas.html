@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>HTML5</title>
+<title>HTML5: Canvas</title>
 
 <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel="stylesheet"> 
 <link rel="stylesheet" href="images/screen.css" media="projection, screen"/> 
@@ -69,7 +69,7 @@
       if(context){
           context.fillStyle   = "#ffffff"; 
           context.strokeStyle = "#CCCCCC"; 
-          context.lineWidth   = 1;
+          context.lineWidth   = 5;
           context.shadowOffsetX = 5;
           context.shadowOffsetY = 5;
           context.shadowBlur    = 4;
@@ -88,8 +88,18 @@
  
  
 <div class="slide normal">
-<header><h1>Overview Of Graphics In The Browser</h1></header>
+<header><h1>Browser Graphics </h1></header>
 <section class="content"> 
+<ul>
+	<li>JPEG</li>
+    <li>GIF</li>
+    <li>Animated GIF</li>
+    <li>PNG</li>
+    <li>Plugins (Flash)</li>
+    <li>VML</li>
+    <li>SVG</li>
+    <li>Canvas</li>
+</ul>
 </section>
 </div>
 
@@ -99,95 +109,301 @@
 </section>
 </div>
 
+
+  
+     <div class="slide object">
+      <header>
+         <h1>canvas
+         </h1>
+      </header><object data="http://www.experiencebureau.com/toys/kaleidoscope/#" style="height: 550px;
+width: 550px;
+overflow:scroll; text-align:center; float:right "> 
+             
+     </object> 
+      
+<p style="clear:left; margin: 30px 10px; border:1px solid rgba(255,255,255,0.5); padding: 30px 0; border-width:1px 0;">
+      Very <a href="http://www.standardista.com/html5/html5-introduction-to-canvas">basic canvas tutorial</a></p>
+      <ul class="icons" style="clear: both;">
+         <li class="chrome">Chrome</li>
+         <li class="safari">Safari</li>
+         <li class="firefox">Firefox</li>
+         <li class="opera ">Opera</li>
+         <li class="ie new">IE 9</li>
+         <li class="txt"><a href="http://code.google.com/p/explorercanvas/">ExplorerCanvas</a> for IE8-</li>
+     </ul>
+     <a href="http://www.experiencebureau.com/toys/kaleidoscope" class="objectlink">kaleidoscope</a>
+  </div> 
+  
+<div class="slide object">
+      <object data="http://mbostock.github.com/d3/ex/voronoi.html"> 
+             
+     </object> 
+     <header style="position:absolute; top:40px; width: 100%; text-align:center"><h1>SVG</h1></header>
+     <a href="http://mbostock.github.com/d3/ex/voronoi.html" class="objectlink">http://mbostock.github.com</a>
+  </div>      
+  
+     <div class="slide">
+      <header>
+         <h1>WebGL
+         </h1>
+      </header>
+      <section class="content">
+      NOT READY!
+      <ul><li><a href="http://www.chromeexperiments.com/webgl">Chrome WebGL examples</a></li><li>
+     Requires modern video drivers.</li>
+<li>Part of Khronos Group (not  W3C)</li></ul>
+      <ul class="icons" style="clear: both;">
+         <li class="chrome">Chrome 8</li>
+         <li class="safari new">Safari 5.1</li>
+         <li class="firefox">Firefox 4</li>
+         <li class="opera new">Opera 12?</li>
+         <li class="ie bad">IE 10</li>
+         <li class="txt">Require hardware</li>
+     </ul> <input type="button" class="button" value="Kill the next slide" 
+     onclick="killwebgl();"/>
+      </section>
+      <script defer>
+	  function killwebgl(){
+		  var el = document.getElementById('webglslide'); 
+		  el.innerHTML = '';
+		  }
+	  </script>
+      </section>
+  </div> 
+  
+  
+  
+  
+   <div class="slide object" id="webglslide" >
+      <object data="http://webglsamples.googlecode.com/hg/aquarium/aquarium.html"> 
+             
+     </object><a href="http://www.chromeexperiments.com/webgl" class="objectlink">Chrome WebGL examples</a> 
+  </div> 
+ 
+
 <div class="slide normal">
-<header><h1>Accessibility</h1></header>
-<section class="content"> 
+<header><h1>SVG v Canvas</h1></header>
+<section class="content">
+<ul>
+	<li>SVG can be made accessible, canvas can not</li>
+    <li>SVG paints DOM elements. Canvas paints pixels</li>
+    <li>SVG can drain memory b/c of DOM usage</li>
+    <li>Canvas can drain CPU because of JS usage</li>
+    <li>Canvas be saved as an image. SVG can be an image</li>
+    <li>SVG scales better</li>
+</ul> 
 </section>
 </div>
 
 <div class="slide normal">
 <header><h1>Using A Canvas</h1></header>
-<section class="content"> 
+<section class="content">  <pre>&lt;canvas id="flag" width="320" height="220">
+  You don't support Canvas. If you did, you would see a flag
+&lt;/canvas></pre>
 </section>
 </div>
 
 <div class="slide normal">
 <header><h1>Context And Coordinates</h1></header>
-<section class="content"> 
+<section class="content"> <pre>var el= document.getElementById("flag");
+
+  if (el && el.getContext) { 
+  var context = el.<strong>getContext('2d')</strong>;
+      if(context){
+       /* draw here */
+      }
+  }</pre>
 </section>
 </div>
 
 <div class="slide normal">
 <header><h1>Drawing Shapes</h1></header>
 <section class="content"> 
+<p>Rectangle is the only shape!</p>
+<pre>context.<strong>fillStyle</strong>   = "#ffffff";
+context.<strong>fillRect</strong>(10, 10, 300, 200);</pre>
+<p>you can border that rectangle</p>
+<pre>context.fillStyle   = "#ffffff"; 
+context.<strong>strokeStyle</strong> = "#CCCCCC"; 
+context.<strong>lineWidth</strong>   = 5;
+context.<strong>strokeRect</strong>(10, 10, 300, 200);
+context.fillRect(10, 10, 300, 200);
+</pre>
+<p>Note: only 50% of border will show</p>
+</section>
+</div>
+
+
+
+<div class="slide normal">
+<header><h1>Canvas API Basics</h1></header>
+<section class="content"> 
+<p>Drawing straight lines</p>
+<dl><dt>moveTo(x,y)</dt> <dd>Move to x / y without drawing.</dd>
+<dt>lineTo(x,y)</dt> <dd>Move to x / y while drawing</dd></dl>
+<p>Appearance of line / shapes</p>
+<dl>
+	<dt>fillStyle</dt> <dd>CSS background color</dd> <dt>strokeStyle</dt> <dd>CSS border color</dd>
+</dl>
+</section>
+</div>
+
+
+<div class="slide normal">
+<header><h1>More Methods</h1></header>
+<section class="content"> 
+
+<dl>
+<dt>beginPath()</dt> <dd>Start a new path</dd>
+
+<dt>closePath()</dt> <dd>Close the current path</dd>
+
+<dt>stroke()</dt> <dd>Stroke the path</dd>
+
+<dt>fill()</dt> <dd>Fill the path</dd>
+</dl>
+
+<pre>
+context.beginPath();
+context.moveTo(50,150);
+context.lineTo(100,100);
+context.lineTo(150,150);
+context.lineTo(200,100);
+context.lineTo(250,150);
+context.stroke();
+</pre>
+</section>
+</div>
+
+
+<div class="slide normal">
+<header><h1>Circles / Arcs</h1></header>
+<section class="content"> 
+<pre> arc(x, y, radius, startAngle, endAngle, clockwise);</pre>
+<dl style="margin: -8px auto;">
+<dt>x, y</dt> <dd>center of the circle/arc coordinates (in pixels)</dd>
+<dt>radius</dt> <dd>radius of your circle/arc (in pixels)</dd>
+<dt>startAngle</dt> <dd>Starting angle of the circle/arc (in radians)</dd>
+<dt>endAngle</dt> <dd>Ending angle of the circle/arc (in radians)</dd>
+<dt>clockwise</dt> <dd>Draw clockwise or counterclockwise (true or false)</dd>
+</dl>
+<pre>context.<strong>fillStyle</strong> = "#d60818";
+context.<strong>arc</strong>(160, 107, 60, 0, Math.PI*2, false);
+context.<strong>fill</strong>();</pre>
 </section>
 </div>
 
 <div class="slide normal">
-<header><h1>Working With Paths</h1></header>
-<section class="content"> 
+<header><h1>Shadows</h1></header>
+<section class="content">
+<pre>1 if(context){
+2           context.fillStyle   = "#ffffff"; 
+3           context.strokeStyle = "#CCCCCC"; 
+4           context.lineWidth   = 5;
+5           context.<strong>shadowOffsetX</strong> = 5;
+6           context.<strong>shadowOffsetY</strong> = 5;
+7           context.<strong>shadowBlur</strong>    = 4;
+8           context.<strong>shadowColor</strong>   = 'rgba(0, 0, 0, 0.4)';
+9           context.strokeRect(10, 10, 300, 200);
+10          context.fillRect(10, 10, 300, 200);
+11          context.<strong>shadowColor</strong>='rgba(0,0,0,0)';
+12          context.fillStyle = "#d60818";
+13          context.arc(160, 107, 60, 0, Math.PI*2, false);
+14          context.fill();
+15    } </pre>
 </section>
 </div>
 
-<div class="slide normal">
-<header><h1>Drawing Straight Lines</h1></header>
-<section class="content"> 
-</section>
-</div>
-
-<div class="slide normal">
-<header><h1>Drawing Circles Or Arcs</h1></header>
-<section class="content"> 
-</section>
-</div>
 
 <div class="slide normal">
 <header><h1>Drawing Text</h1></header>
-<section class="content"> 
+<section class="content">
+<pre>
+context.shadowColor   = 'rgba(255, 0, 0, 1)'
+context.fillStyle   = "#000000"; 
+context.textAlign="center"; 
+context.font="italic 20px verdana"; 
+context.fillText("Japanese Flag", 150, 150);
+</pre> 
 </section>
 </div>
 
 <div class="slide normal">
-<header><h1>Drawing Images</h1></header>
+<header><h1>Including Images</h1></header>
 <section class="content"> 
+<dl>
+	<dt>drawImage(image, dx, dy)</dt>
+    <dd>draws the 'image' starting at coordinates (dx,dy) in actual size</dd>
+
+ 	<dt>drawImage(image, dx, dy, dw, dh)</dt>
+    <dd>Same as drawImage above but to specified size</dd>
+
+	<dt>drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh)</dt>
+    <dd>Draws selected region of image starting at sx/sy with width sw and a height sh. Starts drawing at the dx/dy coordinates with size defined by dw / dh.</dd></dl>
+    <pre>
+var image=new Image();
+image.src="myImage.png";
+image.onload=function() {
+	context.drawImage(image, 140, 0, 206, 183, 0, 0, 206, 183);
+}
+    </pre>
 </section>
 </div>
 
 <div class="slide normal">
 <header><h1>Working With Pixels</h1></header>
 <section class="content"> 
+<p>It is possible to get pixel data from canvas</p>
+<pre>//draw image
+context.drawImage(image,0,0);
+
+//get data from the canvas
+var pixels=context.<strong>getImageData</strong>(0, 0, el.width, el.height);
+
+// loop thru each pixel's 4 colors (length/4)
+for (var i = 0, n = <strong>pixels.data</strong>.length; i < n; i += 4){
+	//red
+	<strong>pixels.data</strong>[i+0] = 0; 
+    //green
+	<strong>pixels.data</strong>[i+1] = 255 - <strong>pixels.data</strong>[i+1];
+    //blue 
+	<strong>pixels.data</strong>[i+2] = 0;
+    // alpha transparency not altered. 
+}
+//draw the image with new pixels
+context.<strong>putImageData</strong>(pixels,0,0);
+</pre>
 </section>
 </div>
 
 <div class="slide normal">
-<header><h1>Understanding Transforms</h1></header>
-<section class="content"> 
+<header><h1>Transforms</h1></header>
+<section class="content">
+<dl>
+	<dt>translate(x,y)</dt> 
+    <dd>moves the canvas and its origin to new coordinates</dd>
+    <dt>restore()</dt>
+    <dd>moves it back to previous saved state</dd>
+    <dt>save()</dt>
+    <dd>saves if there are any current transforms</dd>
+    <dt>rotate(angle)</dt>
+    <dd>Rotats angle radians, such as context.rotate(Math.PI/4)</dd>
+    <dt>scale(x, y)</dt>
+    <dd>Scales it to x times the width and y times the height.</dd>
+    </dl>
 </section>
 </div>
 
-<div class="slide normal">
-<header><h1>Translation</h1></header>
-<section class="content"> 
-</section>
-</div>
-
-<div class="slide normal">
-<header><h1>Rotation</h1></header>
-<section class="content"> 
-</section>
-</div>
-
-<div class="slide normal">
-<header><h1>Scaling</h1></header>
-<section class="content"> 
-</section>
-</div>
-
-<div class="slide normal">
-<header><h1>Browser Support</h1></header>
-<section class="content"> 
-</section>
-</div>
+<div class="slide normal"> 
+     <header><h1>Exercise</h1></header> 
+     <section class="content">
+     <ul>
+     <li>Easy: <a href="html5_labs/canvas.html">Play with the Flag</a></li>
+     <li>Hard: <a href="html5_labs/canvas/">Make a drawing application</a></li>
+     <li>Lost? <a href="http://www.standardista.com/html5/html5-introduction-to-canvas/">Easy Tutorial</a></li>
+     </ul>
+     </section>
+ </div>
 
 <div class="slide intro"> 
      <header><h1>Data Storage</h1></header>
@@ -208,7 +424,7 @@ var el= document.getElementById("flag");
       if(context){
           context.fillStyle   = "#ffffff"; 
           context.strokeStyle = "#CCCCCC"; 
-          context.lineWidth   = 1;
+          context.lineWidth   = 5;
           context.shadowOffsetX = 5;
           context.shadowOffsetY = 5;
           context.shadowBlur    = 4;

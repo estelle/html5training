@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/webapps
+END
+.donotdelete
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/webapps/.donotdelete
+END
+test.war
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/webapps/test.war
+END
+ChatWebSocket.war
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/webapps/ChatWebSocket.war
+END

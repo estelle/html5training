@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/contexts-available
+END
+move-context.xml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/contexts-available/move-context.xml
+END
+resources.xml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/contexts-available/resources.xml
+END
+README.TXT
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/contexts-available/README.TXT
+END

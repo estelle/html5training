@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" />
+	<title>The HTML5 Blog</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>The HTML5 Blog</h1>
+      <h2>All HTML5 News :)</h2>
+    </header>
+    <nav>
+  	  <ul>
+        <li><a href="">Link 1</a></li>
+        <li><a href="">Link 2</a></li>
+        <li><a href="">Link 3</a></li>
+        <li><a href="">Link 4</a></li>
+        <li><a href="">Link 5</a></li>
+      </ul>
+    </nav>
+    <section>
+  	  <form name="fibonacci_form">
+        <p>How many computations do you want?:</p>
+        <input type="text" size="4" name="num" id="iterations"></input> 
+        <input type="button" value="Compute (without worker)" id="btn_compute"></input> 
+        <input type="button" value="Compute (with worker)" id="btn_compute_worker"></input> 
+        <input type="button" value="Reset" id="btn_reset"></input>
+        <p>Sequence result:</p>
+      </form>  
+      <div id="seq" readonly></div>
+      <form name="subscribe" id="reg_form">
+        <label for="form-firstname">Firstname:</label>
+        <input type="text" name="form-firstname" id="form-firstname" placeholder="John" required/>
+        <label for="form-lastname">Lastname:</label>
+        <input type="text" name="form-lastname" id="form-lastname" placeholder="Doe" required/>
+        <label for="form-birthdate">Birthdate:</label>
+        <input type="date" name="form-date" id="form-birthdate"/>
+        <label for="form-email">Email:</label>
+        <input type="email" name="form-email" id="form-email" placeholder="john.doe@unknown.com" required/>
+        <label for="form-email">Website/Blog:</label>
+        <input type="url" name="form-url" id="form-url" placeholder="http://www.thisisunknown.com/"/>
+        <script type="text/javascript">
+          function updateExpdisplay(updatedValue) {
+            var expValue=document.getElementById("expdisplay");
+            expValue.innerHTML=updatedValue;
+          }
+        </script>
+        <label for="form-explevel">Experience with Web Tech:</label>
+        <input id="form-explevel" name="form-explevel" type="range" onchange="updateExpdisplay(this.value)" min="0" max="100" step="10" value="0">
+        <span id="expdisplay">0</span>
+        <span>%</span>
+      </form>
+    </section>
+    <aside>
+      <h2>Word from the author</h2>
+      <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mollis, est vel eleifend tempus, risus erat sodales felis, a egestas elit sem ut velit. Integer eget turpis sit amet felis vehicula semper et nec odio. Mauris enim est, aliquet hendrerit sollicitudin sit amet, aliquam at purus. In hac habitasse platea dictumst. In eleifend quam vel leo fringilla at congue nisi convallis. Duis vel nisi quis eros blandit vehicula id non ante. Ut pulvinar, velit sit amet fermentum venenatis, leo dolor ullamcorper sem, vel faucibus elit tellus a augue."</p>
+    </aside>
+    <footer>
+        <h2>Footer</h2>
+    </footer>
+  </body>
+</html>

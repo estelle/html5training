@@ -1,0 +1,185 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/etc
+END
+jetty-plus.xml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/etc/jetty-plus.xml
+END
+spnego.conf
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/etc/spnego.conf
+END
+krb5.ini
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/etc/krb5.ini
+END
+webdefault.xml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/etc/webdefault.xml
+END
+jetty-logging.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/etc/jetty-logging.xml
+END
+jetty-debug.xml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/etc/jetty-debug.xml
+END
+jetty.conf
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/etc/jetty.conf
+END
+jetty-requestlog.xml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/etc/jetty-requestlog.xml
+END
+jetty-ipaccess.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/etc/jetty-ipaccess.xml
+END
+spnego.properties
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/etc/spnego.properties
+END
+README.spnego
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/etc/README.spnego
+END
+jetty-xinetd.xml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/etc/jetty-xinetd.xml
+END
+jetty-deploy.xml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/etc/jetty-deploy.xml
+END
+jetty-jmx.xml
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/etc/jetty-jmx.xml
+END
+jetty-stats.xml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/etc/jetty-stats.xml
+END
+jetty-policy.xml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/etc/jetty-policy.xml
+END
+realm.properties
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/etc/realm.properties
+END
+jetty-testrealm.xml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/etc/jetty-testrealm.xml
+END
+jetty-ssl.xml
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/etc/jetty-ssl.xml
+END
+jetty-webapps.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/etc/jetty-webapps.xml
+END
+jetty.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/etc/jetty.xml
+END
+jetty-fileserver.xml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/etc/jetty-fileserver.xml
+END
+jetty-contexts.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/etc/jetty-contexts.xml
+END
+jetty-bio-ssl.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/etc/jetty-bio-ssl.xml
+END
+jetty-bio.xml
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/etc/jetty-bio.xml
+END
+keystore
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/etc/keystore
+END
+jetty-ajp.xml
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/etc/jetty-ajp.xml
+END
+jetty-proxy.xml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/etc/jetty-proxy.xml
+END
+jetty-rewrite.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/etc/jetty-rewrite.xml
+END
+jdbcRealm.properties
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/etc/jdbcRealm.properties
+END

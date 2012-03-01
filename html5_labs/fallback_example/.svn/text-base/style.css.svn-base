@@ -1,0 +1,297 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*OUR OWN DESIGN*/
+/* CSS3 font-face declaration */
+@font-face {
+    font-family: 'strato';
+    src: url('fonts/Strato-linked.ttf') format('truetype');
+}
+
+body{
+    margin: 30px 0px;
+    background-color: #000;
+}
+
+#page {
+    width: 900px;
+    margin: auto;
+    background-color: #494B64;
+    /* CSS3 border-radius */
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    /* CSS3 box-shadow */
+    -webkit-box-shadow: 0px 0px 10px 10px #494B64;
+    -moz-box-shadow: 0px 0px 10px 10px #494B64;
+    box-shadow: 0px 0px 10px 10px #494B64;
+}
+
+header {
+    text-align: center;
+    /* Using the font-face defined at the top of the document */
+    font-family: strato;
+}
+
+header h1{
+    padding:30px 0px;
+    font-size:35px;
+    text-shadow: rgba(255, 255, 255, 0.496094) 4px 4px 5px;
+}
+
+header nav{
+    width: 860px;
+    background-color: yellow;
+    margin: 10px auto;
+}
+
+header nav ul{
+    width: 100%;
+    float: left;
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 0;
+    list-style: none;
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #ccc; 
+    border-top: 1px solid #ccc;
+    /* CSS3 border-radius */
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
+
+header nav ul li{
+    float:left;
+    border-right: 1px solid #ccc;
+}
+
+header nav ul li.liLast{
+    float:right;
+    border:none;
+    border-left: 1px solid #ccc;
+}
+
+header nav ul li a{
+    display: block;
+    padding: 8px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #069;
+}
+
+#interactiveArea {
+    width: 860px;
+    margin: auto;
+}
+
+#videoDiv {
+    float: left;
+    text-align: center;
+    width: 560px;
+    height: 370px;
+}
+
+#player {
+    background-color: black;
+    width: 560px;
+    height: 340px;
+}
+
+#chatDiv {
+    background-color: white;
+    float: left;
+    height: 340px;
+    width: 290px;
+    margin-left: 10px;
+    position: relative;
+}
+
+#messages {
+    width: inherit;
+    height: 300px;
+    background-color: white;
+    overflow: auto;
+}
+
+#logging {
+    background-color: grey;
+    height: 40px;
+    width: inherit;
+    text-align: center;
+    position: absolute;
+    bottom: 0px;
+}
+
+#talking {
+    background-color: grey;
+    height: 40px;
+    width: inherit;
+    text-align: center;
+    position: absolute;
+    bottom: 0px;
+}
+
+#thumbnails {
+    clear: both;
+    width: 860px;
+    margin: 0px auto;
+}
+
+#gallery{
+    width: 860px;
+    margin: 0px auto;
+    clear: both;
+}
+
+#thumbnails h1, #gallery h1{
+    /* Using the font-face defined at the top of the document */
+    font-family: strato;
+    text-shadow: rgba(255, 255, 255, 0.496094) 4px 4px 5px;
+    padding: 20px 0px;
+    font-size: 20px;
+}
+
+canvas, #gallery img {
+    float: left;
+    padding: 0px 10px;
+    margin: 10px;
+    background-image: url('images/thumb_bg.gif');
+    /* Defines the transition for the transformation */
+    -moz-transition: -moz-transform 1s;
+    -webkit-transition: -webkit-transform 1s;
+    -o-transition: -o-transform 1s;
+    -ms-transition: -ms-transform 1s;
+    transition: transform 1s;
+}
+
+canvas:hover, #gallery img:hover{
+    /* CSS3 Transformations */
+    transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    -moz-transform: scale(1.3);
+    -webkit-transform: scale(1.3);
+    -o-transform: scale(1.3);
+}
+
+form {
+    background:#ebf4fb;
+    margin:0 auto;
+    width:820px;
+    padding:20px;
+    /* CSS3 border-radius */
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    /* CSS3 box-shadow */
+    -webkit-box-shadow: 0px 0px 10px 10px #494B64;
+    -moz-box-shadow: 0px 0px 10px 10px #494B64;
+    box-shadow: 0px 0px 10px 10px #494B64;
+    font-family:strato;
+    font-size: 12px;
+    clear:both;
+}
+
+form h1{
+    font-family:strato;
+    font-size:15px;
+    border-bottom: 1px solid grey;
+    margin-bottom: 10px;
+}
+
+form label{
+    display:block;
+    font-weight:bold;
+    text-align:right;
+    width:340px;
+    padding-right:10px;
+    float:left;
+}
+
+form input{
+    float:left;
+    font-size:15px;
+    border:solid 1px #aacfe4;
+    width:346px;
+    height:30px;
+    margin-bottom:15px;
+}
+
+/* Extra CSS3 to add to our form */
+form input:required{
+    background: #FAFF69;
+}
+
+form input:focus:valid:required, input:valid:required{
+    background: #5CE66E;
+}
+
+form #submit{
+    float:right;
+    border:none;
+    padding:0px;
+    margin:0px auto;
+    clear:both;
+}
+
+div#clear{
+    clear:both;
+}
+
+footer {
+    font-family: strato;
+    text-shadow: rgba(255, 255, 255, 0.496094) 4px 4px 5px;
+    clear:both;
+    text-align:center;
+}
+
+footer p{
+    font-size:15px;
+    padding:20px 0px;
+}

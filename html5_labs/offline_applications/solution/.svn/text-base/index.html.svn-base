@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" manifest="offline.manifest">
+  <head>
+	  <meta charset="utf-8" />
+	  <title>The HTML5 Blog</title>
+	  <link rel="stylesheet" href="style.css">
+    <script>
+      function networkStatus() {
+          if (navigator.onLine) {
+              document.getElementById("status").innerHTML="ONLINE";
+          } else {
+              document.getElementById("status").innerHTML="OFFLINE";
+          }
+      }
+      
+      function printMessage(message) {
+    	    var p = document.createElement("p");
+    	    p.innerHTML = message;
+    	    document.getElementById("cachelog").appendChild(p);
+    	}
+
+    	//Here we catch all interesting events from the applicationCache
+    	window.applicationCache.onchecking = function(e) {
+    	    printMessage("checking event: Checking is always the first event to be fired");
+    	}
+
+    	window.applicationCache.onnoupdate = function(e) {
+    	    printMessage("noupdate event: The manifest file has not changed. There is no update");
+    	}
+
+    	window.applicationCache.onupdateready = function(e) {
+    	    printMessage("updateready event: Application update ready");
+    	}
+
+    	window.applicationCache.onobsolete = function(e) {
+    	    printMessage("obsolete event: The manifest file does not exist");
+    	}
+
+    	window.applicationCache.ondownloading = function(e) {
+    	    printMessage("downloading event: Update found. Downloading has started");
+    	}
+
+    	window.applicationCache.oncached = function(e) {
+    	    printMessage("cached event: Application cached");
+    	}
+
+    	window.applicationCache.onerror = function(e) {
+    	    printMessage("error event: Application cache error");
+    	}
+
+    	window.applicationCache.onprogress = function(e) {
+    	    printMessage("progress event: Downloading resources...");
+    	}
+
+    	window.addEventListener("online", function(e) {
+    	    document.getElementById("status").innerHTML="ONLINE";
+    	}, true);
+
+    	window.addEventListener("offline", function(e) {
+    	    document.getElementById("status").innerHTML="OFFLINE";
+    	}, true);
+    	
+    	window.addEventListener("load", networkStatus, true);
+    </script>
+  </head>
+<body>
+  <header>
+    <hgroup>
+      <h1>The kick-ass HTML5 Blog</h1>
+      <h2>kick-ass since it is now an offline blog as well :)</h2>
+    </hgroup>
+  </header>
+
+  <nav>
+	  <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="network.html">Network Page</a></li>
+      <li><a href="cached.html">Cached Page</a></li>
+    </ul>
+  </nav>
+
+    <section>
+      <span id="status"></span>
+      <div id="cachelog">
+      </div>
+    </section>
+
+    <aside>
+      <h2>Word from the author</h2>
+      <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mollis, est vel eleifend tempus, risus erat sodales felis, a egestas elit sem ut velit. Integer eget turpis sit amet felis vehicula semper et nec odio. Mauris enim est, aliquet hendrerit sollicitudin sit amet, aliquam at purus. In hac habitasse platea dictumst. In eleifend quam vel leo fringilla at congue nisi convallis. Duis vel nisi quis eros blandit vehicula id non ante. Ut pulvinar, velit sit amet fermentum venenatis, leo dolor ullamcorper sem, vel faucibus elit tellus a augue."</p>
+    </aside>
+
+  <footer>
+      <h2>Footer</h2>
+  </footer>
+</body>
+</html>

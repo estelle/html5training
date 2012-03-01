@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type='text/css'>
+div {
+	border: 1px solid black;
+}
+
+div#chat_output {
+	width: 400px;
+	height: 200px;
+	overflow: auto;
+	background-color: #fff;
+	padding: 4px;
+}
+
+div#input {
+	clear: both;
+	width: 400px;
+	padding: 4px;
+	background-color: #f0f0f0;
+	border-top: 0px
+}
+
+div.hidden {
+	display: none;
+}
+</style>
+
+<script>
+	var chat = {
+		join : function(login) {
+			this._username = login;
+			var location = document.location.toString().replace('http://',
+					'ws://').replace('https://', 'wss://');
+			this._socket = new WebSocket(location + "chat");
+			this._socket.onopen = this._open;
+			this._socket.onmessage = this._onmessage;
+			this._socket.onclose = this._onclose;
+		},
+
+		_open : function() {
+			document.getElementById("chat_join").className = 'hidden';
+			document.getElementById("chat_input").className = '';
+			document.getElementById("message").focus();
+			chat._send(chat._username, 'is on the chat!');
+		},
+
+		_send : function(login, message) {
+			login = login.replace(':', '_');
+			if (this._socket)
+				this._socket.send(login + ': ' + message);
+		},
+
+		sendMessage : function(text) {
+			if (text != null && text.length > 0)
+				chat._send(chat._username, text);
+		},
+
+		_onmessage : function(m) {
+			if (m.data)
+				document.getElementById("chat_output").innerHTML += '<p>'+m.data+'</p>';
+		},
+
+		_onclose : function(m) {
+			this._socket = null;
+			document.getElementById("chat_join").className = '';
+			document.getElementById("chat_input").className = 'hidden';
+			document.getElementById("username").focus();
+			document.getElementById("chat_output").innerHTML = '';
+		}
+
+	};
+
+	function initChat(){
+		document.getElementById("join_button").addEventListener('click', function() {
+			var username=document.getElementById("username").value;
+			chat.join(username);
+		}, true);
+		document.getElementById("send_button").addEventListener('click', function() {
+			message=document.getElementById("message").value;
+			chat.sendMessage(message);
+		}, true);
+	}
+
+	if (!window.WebSocket)
+		alert("WebSocket is not supported on your browser");
+	else {
+		window.addEventListener('load',initChat,true);
+	}
+</script>
+</head>
+<body>
+<div id="chat_output"></div>
+<div id="input">
+<div id="chat_join"><span>Choose a username:</span> <input
+	type="text" id="username" /> <input type="button" id="join_button"
+	value="Join" /></div>
+<div id="chat_input" class="hidden"><span>Type your message
+here:</span> <input type="text" id="message" /> <input type="button"
+	id="send_button" value="Send" /></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" /> 
+    <title>Frame</title>
+    <script>
+      window.addEventListener('load',function(){
+        document.getElementById('frame_send').addEventListener('click',function() {
+          var msg_to_send=document.getElementById('frame_text').value;
+          window.top.postMessage(msg_to_send,"http://main.html5learning.com:8000");
+        },true);
+      },true);
+
+      window.addEventListener('message',function(e) {
+        if(e.origin === "http://main.html5learning.com:8000") {
+          document.getElementById('frame_output').innerHTML="<p>"+e.data+"</p>"
+        }
+      },true);
+    </script>
+  </head>
+  <body>
+    <div id="frame_io">
+      <div>
+        <label for="frame_text">Send a message to the main window:</label>
+        <input type="text" id="frame_text"></input>
+        <input type="button" id="frame_send" value="send to window"/>
+      </div>
+      <div id="frame_output"></div>
+    </div>
+  </body>
+</html>

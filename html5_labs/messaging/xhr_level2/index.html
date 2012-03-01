@@ -1,0 +1,54 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head>
+  <meta charset="utf-8" /> 
+  <title>The HTML5 Blog</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    window.addEventListener('load',function() {
+      var xhr = new XMLHttpRequest();
+
+      xhr.onload = function(e){
+        document.getElementById('horrorscope').innerHTML=xhr.responseText;
+      };
+      xhr.onerror = function(e){
+        alert("something bad happend, but not to you...");
+      };
+      xhr.open("GET","http://amirharel.com/labs/ajaxstore/hscope.php",true);
+      xhr.send(null);
+    },true);
+  </script>
+</head>
+<body>
+  <header>
+    <hgroup>
+      <h1>The HTML5 Blog</h1>
+      <h2>All HTML5 News :)</h2>
+    </hgroup>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="">Link 1</a></li>
+      <li><a href="">Link 2</a></li>
+      <li><a href="">Link 3</a></li>
+      <li><a href="">Link 4</a></li>
+      <li><a href="">Link 5</a></li>
+    </ul>
+  </nav>
+
+  <section>
+    <span id="horrorscope"/>
+  </section>
+
+  <aside>
+    <h2>Word from the author</h2>
+    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mollis, est vel eleifend tempus, risus erat sodales felis, a egestas elit sem ut velit. Integer eget turpis sit amet felis vehicula semper et nec odio. Mauris enim est, aliquet hendrerit sollicitudin sit amet, aliquam at purus. In hac habitasse platea dictumst. In eleifend quam vel leo fringilla at congue nisi convallis. Duis vel nisi quis eros blandit vehicula id non ante. Ut pulvinar, velit sit amet fermentum venenatis, leo dolor ullamcorper sem, vel faucibus elit tellus a augue."</p>
+  </aside>
+
+  <footer>
+    <h2>Footer</h2>
+  </footer>
+
+</body>
+</html>
