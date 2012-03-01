@@ -88,8 +88,18 @@
  
  
 <div class="slide normal">
-<header><h1>Overview Of Graphics In The Browser</h1></header>
+<header><h1>Browser Graphics </h1></header>
 <section class="content"> 
+<ul>
+	<li>JPEG</li>
+    <li>GIF</li>
+    <li>Animated GIF</li>
+    <li>PNG</li>
+    <li>Plugins (Flash)</li>
+    <li>VML</li>
+    <li>SVG</li>
+    <li>Canvas</li>
+</ul>
 </section>
 </div>
 
@@ -98,6 +108,78 @@
 <section class="content"> 
 </section>
 </div>
+
+
+  
+     <div class="slide object">
+      <header>
+         <h1>canvas
+         </h1>
+      </header><object data="http://www.experiencebureau.com/toys/kaleidoscope/#" style="height: 550px;
+width: 550px;
+overflow:scroll; text-align:center; float:right "> 
+             
+     </object> 
+      
+<p style="clear:left; margin: 30px 10px; border:1px solid rgba(255,255,255,0.5); padding: 30px 0; border-width:1px 0;">
+      Very <a href="http://www.standardista.com/html5/html5-introduction-to-canvas">basic canvas tutorial</a></p>
+      <ul class="icons" style="clear: both;">
+         <li class="chrome">Chrome</li>
+         <li class="safari">Safari</li>
+         <li class="firefox">Firefox</li>
+         <li class="opera ">Opera</li>
+         <li class="ie new">IE 9</li>
+         <li class="txt"><a href="http://code.google.com/p/explorercanvas/">ExplorerCanvas</a> for IE8-</li>
+     </ul>
+     <a href="http://www.experiencebureau.com/toys/kaleidoscope" class="objectlink">kaleidoscope</a>
+  </div> 
+  
+<div class="slide object">
+      <object data="http://mbostock.github.com/d3/ex/voronoi.html"> 
+             
+     </object> 
+     <header style="position:absolute; top:40px; width: 100%; text-align:center"><h1>SVG</h1></header>
+     <a href="http://mbostock.github.com/d3/ex/voronoi.html" class="objectlink">http://mbostock.github.com</a>
+  </div>      
+  
+     <div class="slide">
+      <header>
+         <h1>WebGL
+         </h1>
+      </header>
+      <section class="content">
+      NOT READY!
+      <ul><li><a href="http://www.chromeexperiments.com/webgl">Chrome WebGL examples</a></li><li>
+     Requires modern video drivers.</li>
+<li>Part of Khronos Group (not  W3C)</li></ul>
+      <ul class="icons" style="clear: both;">
+         <li class="chrome">Chrome 8</li>
+         <li class="safari new">Safari 5.1</li>
+         <li class="firefox">Firefox 4</li>
+         <li class="opera new">Opera 12?</li>
+         <li class="ie bad">IE 10</li>
+         <li class="txt">Require hardware</li>
+     </ul> <input type="button" class="button" value="Kill the next slide" 
+     onclick="killwebgl();"/>
+      </section>
+      <script defer>
+	  function killwebgl(){
+		  var el = document.getElementById('webglslide'); 
+		  el.innerHTML = '';
+		  }
+	  </script>
+      </section>
+  </div> 
+  
+  
+  
+  
+   <div class="slide object" id="webglslide" >
+      <object data="http://webglsamples.googlecode.com/hg/aquarium/aquarium.html"> 
+             
+     </object><a href="http://www.chromeexperiments.com/webgl" class="objectlink">Chrome WebGL examples</a> 
+  </div> 
+ 
 
 <div class="slide normal">
 <header><h1>Accessibility</h1></header>

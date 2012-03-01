@@ -5,7 +5,11 @@
 <title>HTML5: Audio &amp; Video</title>
 
 <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel="stylesheet"> 
-<link rel="stylesheet" href="images/screen.css" media="projection, screen"/> 
+<link rel="stylesheet" href="images/screen.css" media="projection, screen"/>
+<style>
+td.good {background-color:#9F9;}
+td.half {background-color: #FFC;} 
+</style>
 </head>
 <body>
 
@@ -336,7 +340,146 @@ overflow:scroll; text-align:center ">
 
 <div class="slide normal">
 <header><h1>Video/Audio Codecs And Browser Support</h1></header>
-<section class="content"> 
+<section class="content">
+<table> 
+<thead> 
+<tr> 
+<th>Feature
+</th> 
+<th>Chrome
+</th> 
+<th>Firefox
+</th> 
+<th>IE
+</th> 
+<th>Opera
+</th> 
+<th>Safari
+</th> 
+</tr> </thead>
+<tr> 
+<th>Basic Support</th>
+<td>3
+</td> 
+<td>3.5 
+</td> 
+<td>9
+</td> 
+<td>10.50
+</td> 
+<td>3.1
+</td> 
+</tr>
+<tr><th></th><th colspan="5">Audio</th></tr> 
+<tr> 
+<th>
+WAVE, PCM
+</th> 
+<td>&nbsp;
+</td> 
+<td class="good">YES
+</td> 
+<td>&nbsp;
+</td> 
+<td>&nbsp;
+</td> 
+<td class="good">YES
+</td> 
+</tr> 
+<tr> 
+<th>
+WebM, Vorbis
+</th> 
+<td class="good">YES
+</td> 
+<td class="good">YES 4.0
+</td> 
+<td>&nbsp;
+</td> 
+<td class="good">YES
+</td> 
+<td class="half">If installed
+</td> 
+</tr> 
+<tr> 
+<th>
+Ogg, Vorbis
+</td> 
+<td class="good">YES
+</td> 
+<td class="good">YES
+</td> 
+<td>&nbsp;
+</td> 
+<td class="good">YES
+</td> 
+<td class="half">If installed
+</td> 
+</tr> 
+<tr> 
+<th>
+MPEG 4, MP3, AAC
+</td> 
+<td>&nbsp;
+</td> 
+<td>&nbsp;
+</td> 
+<td class="good">YES
+</td> 
+<td>&nbsp;
+</td> 
+<td class="good">YES
+</td> 
+</tr>
+<tr><th></th><th colspan="5">Video</th></tr> 
+<tr> 
+<th>
+WebM, VP8, Vorbis
+</td> 
+<td class="good">YES
+</td> 
+<td class="good">YES 4.0
+</td> 
+<td class="half">If installed
+</td> 
+<td class="good">YES
+</td> 
+<td class="half">If installed
+</td> 
+</tr> 
+<tr> 
+<th>
+Ogg, Theora, Vorbis
+</td> 
+<td class="good">YES
+</td> 
+<td class="good">YES
+</td> 
+<td>&nbsp;
+</td> 
+<td class="good">YES
+</td> 
+<td class="half">If installed
+</td> 
+</tr> 
+<tr> 
+<th>
+MPEG 4, H.264, MP3
+</td> 
+<td>&nbsp;
+</td> 
+<td>&nbsp;
+</td> 
+<td class="good">YES
+</td> 
+<td>&nbsp;
+</td> 
+<td class="good">YES
+</td> 
+</tr> 
+</tbody> 
+</table>
+ 
 </section>
 </div>
 

@@ -437,7 +437,7 @@ dl.inline dd{
 	font-size: 180%;	
 }
 
-.new {color: #C7573A; background-color: #fff; padding: 3px 8px;}
+.new:not(li) {color: #C7573A; background-color: #fff; padding: 3px 8px;}
 ul.columns {
 	-webkit-column-count: 4;
 	font-size: 80%;
