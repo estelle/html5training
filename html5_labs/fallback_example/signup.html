@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style.css"/>
+	<link rel="stylesheet" href="jquery-ui-1.8.16.custom.css">
+	<script src="modernizr-2.0.6.js"></script>
+    <script src="jquery-1.6.2.min.js"></script>
+	<script src="jquery-ui-1.8.16.custom.min.js"></script>
+    <script src="form.js"></script>
+</head>
+<body>
+    <div id="page">
+        <header>
+            <h1>HTML5 powered video player</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li class="liLast"><a href="signup.html">Sign Up</a></li>
+                </ul>
+            </nav>
+        </header>
+        <form name="signup">
+            <h1>Sign-Up :</h1>
+            <!-- Firstname -->
+            <label for="firstname">Firstname :</label>
+            <input type="text" name="firstname" id="firstname" placeholder="e.g. John" required/>
+            
+            <!-- Lastname -->
+            <label for="lastname">Lastname :</label>
+            <input type="text" name="lastname" id="lastname" placeholder="e.g. Doe" required/>
+            
+            <!-- Nickname -->
+            <label for="nickname">Nickname :</label>
+            <input type="text" name="nickname" id="nickname" placeholder="e.g. The Unknown Man" required/>
+            
+            <!-- Password -->
+            <label for="passwd">Password :</label>
+            <input type="password" name="passwd" id="passwd" required/>
+            
+            <!-- Password confirmation -->
+            <label for="passwdConf">Password confirmation :</label>
+            <input type="password" name="passwdConf" id="passwdConf" required/>
+            
+            <!-- Email -->
+            <label for="email">Email :</label>
+            <input type="email" name="email" id="email" placeholder="e.g. john.doe@unknown.com" required/>
+            
+            <!-- Birthdate -->
+            <label for="birthdate">Birthdate :</label>
+            <input type="date" name="birthdate" id="birthdate" required/>
+            
+            <!-- Web Site -->
+            <label for="website">Web Site :</label>
+            <input type="url" name="website" id="website" placeholder="e.g. john.doe@unknown.com"/>
+            
+            <!-- Submit button -->
+            <input id="submit" type="submit"/>
+            
+            <div id="clear"></div>
+        </form>
+        <footer>
+            <p>&copy; 2011 Laurent Tonon</p>
+        </footer>
+    </div>
+</body>
+</html>

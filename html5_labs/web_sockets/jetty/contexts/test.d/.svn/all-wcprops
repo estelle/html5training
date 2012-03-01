@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/contexts/test.d
+END
+override-web.xml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/contexts/test.d/override-web.xml
+END

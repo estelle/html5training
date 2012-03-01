@@ -1,0 +1,131 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/lib
+END
+jetty-deploy-7.3.0.v20110203.jar
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/lib/jetty-deploy-7.3.0.v20110203.jar
+END
+jetty-annotations-7.3.0.v20110203.jar
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/lib/jetty-annotations-7.3.0.v20110203.jar
+END
+jetty-jmx-7.3.0.v20110203.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/lib/jetty-jmx-7.3.0.v20110203.jar
+END
+jetty-policy-7.3.0.v20110203.jar
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/lib/jetty-policy-7.3.0.v20110203.jar
+END
+jetty-xml-7.3.0.v20110203.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/lib/jetty-xml-7.3.0.v20110203.jar
+END
+jetty-server-7.3.0.v20110203.jar
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/lib/jetty-server-7.3.0.v20110203.jar
+END
+jetty-security-7.3.0.v20110203.jar
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/lib/jetty-security-7.3.0.v20110203.jar
+END
+jetty-io-7.3.0.v20110203.jar
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/lib/jetty-io-7.3.0.v20110203.jar
+END
+jetty-servlets-7.3.0.v20110203.jar
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/lib/jetty-servlets-7.3.0.v20110203.jar
+END
+jetty-continuation-7.3.0.v20110203.jar
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/lib/jetty-continuation-7.3.0.v20110203.jar
+END
+jetty-ajp-7.3.0.v20110203.jar
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/lib/jetty-ajp-7.3.0.v20110203.jar
+END
+jetty-util-7.3.0.v20110203.jar
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/lib/jetty-util-7.3.0.v20110203.jar
+END
+jetty-webapp-7.3.0.v20110203.jar
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/lib/jetty-webapp-7.3.0.v20110203.jar
+END
+jetty-client-7.3.0.v20110203.jar
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/lib/jetty-client-7.3.0.v20110203.jar
+END
+jetty-http-7.3.0.v20110203.jar
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/lib/jetty-http-7.3.0.v20110203.jar
+END
+servlet-api-2.5.jar
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/lib/servlet-api-2.5.jar
+END
+jetty-rewrite-7.3.0.v20110203.jar
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/lib/jetty-rewrite-7.3.0.v20110203.jar
+END
+jetty-plus-7.3.0.v20110203.jar
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/lib/jetty-plus-7.3.0.v20110203.jar
+END
+jetty-jndi-7.3.0.v20110203.jar
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/lib/jetty-jndi-7.3.0.v20110203.jar
+END
+jetty-servlet-7.3.0.v20110203.jar
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/lib/jetty-servlet-7.3.0.v20110203.jar
+END
+jetty-websocket-7.3.0.v20110203.jar
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/lib/jetty-websocket-7.3.0.v20110203.jar
+END

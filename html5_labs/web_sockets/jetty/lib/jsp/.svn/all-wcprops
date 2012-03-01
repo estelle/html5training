@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/lib/jsp
+END
+ecj-3.6.jar
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/lib/jsp/ecj-3.6.jar
+END
+javax.servlet.jsp.jstl_1.2.0.v201004190952.jar
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/lib/jsp/javax.servlet.jsp.jstl_1.2.0.v201004190952.jar
+END
+org.apache.jasper.glassfish_2.1.0.v201007080150.jar
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/lib/jsp/org.apache.jasper.glassfish_2.1.0.v201007080150.jar
+END
+jetty-jsp-2.1-7.3.0.v20110203.jar
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/lib/jsp/jetty-jsp-2.1-7.3.0.v20110203.jar
+END
+javax.servlet.jsp_2.1.0.v201004190952.jar
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/lib/jsp/javax.servlet.jsp_2.1.0.v201004190952.jar
+END
+javax.el_2.1.0.v201004190952.jar
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/lib/jsp/javax.el_2.1.0.v201004190952.jar
+END
+org.apache.taglibs.standard.glassfish_1.2.0.v201004190952.jar
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/lib/jsp/org.apache.taglibs.standard.glassfish_1.2.0.v201004190952.jar
+END
+com.sun.el_1.0.0.v201004190952.jar
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/lib/jsp/com.sun.el_1.0.0.v201004190952.jar
+END

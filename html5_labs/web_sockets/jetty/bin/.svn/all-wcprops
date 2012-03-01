@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/bin
+END
+jetty-xinetd.sh
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/bin/jetty-xinetd.sh
+END
+README.jetty-cygwin.txt.txt
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/bin/README.jetty-cygwin.txt.txt
+END
+jetty-cygwin.sh
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/bin/jetty-cygwin.sh
+END
+jetty.sh
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/courseware/!svn/ver/393/trunk/html5/labs/web_sockets/jetty/bin/jetty.sh
+END

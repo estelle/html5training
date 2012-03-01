@@ -1,0 +1,15 @@
+CACHE MANIFEST
+# Version 1.0.1
+
+CACHE:
+index.html
+cached.html
+style.css
+light_bulb_off.jpg
+favicon.ico
+
+NETWORK:
+*
+
+FALLBACK:
+/ fallback.html

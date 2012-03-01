@@ -1,0 +1,101 @@
+10
+
+dir
+756
+https://svn.marakana.com/courseware/trunk/html5/labs
+https://svn.marakana.com/courseware
+
+
+
+2011-08-31T18:44:01.847691Z
+713
+laurent
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0834041a-a189-0410-b23f-9fe5cf95aaf5
+
+web_storage
+dir
+
+geolocation
+dir
+
+web-sql-example
+dir
+
+forms
+dir
+
+web_worker
+dir
+
+offline_applications
+dir
+
+structure_and_semantics
+dir
+
+web_sockets
+dir
+
+audio_and_video
+dir
+
+LICENSING.txt
+file
+
+
+
+
+2011-05-25T07:32:21.000000Z
+6cde60dfdd5ac0a439d7e9b1dcc9162c
+2011-02-23T20:13:07.396077Z
+387
+laurent
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+359
+
+fallback_example
+dir
+
+forms_styling_example
+dir
+
+canvas
+dir
+
+messaging
+dir
+
