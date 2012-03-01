@@ -182,26 +182,53 @@ overflow:scroll; text-align:center; float:right ">
  
 
 <div class="slide normal">
-<header><h1>Accessibility</h1></header>
-<section class="content"> 
+<header><h1>SVG v Canvas</h1></header>
+<section class="content">
+<ul>
+	<li>SVG can be made accessible, canvas can not</li>
+    <li>SVG paints DOM elements. Canvas paints pixels</li>
+    <li>SVG can drain memory b/c of DOM usage</li>
+    <li>Canvas can drain CPU because of JS usage</li>
+    <li>Canvas be saved as an image. SVG can be an image</li>
+    <li>SVG scales better</li>
+</ul> 
 </section>
 </div>
 
 <div class="slide normal">
 <header><h1>Using A Canvas</h1></header>
-<section class="content"> 
+<section class="content">  <pre>&lt;canvas id="flag" width="320" height="220">
+  You don't support Canvas. If you did, you would see a flag
+&lt;/canvas></pre>
 </section>
 </div>
 
 <div class="slide normal">
 <header><h1>Context And Coordinates</h1></header>
-<section class="content"> 
+<section class="content"> <pre>var el= document.getElementById("flag");
+
+  if (el && el.getContext) { 
+  var context = el.getContext('2d');
+      if(context){
+       /* draw here */
+      }
+  }</pre>
 </section>
 </div>
 
 <div class="slide normal">
 <header><h1>Drawing Shapes</h1></header>
 <section class="content"> 
+<p>Rectangle is the only shape!</p>
+<pre>context.fillStyle   = "#ffffff";
+context.fillRect(10, 10, 300, 200);</pre>
+<p>you can border that rectangle</p>
+<pre>context.fillStyle   = "#ffffff"; 
+context.<strong>strokeStyle</strong> = "#CCCCCC"; 
+context.<strong>lineWidth</strong>   = 5;
+context.<strong>strokeRect</strong>(10, 10, 300, 200);
+context.fillRect(10, 10, 300, 200);
+</pre>
 </section>
 </div>
 
@@ -261,12 +288,6 @@ overflow:scroll; text-align:center; float:right ">
 
 <div class="slide normal">
 <header><h1>Scaling</h1></header>
-<section class="content"> 
-</section>
-</div>
-
-<div class="slide normal">
-<header><h1>Browser Support</h1></header>
 <section class="content"> 
 </section>
 </div>
