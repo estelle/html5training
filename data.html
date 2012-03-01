@@ -30,40 +30,455 @@
 </div>
 
 <div class="slide normal">
-<header><h1>Problems With The Existing Cookie-based Model</h1></header>
+<header><h1>Cookie Limitations</h1></header>
 <section class="content"> 
+<p>Cookies</p>
+<ul>
+	<li>Sent with every HTTP request (in plain text)</li>
+    <li>Limited to 4KB each, 20 per domain. 300 per browser.</li>
+    <li>No real API</li>
+</ul>
+<p>Local and Session Storage</p>
+<ul>
+	<li>Not sent to server (more secure / less bandwidth)</li>
+    <li>Limited to 5MB each</li>
+    <li>Long term or session long</li>
+    <li>Simmple API</li>
+</ul>
+        
 </section>
 </div>
 
-<div class="slide normal">
-<header><h1>Hacks Prior To HTML5</h1></header>
-<section class="content"> 
-</section>
-</div>
+ <div class="slide" id="web-storage"> 
+          
+          <header> <h1>localStorage</h1></header> 
+          <section> 
+<pre contenteditable> 
+saveButton.addEventListener('click', function () {
+  window.<b>localStorage</b>.<b>setItem</b>('value', textarea.value);
+}, false);
+textarea.value = window.<b>localStorage</b>.<b>getItem</b>('value');
+</pre> 
+            <p id="localstorage-message">Save text value on the client side (crash-safe)</p> 
+            <textarea id="ls" placeholder="Type your text here..."></textarea> 
+            <input type="button" value="save" id="savelocalstorage" class="button"/>
+            <input type=button id="savelocalstorage" class="button" onClick="window.open('localstorageiframe.html', 'ls', 'width=200,height=200')" value="Open Test"/> 
+            <p id="lsLog"></p>
+           
+ <pre contenteditable>	var el = document.querySelector('#myID');
+	// place content from local storage on load if there is one
+	el.innerHTML = window.localStorage.getItem('value');</pre> 
+<script defer> 
+  (function(){
+	// if local storage not supported, quit
+	try {
+	  (window.localStorage.getItem) 
+	} catch(e){
+	  return; 
+	}
 
-<div class="slide normal">
-<header><h1>New Storage Options</h1></header>
-<section class="content"> 
-</section>
-</div>
+	var textarea = document.querySelector('#ls');
+	
+	
+	// place content from local storage on load if there is one
+	if (!textarea.value) {
+	  textarea.value = window.localStorage.getItem('value');
+	}
+	
+	updateLog(false);
+	
+	
+	// your content will be saved locally
+	document.querySelector('#savelocalstorage').addEventListener('click', function () {
+	  window.localStorage.setItem('value', textarea.value);
+	  window.localStorage.setItem('timestamp', (new Date()).getTime());
+	  updateLog(true);
+	}, false);
 
-<div class="slide normal">
-<header><h1>Web Storage</h1></header>
-<section class="content"> 
-</section>
-</div>
+	function updateLog(new_save) {
+	  var log = document.querySelector("#lsLog");
+	  var delta = 0;
+	  if (window.localStorage.getItem('value')) {
+		delta = ((new Date()).getTime() - (new Date()).setTime(window.localStorage.getItem('timestamp'))) / 1000;
+		if (new_save) {
+		  log.textContent = 'Saved. Content will be available after browser refresh/reopen.';
+		  setTimeout(function() {
+			log.textContent = '';
+		  }, 3000);
+		} else {
+		  log.textContent = 'last saved: ' + delta + 's ago';
+		}
+	  }
+	}
 
-<div class="slide normal">
-<header><h1>Web SQL Storage</h1></header>
-<section class="content"> 
-</section>
-</div>
+  })();  
+</script> 
+</section> 
+        </div> 
+  
+     <div class="slide">
+      <header>
+         <h1>Session Storage
+         </h1>
+      </header>
+      <section class="content">
+<ul>
+<li>use localStorage for persistent storage</li>
+<li>use sessionStorage for per tab storage</li>
+</ul>
+<p class="notes">Chrome: view storage: Inspector > Local Storage </p>
+<ul class="icons" style="clear: both;">
+         <li class="chrome">Chrome</li>
+         <li class="safari">Safari</li>
+         <li class="firefox">Firefox</li>
+         <li class="opera">Opera</li>
+         <li class="ie">IE 8</li>
+         <li class="txt">Well Supported!</li>
+     </ul>
+      </section>
+  </div> 
+  
+  
 
-<div class="slide normal">
-<header><h1>Browser Support</h1></header>
-<section class="content"> 
-</section>
-</div>
+ <div class="slide">
+      
+          <header><h1>Web SQL</h1></header>
+          <section>
+<pre contenteditable>var db = window.<b>openDatabase</b>("DBName", "1.0", "description", 5*1024*1024); 
+  db.<b>transaction</b>(function(tx) {
+  tx.<b>executeSql</b>(<em>"SELECT * FROM test"</em>, [ ], successCallback, errorCallback);
+});
+
+</pre>
+
+          <div class="center" id="websqldb-example">
+            <input type="text" id="todoitem" />
+            <input type="button" class="button" onClick="webSqlSample.newRecord()" value="New Item"/>
+            <input type="button" class="button" onClick="webSqlSample.createTable()" value="create table"/>
+            <input type="button" class="button" onClick="webSqlSample.dropTable()" value="drop table"/>
+            <p class="notes">ChromeView your database: Inspector > Resources > Databases</p>
+
+            <ul class="record-list" id="db-results"></ul>
+            <div id="db-log"></div>
+          </div>
+          
+          <ul class="icons" style="clear: both;">
+         <li class="chrome">Chrome</li>
+         <li class="safari">Safari</li>
+         <li class="firefox bad">Firefox</li>
+         <li class="opera">Opera</li>
+         <li class="ie bad">IE 8</li>
+         <li class="txt">Well Supported!</li>
+     </ul>
+          <script defer>
+		  /* Code from HTML5Rocks.com */
+            var webSqlSample = (function() {
+              var db;
+              var log = document.getElementById('db-log');
+              if (window.openDatabase) {
+                db = openDatabase("DBTest", "1.0", "HTML5 Database API example", 200000);
+                showRecords();  
+              }
+              document.getElementById('db-results').addEventListener('click', function(e) { e.preventDefault(); }, false);
+
+              function onError(tx, error) {
+                log.innerHTML = '<p class="error">Error: ' + error.message + '</p>';
+              }
+
+              // select all records and display them
+              function showRecords() {
+                document.getElementById('db-results').innerHTML = '';
+                db.transaction(function(tx) {
+                  tx.executeSql("SELECT * FROM testTable", [], function(tx, result) {
+                    for (var i = 0, item = null; i < result.rows.length; i++) {
+                      item = result.rows.item(i);
+                      document.getElementById('db-results').innerHTML += 
+                          '<li><span contenteditable="true" onkeyup="webSqlSample.updateRecord('+item['id']+', this)">'+
+                          item['text'] + '</span> <a href="#" onclick="webSqlSample.deleteRecord('+item['id']+')">[Delete]</a></li>';
+                    }
+                  });
+                });
+              }
+
+              function createTable() {
+                db.transaction(function(tx) {
+                  tx.executeSql("CREATE TABLE testTable (id REAL UNIQUE, text TEXT)", [],
+                      function(tx) {  log.innerHTML = '<p>"testTable" created!</p>' },
+                      onError);
+                });
+              }
+
+              // add record with random values
+              function newRecord() {
+                var num = Math.round(Math.random() * 10000); // random data
+                db.transaction(function(tx) {
+                  tx.executeSql("INSERT INTO testTable (id, text) VALUES (?, ?)", [num, document.querySelector('#todoitem').value],
+                      function(tx, result) {
+                        log.innerHTML = '';
+                        showRecords();
+                      }, 
+                      onError);
+                });
+              }
+
+              function updateRecord(id, textEl) {
+                db.transaction(function(tx) {
+                  tx.executeSql("UPDATE testTable SET text = ? WHERE id = ?", [textEl.innerHTML, id], null, onError);
+                });
+              }
+
+              function deleteRecord(id) {
+                db.transaction(function(tx) {
+                  tx.executeSql("DELETE FROM testTable WHERE id=?", [id],
+                      function(tx, result) { showRecords() }, 
+                      onError);
+                });
+              }
+
+              // delete table from db
+              function dropTable() {
+                db.transaction(function(tx) {
+                  tx.executeSql("DROP TABLE testTable", [],
+                      function(tx) { showRecords() }, 
+                      onError);
+                });
+              }
+              
+              return {
+                newRecord: newRecord,
+                createTable: createTable,
+                updateRecord: updateRecord,
+                deleteRecord: deleteRecord,
+                dropTable: dropTable
+              }
+            })();
+          </script>
+      </section>
+  </div> 
+  
+  
+<div class="slide" id="indexed-db">
+          <header><h1>Index dB</h1></header>
+          <section>
+<pre contenteditable>var indexDatabase = window.<b>indexedDB</b>.<b>open</b>('Database Name');
+indexDatabase.onsuccess = function(event) {
+  <b>var db = event.srcElement.result</b>;
+  var transaction = db.<b>transaction</b>([], <b>IDBTransaction.READ_ONLY</b>);
+  var currRequest = transaction.<b>objectStore</b>('ObjectStore Name').<b>openCursor</b>();
+  currRequest.<b>onsuccess</b> = ...;
+};
+
+</pre>
+          <div class="center" id="indexeddb-example">
+            <input type="text" placeholder="key" id="idb-key" size="10" /> <input type="text" placeholder="value" id="idb-value" size="15" />
+            <input type="button" class="button" onClick="indexedDbSample.idbSet()" value="New Entry"/>
+            <input type="button" class="button" onClick="indexedDbSample.idbCreate()" value="Create dB"/>
+            <input type="button" class="button" onClick="indexedDbSample.idbRemove()" value="Delete dB"/>
+            <div id="idb-log"></div>
+
+            <div class="record-list" id="idb-results-wrapper"></div>
+            <ul class="icons" style="clear: both;">
+         <li class="chrome">Chrome 11</li>
+         <li class="safari bad">Safari</li>
+         <li class="firefox">Firefox 4</li>
+         <li class="opera bad">Opera</li>
+         <li class="ie bad">IE 10</li>
+         <li class="txt"></li>
+     </ul>
+          </div>
+          <script defer>
+            var indexedDbSample = (function() {
+              var idb_;
+              var idbRequest_;
+              var idbLog_ = document.getElementById('idb-log');
+              var idResultsWrapper_ = document.getElementById('idb-results-wrapper');
+
+              // IndexedDB spec is still evolving, various browsers keep it
+              // behind various flags and implementation varies.
+              if ('webkitIndexedDB' in window) {
+                window.indexedDB = window.webkitIndexedDB;
+                window.IDBTransaction = window.webkitIDBTransaction;
+              } else if ('moz_indexedDB' in window) {
+                window.indexedDB = window.moz_indexedDB;
+              }
+
+              // Open our IndexedDB if the browser supports it.
+              if (window.indexedDB) {
+                idbRequest_ = window.indexedDB.open("Test", "A test object store.");
+                idbRequest_.onerror = idbError_;
+                idbRequest_.addEventListener('success', function(event) {
+                  idb_ = event.srcElement.result;
+                  idbShow_(event);
+                }, false);
+              }
+
+              function idbError_(event) {
+                idbLog_.innerHTML += '<p class="error">Error: ' +
+                                     event.message + ' (' + event.code + ')</p>';
+              }
+
+              function idbShow_(event) {
+                if (!idb_.objectStoreNames.contains('myObjectStore')) {
+                  idbLog_.innerHTML = "<p>Object store not yet created.</p>";
+                  return;
+                }
+
+                var html = [];
+                var transaction = idb_.transaction([], IDBTransaction.READ_ONLY); // Read is default.
+                var request = transaction.objectStore('myObjectStore').openCursor(); // Get all results.
+
+                // This callback will continue to be called until we have no more results.
+                request.onsuccess = function(e) {
+                  var cursor = e.srcElement.result;
+                  if (!cursor) {
+                    idResultsWrapper_.innerHTML = '<ul class="record-list" id="idb-results">' + html.join('') + '</ul>';
+                    return;
+                  }
+                  html.push('<li><span class="keyval" contenteditable onblur="indexedDbSample.updateKey(\'',
+                            cursor.key, '\', this)">', cursor.key, '</span> ',
+                            '=> <span class="keyval" contenteditable onblur="indexedDbSample.updateValue(\'',
+                            cursor.key, '\', this)">', cursor.value, '</span>&nbsp; ',
+                            '<a href="javascript:void(0)" onclick="indexedDbSample.deleteKey(\'',
+                            cursor.key, '\')">[Delete]</a></li>');
+                  cursor.continue();
+                }
+                request.onerror = idbError_;
+              }
+
+              function idbCreate_() {
+                if (!idb_) {
+                  if (idbRequest_) {
+                    idbRequest_.addEventListener('success', removeObjectStore, false); // If indexedDB is still opening, just queue this up.
+                  }
+                  return;
+                }
+
+                var request = idb_.setVersion('the new version string');
+                request.onerror = idbError_;
+                request.onsuccess = function(e) {
+                  if (!idb_.objectStoreNames.contains('myObjectStore')) {
+                    try {
+                      var objectStore = idb_.createObjectStore('myObjectStore', null); // FF is requiring the 2nd keyPath arg. It can be optional :(
+                      idbLog_.innerHTML = "<p>Object store created.</p>";
+                    } catch (err) {
+                      idbLog_.innerHTML = '<p class="error">' + err.toString() + '</p>';
+                    }
+                  } else {
+                    idbLog_.innerHTML = '<p class="error">Object store already exists.</p>';
+                  }
+                }
+              }
+
+              function idbSet_() {
+                if (!idb_) {
+                  if (idbRequest_) {
+                    idbRequest_.addEventListener('success', removeObjectStore, false); // If indexedDB is still opening, just queue this up.
+                  }
+                  return;
+                }
+
+                if (!idb_.objectStoreNames.contains('myObjectStore')) {
+                  idbLog_.innerHTML = "<p class=\"error\">Object store doesn't exist.</p>";
+                  return;
+                }
+
+                 // Create a transaction that locks the world.
+                var objectStore = idb_.transaction([], IDBTransaction.READ_WRITE)
+                                      .objectStore("myObjectStore");
+                var request = objectStore.put(
+                    document.getElementById('idb-value').value,
+                    document.getElementById('idb-key').value);
+                request.onerror = idbError_;
+                request.onsuccess = idbShow_;
+              }
+
+              function updateKey_(key, element) {
+                var newKey = element.textContent;
+                var transaction = idb_.transaction([], IDBTransaction.READ_WRITE); // Create a transaction that locks the world.
+                var objectStore = transaction.objectStore("myObjectStore");
+                var request = objectStore.get(key);
+                request.onerror = idbError_;
+                request.onsuccess = function(event) {
+                  var value = event.srcElement.result;
+                  if (objectStore.delete) {
+                    var request = objectStore.delete(key);
+                  } else {
+                    var request = objectStore.remove(key);
+                  }
+                  request.onerror = idbError_;
+                  request.onsuccess = function(event) {
+                    var request = objectStore.add(value, newKey);
+                    request.onerror = idbError_;
+                    request.onsuccess = idbShow_;
+                  };
+                };
+              }
+
+              function updateValue_(key, element) {
+                var transaction = idb_.transaction([], IDBTransaction.READ_WRITE); // Create a transaction that locks the world.
+                var objectStore = transaction.objectStore("myObjectStore");
+                var request = objectStore.put(element.textContent, key);
+                request.onerror = idbError_;
+                request.onsuccess = idbShow_;
+              }
+
+              function deleteKey_(key) {
+                var transaction = idb_.transaction([], IDBTransaction.READ_WRITE); // Create a transaction that locks the world.
+                var objectStore = transaction.objectStore("myObjectStore");
+                if (objectStore.delete) {
+                  var request = objectStore.delete(key);
+                } else {
+                  var request = objectStore.remove(key);
+                }
+                request.onerror = idbError_;
+                request.onsuccess = idbShow_;
+              }
+
+              function idbRemove_() {
+                if (!idb_) {
+                  if (idbRequest_) {
+                    idbRequest_.addEventListener('success', removeObjectStore, false); // If indexedDB is still opening, just queue this up.
+                  }
+                  return;
+                }
+
+                var request = idb_.setVersion("the new version string");
+                request.onerror = idbError_;
+                request.onsuccess = function(event) {
+
+                  if (idb_.objectStoreNames.contains('myObjectStore')) {
+                    try {
+                      // Spec has been updated to deleteObjectStore.
+                      if (idb_.deleteObjectStore) {
+                        idb_.deleteObjectStore('myObjectStore');
+                      } else {
+                        idb_.removeObjectStore('myObjectStore');
+                      }
+                      idResultsWrapper_.innerHTML = '';
+                      idbLog_.innerHTML = "<p>Object store removed.</p>";
+                    } catch (err) {
+                      idbLog_.innerHTML = '<p class="error">' + err.toString() + '</p>';
+                    }
+                  } else {
+                    idbLog_.innerHTML = "<p class=\"error\">Object store doesn't exist.</p>";
+                  }
+                };
+              }
+
+              return {
+                idbSet: idbSet_,
+                idbCreate: idbCreate_,
+                idbRemove: idbRemove_,
+                updateKey: updateKey_,
+                updateValue: updateValue_,
+                deleteKey: deleteKey_
+              }
+            })();
+          </script>
+        </section>
+      </div>
+  
+  
 
 <div class="slide intro">
 <header><h1>HTML5 Offline Applications</h1></header>
