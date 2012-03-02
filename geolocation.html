@@ -141,9 +141,43 @@ message</pre>
 </div>
 
 <div class="slide normal"> 
-     <header><h1>Example</h1></header> 
-     <section class="content"> 
-     <a href="html5_labs/geolocation/index.html">Try it out</a>
+     <header><h1>Code Lab</h1></header> 
+     <section class="content">
+     <div style="height:550px; overflow:scroll">
+     <p> Browse into your labs folder in the <a href="https://github.com/estelle/html5training/tree/master/html5_labs/geolocation" target="play">geolocation folder</a> and edit index.html. This page contains a &lt;div
+
+id="map_canvas"> (even though it is not a canvas) that will contain our google map and it also contains three empty
+
+JavaScript functions: The ﬁrst one we call when the page has ﬁnished to load is getLocation(). Then the two other
+
+functions will be callback function when getting user location: successCallback(pos) and errorCallback(err)</p>
+
+<ol>
+<li>In the code, look for a // TODO 1. Here we want to get the user location in one line using the "one-time location"
+
+function<br>
+
+• Pass the success and error callback to the function you are going to use</li>
+
+<li>Look for a // TODO 2. Here we are using the Google Map API to create a coordinate (using the google.maps.LatLng
+
+function)<br>
+
+• This google.maps.LatLng function expects a latitude and a longitude as parameters. Use the Position object,
+
+pos, provided by the success callback to get those informations</li>
+
+<li> Look for a // TODO 3. Here we need to get the accuracy of the obtained position so we are going to be able to
+
+display that in the map
+<br>
+• Replace xxxxxx by the accuracy you can get from the Position object, pos</li>
+
+<li>Finally, open the ﬁnal index.html in Firefox 3.5+, Safari 5.0+, Chrome 5.0+ or Opera 10.6+</li>
+
+<li> Allow the page to get user location and you should get a marker on a map representing your user location</li></ol>
+     </div> 
+     <a href="html5_labs/geolocation/index.html" target="play">Try it out</a>
      </section>
  </div>
 
