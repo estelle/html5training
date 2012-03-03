@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -92,6 +93,65 @@
 }</pre>
 </section>
 </div>
+
+
+<div class="slide normal"> 
+     <header><h1>Web Workers: Code Lab</h1></header> 
+     <section class="content"><div style="height: 550px; overflow:scroll">
+     <p>In this lab, we are going to create a worker that calculate a ﬁbonacci number sequence and display the result to the page
+
+that has spawned the worker</p>
+
+<p>Currently, the ﬁbonacci sequence is calculated in the same thread as the UI
+
+thread. For small sequences, it works ﬁne but if you ask for bigger sequences, it starts to become problematic and the
+
+browser thinks that the script is unresponsive</p>
+
+<p>In your  <a href="https://github.com/estelle/html5training/tree/master/html5_labs/web_worker">labs folder</a>  open index.html in a browser. The button to calculate with web
+
+worker is not implemented yet. Try to calculate a ﬁbonacci sequence of 10. Then try with 100</p>
+
+<ol>
+	<li>In your labs folder, ﬁnd the web_worker folder and edit the script.js ﬁle</li>
+
+<li>In the code, look for a // TODO 1. Here we want to create a new Worker called ﬁb_worker using the worker ﬁle
+
+named worker.js (one line)</li>
+
+<li>Look for a // TODO 2. Here we are in the event listener for the message event. We want to display the message
+
+from the worker. Replace xxxxxx by the actual message from the worker</li>
+
+<li>Look for a // TODO 3. Here we want to send the num variable as a message to the worker (one line)</li>
+
+<li>Now we are done with the main UI "thread", it is time to edit the worker, worker.js</li>
+
+<li>Look for a // TODO 4. Here we want to send the number from the suite to the main window (one line)
+
+<br>• The message to send is: fibonacci(i)</li>
+
+<li> Look for a // TODO 5. Here we need to use the show method deﬁned above and pass the message sent from the
+
+main window as a parameter (one line)</li>
+
+<li> You can now try the ﬁnal result by opening the index.html ﬁle in Safari, Chrome, Opera and Firefox</li>
+</ol>
+<p>
+
+Note:
+
+Because of Chrome security restrictions, you cannot run your app from the file:// scheme unless you start
+
+Chrome with the --allow-file-access-from-files ﬂag</p></div>
+     </section>
+ </div>
+
+
+
+
+
+
 
 
 <div class="slide intro">
@@ -207,10 +267,10 @@ Access-Control-Max-Age: 86400</section>
    		request.send();
     }
 }</pre> 
+<p><a href="http://arunranga.com/examples/access-control/simpleXSInvocation.html" target="play">Read the http headers </a></p>
      </section>
  </div>
  
-<p><a href="http://arunranga.com/examples/access-control/simpleXSInvocation.html" target="play">Read the http headers </a></p>
  
  
  <div class="slide normal"> 
@@ -285,7 +345,8 @@ function handleEvent(evtXHR) {
  
 <div class="slide intro"> 
      <header><h1>Cross-document Messaging</h1></header> 
-     <section class="content"> 
+     <section class="content">
+     <p><a href="https://github.com/estelle/html5training/tree/master/html5_labs/messaging">Code Lab Files</a> </p>
      </section>
  </div>
  
@@ -470,8 +531,10 @@ socket.onclose = function(e){
 
 
 <div class="slide normal"> 
-     <header><h1></h1></header> 
+     <header><h1>Libraries</h1></header> 
      <section class="content">
+     <p><a href="http://estelle.github.com/html5training/html5_labs/web_sockets/ChatWebSocket/index.html">ChatWebSocket Library</a></p>
+     <p><a href="http://estelle.github.com/html5training/html5_labs/web_sockets/jetty/">Jetty Library</a></p>
      </section>
 </div>
 
@@ -624,11 +687,11 @@ window.history.<b>forward()</b> <span class="notes">/* Goes forward one step &De
       </header>
       <section class="content">
         <ul>
-          <li>Import from the filesystem or the web.</li>
-          <li>Create new files from scratch.</li>
-          <li>Manipulate existing file data.</li>
-          <li>Store file data on the client.</li>
-          <li>Publish files back to the web.</li>
+          <li>Import from the filesystem or the web.</li>
+          <li>Create new files from scratch.</li>
+          <li>Manipulate existing file data.</li>
+          <li>Store file data on the client.</li>
+          <li>Publish files back to the web.</li>
         </ul>
         <ul class="icons" style="clear: both;">
          <li class="chrome">Chrome 6</li>
@@ -758,10 +821,10 @@ console.log(el.<b>classList</b>.toString() == el.className); // true</pre>
           <header><h1>Notifications</h1></header>
           <section>
           <pre contenteditable>if (window.<b>webkitNotifications.checkPermission</b>() == 0) {
-  window.webkitNotifications.createNotification(picture, title, 
-      content).<b>show</b>();
+  window.webkitNotifications.createNotification(picture, title, 
+      content).<b>show</b>();
 } else {
-  window.<b>webkitNotifications.requestPermission</b>();
+  window.<b>webkitNotifications.requestPermission</b>();
 }</pre>
         <div id="notifications-message">
           <p>

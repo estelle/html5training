@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -84,7 +85,156 @@ dosomething.cgi</pre>
 }</pre>
       </section>
   </div>  
-  
+  <div class="slide normal"> 
+     <header><h1>Code Lab</h1></header> 
+     <section class="content">
+     <div style="height:550px; overflow: scroll">
+     <p><br />
+In this lab, we are going to build a manifest ﬁle for our web application and we are going to see a live example of ofﬂine caching For the purpose of this lab, we are going to use the python module SimpleHTTPServer as a web server but ﬁrst, we will need to deﬁne the MIME type for the manifest ﬁle. Edit mimetypes.py and look for the section deﬁning MIME types. Add the MIME type for .manifest ﬁles after '.man' : 'application/x-troff-man', like this:</p>
+<pre>types_map = {
+
+# Mimetypes
+'.man' : 'application/x-troff-man',
+
+# MIME TYPE ADDED FOR MANIFEST FILES
+'.manifest' : 'text/cache-manifest',
+
+# Continues...
+}</pre>
+<p>We are also going to use ﬁrefox for this lab since it provides the useful functionality to go work ofﬂine</p>
+<p>1. The application in your labs folder (in <a href="https://github.com/estelle/html5training/tree/master/html5_labs/offline_applications" target="play">offline_application</a>) is composed by the following assets:</p>
+<ul>
+  <li>An index page: index.html</li>
+  <li>A stylesheet: style.css</li>
+  <li>A page that we want to cache automatically: cached.html</li>
+  <li>A page that requires to be online: network.html</li>
+  <li>A fallback page in case we cannot access a certain page while ofﬂine: fallback.html</li>
+  <li> Two images: One that is going to be cached light_bulb_off.jpg (displayed in fallback.html) and another one that is going to be accessible only from the network light_bulb_on.jpg (displayed in network.html).</li>
+</ul>
+<p>2. We now want to create a manifest ﬁle specifying which resources need to be cached and what is the fallback page in case users try to access a resources which is not cached. In the same folder of the application, create offline.manifest:</p>
+<pre>CACHE MANIFEST
+# Version 1.0.0 
+
+CACHE: 
+index.html
+cached.html
+style.css
+light_bulb_off.jpg
+
+NETWORK: 
+*
+
+FALLBACK:
+/ fallback.html</pre>
+
+<p>3. We then need to link this manifest ﬁle to the index.html page:</p>
+<pre>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot; manifest=&quot;offline.manifest&quot;&gt; 
+&lt;!-- Rest of the file not showed here --&gt;
+</pre>
+<p>4. So far we could use our application as it is but before we would like to have details on which events have been ﬁred so we exactly know what is going on. In index.html, add the following between the &lt;script&gt; tag:</p>
+<pre>function networkStatus() {
+    if (navigator.onLine) {
+    	document.getElementById(&quot;status&quot;).innerHTML=&quot;ONLINE&quot;;
+    } else {
+    	document.getElementById(&quot;status&quot;).innerHTML=&quot;OFFLINE&quot;;
+    }
+}
+function printMessage(message) {
+    var p = document.createElement(&quot;p&quot;);
+    p.innerHTML = message;
+    document.getElementById(&quot;cachelog&quot;).appendChild(p);
+}
+//Here we add event listener for the applicationCache so we exactly know what is the flow of event
+//For each fired event, this will be displayed in the page
+window.applicationCache.<strong>onchecking</strong> = function(e) {
+	printMessage(&quot;checking event: Checking is always the first event to be fired&quot;);
+}
+window.applicationCache.<strong>onnoupdate</strong> = function(e) {
+	printMessage(&quot;noupdate event: The manifest file has not changed. There is no update&quot;);
+}
+window.applicationCache.<strong>onupdateready</strong> = function(e) {
+	printMessage(&quot;updateready event: Application update ready&quot;);
+}
+window.applicationCache.<strong>onobsolete</strong> = function(e) {
+	printMessage(&quot;obsolete event: The manifest file does not exist&quot;);
+}
+window.applicationCache.<strong>ondownloading</strong> = function(e) {
+	printMessage(&quot;downloading event: Update found. Downloading has started&quot;);
+}
+window.applicationCache.<strong>oncached</strong> = function(e) {
+	printMessage(&quot;cached event: Application cached&quot;);
+}
+window.applicationCache.<strong>onerror</strong> = function(e) {
+	printMessage(&quot;error event: Application cache error&quot;);
+}
+window.applicationCache.<strong>onprogress</strong> = function(e) {
+	printMessage(&quot;progress event: Downloading resources...&quot;);
+}
+window.addEventListener(&quot;<strong>online</strong>&quot;, function(e) {
+	document.getElementById(&quot;status&quot;).innerHTML=&quot;ONLINE&quot;;
+}, true);
+window.addEventListener(&quot;<strong>offline</strong>&quot;, function(e) {
+	document.getElementById(&quot;status&quot;).innerHTML=&quot;OFFLINE&quot;;
+}, true);
+window.addEventListener(&quot;<strong>load</strong>&quot;, networkStatus, true);</pre>
+<p>5. Time to see your application working. In a terminal or command prompt, browse to your labs folder in the
+offline_application and run the following command:</p>
+<pre>python -m SimpleHTTPServer</pre>
+<p>6. Then open ﬁrefox and browse to: http://localhost:8000 (or any other port where the web server is listening on). So far, if it worked well, ﬁrefox should ask you to store data on your computer for ofﬂine use:</p>
+<p>7. Click on &quot;Allow&quot; and then you should see the following being displayed: </p>
+<pre>ONLINE
+checking event: Checking is always the first event to be fired
+downloading event: Update found. Downloading has started
+progress event: Downloading resources...
+progress event: Downloading resources...
+progress event: Downloading resources...
+progress event: Downloading resources...
+progress event: Downloading resources...
+cached event: Application cached</pre>
+<p>8. Do not browse any other page and directly switch to ofﬂine mode. In ﬁrefox, click on File!Work Ofﬂine</p>
+<p>9. Now that you are ofﬂine, click on the &quot;Network Page&quot; link. Since it is not cached, the fallback page should be displayed.</p>
+<p>10. Click on the &quot;Cached Page&quot; link and you should be able to see the page since it was in the CACHE section of themanifest ﬁle</p>
+<p>11. Switch back to online mode. In ﬁrefox, click on File!Work Ofﬂine (if this one is checked)</p>
+<p>12. Now visit the &quot;Network Page&quot; again. You should be able to see it since you are online</p>
+<p>13. Switch to ofﬂine mode again. In ﬁrefox, click on File!Work Ofﬂine</p>
+<p>14. Visit the &quot;Network Page&quot; again and now instead of getting the fallback page, you get the browser cache (do not confuse this with the application cache) since you already visited the page while online.</p>
+<p>15. Let us change the header of our web application to something a little bit fancier. Change:</p>
+<pre>&lt;header&gt;
+&lt;hgroup&gt;
+&lt;h1&gt;The HTML5 Blog&lt;/h1&gt;
+&lt;h2&gt;All HTML5 News :)&lt;/h2&gt;
+&lt;/hgroup&gt;
+&lt;/header&gt;</pre>
+<p>By the following:</p>
+<pre>&lt;header&gt;
+&lt;hgroup&gt;
+&lt;h1&gt;The kick-ass HTML5 Blog&lt;/h1&gt;
+&lt;h2&gt;kick-ass since it is now an offline blog as well :)&lt;/h2&gt;
+&lt;/hgroup&gt;
+&lt;/header&gt;</pre>
+<p>16. Switch to online mode. In ﬁrefox, click on File!Work Ofﬂine (if this one is checked)</p>
+<p>17. Click on the &quot;Home&quot; link and checked that the title has changed </p>
+<p>18. The modiﬁcation we have just made did not take place since we did not modify the manifest as well. Update the</p>
+<p>manifest with a simple comment (like modifying the version number for instance), save it and click again on the</p>
+<p>&quot;Home&quot; link</p>
+<p>19. The information displayed in the index.html page are the following:</p>
+<pre>ONLINE
+checking event: Checking is always the first event to be fired
+downloading event: Update found. Downloading has started 
+progress event: Downloading resources...
+progress event: Downloading resources...
+progress event: Downloading resources...
+progress event: Downloading resources...
+progress event: Downloading resources...
+updateready event: Application update ready</pre>
+
+<p>Since the manifest ﬁle has been updated, the application detect that there is an update at "downloading event: Update found. Downloading has started". "Application update ready" mean that the application has downloaded the new cache and the new cached resources but it is not using it yet</p>
+<p>20. Reload the page again and now you can see the change</p>
+     </div> 
+     <a href="https://github.com/estelle/html5training/tree/master/html5_labs/offline_applications" target="play">Files</a>
+     </section>
+ </div>
  <div class="slide intro">
 <header><h1> Geolocation</h1></header>
 
