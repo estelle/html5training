@@ -60,44 +60,106 @@ td.half {background-color: #FFC;}
 </div>
 
   
-  <div class="slide">
-      <header>
-         <h1>Audio &amp; Video</h1>
-      </header>
-      <section class="content" style="margin-top: -20px;">
-          
-            <pre contenteditable>&lt;<strong>audio</strong> id="audio" src="sound.mp3" <strong>controls</strong>&gt;&lt;/audio&gt;</pre>
-            <pre contenteditable>&lt;<strong>video</strong> id="video" src="movie.webm" <strong>autoplay</strong> <strong>controls</strong>&gt;&lt;/video&gt;</pre>
-            <div id="video-column">
-              <input type="button" class="button"  id="reflection-button" onClick="addReflection()" value="Add CSS reflection to video">
-              <video src="images/nyan.webm" width="390" id="clip" controls="" style="" poster="http://i2.ytimg.com/vi/QH2-TGUlwu4/hqdefault.jpg" ></video>
-               <!--<video width="390" id="clip" controls="" style="" poster="http://i2.ytimg.com/vi/QH2-TGUlwu4/hqdefault.jpg" >
-               <source src="http://v3.lscache8.c.youtube.com/videoplayback?sparams=id%2Cexpire%2Cip%2Cipbits%2Citag%2Cratebypass%2Coc%3AU0hQRlZOT19FSkNOMF9OSFND&amp;itag=43&amp;ip=0.0.0.0&amp;signature=38C8D8BCF90A23376366578C0FD2218735CD75A8.D3A566631CB6FFD10C8441CE9283D5B6E84B04B2&amp;sver=3&amp;ratebypass=yes&amp;expire=1311631200&amp;key=yt1&amp;ipbits=0&amp;id=407dbe4c6525c2ee" type="video/webm; codecs=&quot;vp8, vorbis&quot;">
-                <source src="http://v3.lscache8.c.youtube.com/videoplayback?sparams=id%2Cexpire%2Cip%2Cipbits%2Citag%2Cratebypass%2Coc%3AU0hQRlNPUV9FSkNOMF9LSVVD&amp;itag=43&amp;ip=0.0.0.0&amp;signature=87A1F1D3714A30AAFED2F2D16AE49AE0F7262E67.5837A6979117F1565BC57A45498B8C850A21B5A9&amp;sver=3&amp;ratebypass=yes&amp;expire=1311343200&amp;key=yt1&amp;ipbits=0&amp;id=407dbe4c6525c2ee" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
-                <source src="http://v3.lscache8.c.youtube.com/videoplayback?sparams=id%2Cexpire%2Cip%2Cipbits%2Citag%2Cratebypass%2Coc%3AU0hQRlNPUV9FSkNOMF9LSVVD&amp;itag=43&amp;ip=0.0.0.0&amp;signature=87A1F1D3714A30AAFED2F2D16AE49AE0F7262E67.5837A6979117F1565BC57A45498B8C850A21B5A9&amp;sver=3&amp;ratebypass=yes&amp;expire=1311343200&amp;key=yt1&amp;ipbits=0&amp;id=407dbe4c6525c2ee" type="video/ogg; codecs=&quot;theora, vorbis&quot;">
-                Your browser does not support the video tag
-              </video>-->
-              <div class="media-buttons">
-                <input type="button" class="button"  id="play-button" onClick="PlayVideo()" ;="" value="Play">
-                <input type="button" class="button"  id="pause-button" onClick="PauseVideo()" ;="" value="Pause" disabled="">
-                <input type="button" class="button"  id="mute" onClick="MuteUnMute()" value="Mute">
-              </div>
-            </div>
+  
+  <div class="slide normal"> 
+     <header><h1>Audio Example</h1></header> 
+     <section class="content"> 
+            <pre contenteditable>&lt;<strong>audio</strong> id="audio" src="sound.mp3"<strong id="controlaudio"> controls</strong>&gt;&lt;/audio&gt;</pre>
             
-            <div id="audio-column" class="center">
-              <audio id="audio-clip" width="250" controls src="http://files.myopera.com/tagawa/blog/Ode-to-IE6.ogg" type="audio/ogg">
+              <audio id="audio-clip" width="250" src="http://files.myopera.com/tagawa/blog/Ode-to-IE6.ogg" type="audio/ogg" controls>
                 Your browser does not support the audio tag
               </audio>
               <div class="media-buttons">
                 <input type="button" class="button"  id="audio-play-button" onClick="PlayAudio()" value="Play">
                 <input type="button" class="button"  id="audio-pause-button" onClick="PauseAudio()" value="Pause" disabled="">
                 <input type="button" class="button"  id="audio-mute" onClick="MuteUnMuteAudio()" value="Mute">
+                <a href="#" onClick="showAudioControls(this); return false;" style="float:right">hide audio</a>
               </div>
-              <p><small><small>
-Nyan Cat from  <a href="http://www.youtube.com/watch?v=QH2-TGUlwu4">Saranj00n</a><br><a href="http://my.opera.com/tagawa/blog/ode-to-ie6">Ode to IE6</a></small></small></p>
+            <p><a href="http://my.opera.com/tagawa/blog/ode-to-ie6">Ode to IE6</a></small></small></p>
+            <pre style="clear:both">var clip = document.getElementById('audio-clip');
+clip.<strong>muted</strong> = false;
+clip.<strong>play()</strong>;
+clip.<strong>pause()</strong>;</pre>
+<pre>
+clip.addEventListener('<strong>ended</strong>', OnAudioFinished, false);
+
+function OnAudioFinished() {
+  audioPlayButton.disabled = false;
+  audioPauseButton.disabled = true;
+}
+</pre>
+     </section>
+      <script defer="">
+            var audioClip = document.getElementById('audio-clip');
+            var audioPlayButton = document.getElementById('audio-play-button');
+            var audioPauseButton = document.getElementById('audio-pause-button');
+            audioClip.addEventListener('ended', OnAudioFinished, false);
+
+            function PlayAudio() {
+              audioClip.play();
+              audioPlayButton.disabled = true;
+              audioPauseButton.disabled = false;
+            }
+
+            function PauseAudio() {
+              audioClip.pause();
+              audioPlayButton.disabled = false;
+              audioPauseButton.disabled = true;
+            }
+
+            function MuteUnMuteAudio() {
+              document.getElementById('audio-mute').value = audioClip.muted ? 'Mute' : 'Unmute';
+              audioClip.muted = audioClip.muted ? false : true;
+            }
+
+            function OnAudioFinished() {
+              audioPlayButton.disabled = false;
+              audioPauseButton.disabled = true;
+            }
+			
+			function showAudioControls(e){
+				if (document.querySelector('#controlaudio').innerHTML == ' controls'){
+					document.querySelector('#controlaudio').innerHTML = '';
+					document.querySelector('#audio-clip').removeAttribute('controls');
+					e.innerHTML = 'show player';
+				} else {
+					
+					document.querySelector('#controlaudio').innerHTML = ' controls';
+					document.querySelector('#audio-clip').setAttribute('controls', 'controls');
+					e.innerHTML = 'hide player';
+				}
+			}
+          </script>
+ </div>
+ 
+ 
+  <div class="slide">
+      <header>
+         <h1>Video Example</h1>
+      </header>
+      <section class="content" style="margin-top: -20px;">
+          
+            <pre contenteditable>&lt;<strong>video</strong> id="video" src="movie.webm" <strong>autoplay</strong> <strong id="videocontrol">controls</strong>&gt;&lt;/video&gt;</pre>
+            <div id="video-column">
+              <input type="button" class="button"  id="reflection-button" onClick="addReflection()" value="Add CSS reflection to video">
+              <video src="images/nyan.webm" width="390" id="clip" controls="" style="" poster="http://i2.ytimg.com/vi/QH2-TGUlwu4/hqdefault.jpg" ></video>
+              <div class="media-buttons">
+                <input type="button" class="button"  id="play-button" onClick="PlayVideo()"  value="Play">
+                <input type="button" class="button"  id="pause-button" onClick="PauseVideo()" value="Pause">
+                <input type="button" class="button"  id="mute" onClick="MuteUnMute()" value="Mute">
+              </div>
             </div>
-  <pre style="clear:both">document.getElementById("audio").<strong>muted</strong> = false;<br>document.getElementById("video").<strong>play</strong>();</pre>
-          </section>
+            <p>
+Nyan Cat from  <a href="http://www.youtube.com/watch?v=QH2-TGUlwu4">Saranj00n</a></p>
+<p onClick="hideControls();" class="imp">Hide Native Controls</p>
+            
+  <pre style="clear:both">document.getElementById("video").<strong>play</strong>();
+function MuteUnMute() {
+  document.getElementById('mute').value = videoClip.muted ? 'Mute' : 'Unmute';
+  videoClip.muted = videoClip.muted ? false : true;
+}
+  </pre>
+          </section></div>
     <script defer="">
             var videoClip = document.getElementById('clip');
             var playButton = document.getElementById('play-button');
@@ -128,36 +190,20 @@ Nyan Cat from  <a href="http://www.youtube.com/watch?v=QH2-TGUlwu4">Saranj00n</a
             function addReflection() {
               videoClip.style.webkitBoxReflect = videoClip.style.webkitBoxReflect !== '' ? '' : "below 0px -webkit-gradient(linear, 0% 0%, 0% 100%, from(transparent), color-stop(0.55, transparent), to(white))";
             }
+			
+			function hideControls(){
+				var text = document.getElementById('videocontrol');
+				if(videoClip.hasAttribute('controls')){
+					videoClip.removeAttribute('controls');
+					text.innerHTML = '';
+				} else {
+					videoClip.setAttribute('controls', 'controls');
+					text.innerHTML = 'controls';
+				}
+			}
           </script>
 
-          <script defer="">
-            var audioClip = document.getElementById('audio-clip');
-            var audioPlayButton = document.getElementById('audio-play-button');
-            var audioPauseButton = document.getElementById('audio-pause-button');
-            audioClip.addEventListener('ended', OnAudioFinished, false);
-
-            function PlayAudio() {
-              audioClip.play();
-              audioPlayButton.disabled = true;
-              audioPauseButton.disabled = false;
-            }
-
-            function PauseAudio() {
-              audioClip.pause();
-              audioPlayButton.disabled = false;
-              audioPauseButton.disabled = true;
-            }
-
-            function MuteUnMuteAudio() {
-              document.getElementById('audio-mute').value = audioClip.muted ? 'Mute' : 'Unmute';
-              audioClip.muted = audioClip.muted ? false : true;
-            }
-
-            function OnAudioFinished() {
-              audioPlayButton.disabled = false;
-              audioPauseButton.disabled = true;
-            }
-          </script>
+         
   </div> 
   
   
@@ -518,7 +564,56 @@ MPEG 4, H.264, MP3
 </section>
 </div>
 
-
+<div class="slide normal"> 
+     <header><h1>Full list of Events</h1></header> 
+     <section class="content">
+     <p>Fired on media elements</p>
+     <ul class="columns"><li>	loadstart	</li>
+<li>	progress	</li>
+<li>	suspend	</li>
+<li>	abort	</li>
+<li>	error	</li>
+<li>	emptied	</li>
+<li>	stalled	</li>
+<li>	loadedmetadata	</li>
+<li>	loadeddata	</li>
+<li>	canplay	</li>
+<li>	canplaythrough	</li>
+<li>	playing	</li>
+<li>	waiting	</li>
+<li>	seeking	</li>
+<li>	seeked	</li>
+<li>	ended	</li>
+<li>	durationchange	</li>
+<li>	timeupdate	</li>
+<li>	play	</li>
+<li>	pause	</li>
+<li>	ratechange	</li>
+<li>	volumechange	</li>
+</ul>
+<p>	Fired on media controllers:	</p>
+<ul class="columns">
+<li>	emptied	</li>
+<li>	loadedmetadata	</li>
+<li>	loadeddata	</li>
+<li>	canplay	</li>
+<li>	canplaythrough	</li>
+<li>	playing	</li>
+<li>	ended	</li>
+<li>	waiting	</li>
+<li>	ended	</li>
+<li>	durationchange	</li>
+<li>	timeupdate	</li>
+<li>	play	</li>
+<li>	pause	</li>
+<li>	ratechange	</li>
+<li>	volumechange	</li>
+     </ul> 
+     </section>
+ </div>
+ 
+ 
+ 
 <div class="slide normal">
 <header><h1>Methods &amp; Properties</h1></header>
 <section class="content">
@@ -536,7 +631,70 @@ document.getElementById("video").<strong>play</strong>(); </pre>
 </section>
 </div>
 
-
+<div class="slide normal"> 
+     <header><h1>Controller Methods and Properties</h1></header> 
+     <section class="content">
+     <dl class="deprecated listed wide" style="margin-top:-10px">
+  <dt>controller = new MediaController()</dt>
+  <dd>
+    <p>Returns a new MediaController object.</p>
+  </dd>
+  <dt>media.controller [ = controller ]</dt>
+  <dd>
+    <p>Returns the current MediaController for the media element, if any; returns null otherwise. Can be set, to set an explicit MediaController. Doing so removes the mediagroup attribute, if any.</p>
+  </dd>
+  <dt>buffered</dt>
+  <dd>
+    <p>Returns a TimeRanges object that represents the intersection of the time ranges for which the user agent has all relevant media data for all the slaved media elements.</p>
+  </dd>
+  <dt>seekable</dt>
+  <dd>
+    <p>Returns a TimeRanges object that represents the intersection of the time ranges into which the user agent can seek for all the slaved media elements.</p>
+  </dd>
+  <dt>duration</dt>
+  <dd>
+    <p>Returns the difference between the earliest playable moment and the latest playable moment (not considering whether the data in question is actually buffered or directly seekable, but not including time in the future for infinite streams). Will return zero if there is no media.</p>
+  </dd>
+  <dt>currentTime [ = value ]</dt>
+  <dd>
+    <p>Returns the current playback position, in seconds, as a position between zero time and the current duration. Can be set, to seek to the given time.</p>
+  </dd>
+  <dt>paused</dt>
+  <dd>
+    <p>Returns true if playback is paused; false otherwise. When this attribute is true, any media element slaved to this controller will be stopped.</p>
+  </dd>
+  <dt>play()</dt>
+  <dd>
+    <p>Sets the paused attribute to false.</p>
+  </dd>
+  <dt>pause()</dt>
+  <dd>
+    <p>Sets the paused attribute to true.</p>
+  </dd>
+  <dt>played</dt>
+  <dd>
+    <p>Returns a TimeRanges object that represents the union of the time ranges in all the slaved media elements that have been played.</p>
+  </dd>
+  <dt>defaultPlaybackRate [ = value ]</dt>
+  <dd>
+    <p>Returns the default rate of playback. Can be set, to change the default rate of playback. This default rate has no direct effect on playback, but if the user switches to a fast-forward mode, when they return to the normal playback mode the playbackRate will return to this default rate.</p>
+  </dd>
+  <dt>playbackRate [ = value ]</dt>
+  <dd>
+    <p>Returns the current rate of playback. Can be set, to change the rate of playback.</p>
+  </dd>
+  <dt>volume [ = value ]</dt>
+  <dd>
+    <p>Returns the current playback volume multiplier, as a number in the range 0.0 to 1.0, where 0.0 is the quietest and 1.0 the loudest.
+    Throws an IndexSizeError if the new value is not in the range 0.0 .. 1.0.</p>
+  </dd>
+  <dt>muted [ = boolean ]</dt>
+  <dd>
+    <p style="margin:0; padding:0; font-size:smaller">Returns true if all audio is muted (regardless of other attributes either on the controller or on any media elements slaved to this controller), and false otherwise. Can be set, to change whether the audio is muted or not.</p>
+  </dd>
+</dl> 
+     </section>
+ </div>
 
 <div class="slide normal">
 <header><h1>Customizing Audio/Video Controls</h1></header>
@@ -569,8 +727,8 @@ function OnAudioFinished() {
 </section>
 </div>
 <div class="slide intro">
-<header><h1>CSS3</h1></header>
-    <h1><a href="css.html">Next ➹</a></h1>  
+<header><h1>&lt;canvas&gt;</h1></header>
+    <h1><a href="canvas.html">Next ➹</a></h1>  
 </div>
 <!-- END of PRESENTATION -->
 </div><!-- slides -->
