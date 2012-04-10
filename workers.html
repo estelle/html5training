@@ -910,7 +910,120 @@ console.log(el.<b>classList</b>.toString() == el.className); // true</pre>
       </section>
   </div>  
   
+ <div class="slide normal"> 
+<header><h1>Page Visibility API</h1></header> 
+<section class="content"> 
   
+
+    <p>Determine if your media is visible or not:</p>
+    <pre contenteditable>document.addEventListener('visibilitychange', function(e) {
+  console.log('hidden:' + document.hidden,
+              'state:' + document.visibilityState)
+}, false);
+</pre>
+    
+    <p><a href="http://www.samdutton.com/pageVisibility/" target="_blank">Demo</a></p>
+
+
+</section>
+</div> 
+ 
+  <div class="slide normal"> 
+<header><h1>Page Visibility</h1></header> 
+<section class="content"> 
+<pre contenteditable style="max-height: 500px; overflow:auto">// set name of hidden property and visibility change event
+var hidden, visibilityChange; 
+
+if (<strong>typeof document.hidden</strong> !== "undefined") {
+	hidden = "hidden";
+	visibilityChange = "visibilitychange";
+} else if (typeof document.mozHidden !== "undefined") {
+	hidden = "mozHidden";
+	visibilityChange = "mozvisibilitychange";
+} else if (typeof document.msHidden !== "undefined") {
+	hidden = "msHidden";
+	visibilityChange = "msvisibilitychange";
+} else if (<strong>typeof document.webkitHidden</strong> !== "undefined") {
+	hidden = "webkitHidden";
+	visibilityChange = "webkitvisibilitychange";
+}
+ 
+var videoElement = document.getElementById("videoElement");
+
+// if the page is hidden, pause the video
+// if the page is shown, play the video
+function handleVisibilityChange() {
+	if (document[hidden]) {
+		videoElement.pause();
+	} else {
+		videoElement.play();
+	}
+}
+
+// warn if the browser doesn't support addEventListener or the Page Visibility API
+if (typeof document.addEventListener === "undefined" || 
+	typeof hidden === "undefined") {
+	alert("This demo requires a browser such as Google Chrome that supports the Page Visibility API.");
+} else {
+
+    // handle page visibility change
+    // see https://developer.mozilla.org/en/API/PageVisibility/Page_Visibility_API
+    document.addEventListener(visibilityChange, handleVisibilityChange, false);
+    
+    // revert to existing favicon for site when the page is closed
+    // otherwise the favicon will remain as paused.png
+    window.addEventListener("unload", function(){
+		favicon.change("/favicon.ico");
+	}, false);
+    
+    // when the video pauses, set the favicon
+    videoElement.addEventListener("pause", function(){
+        favicon.change("images/paused.png");
+	}, false);
+    
+    // when the video plays, set the favicon
+    videoElement.addEventListener("play", function(){
+		favicon.change("images/playing.png");
+	}, false);
+    
+    // set the document (tab) title from the current video time
+    videoElement.addEventListener("timeupdate", function(){
+		document.title = Math.floor(videoElement.currentTime) + " second(s)";
+	}, false);</pre>
+</section>
+</div> 
+ 
+ <div class="slide normal"> 
+     <header><h1>getUserMedia</h1><h2>Device API</h2></header> 
+     <section class="content">
+     <pre contenteditable>navigator.getUserMedia({audio: true, video: true}, function(s) {
+  var video = document.querySelector('video');
+  video.src = window.URL.createObjectURL(s);
+}, function(e) {
+  console.log(e);
+});</pre>
+    <ul>
+
+      <li><a href="http://html5camera.com/" target="_blank">Instant Camera</a></li>
+      <li><a href="http://people.opera.com/danield/html5/explode/" target="_blank">Explode Video</a></li>
+      <li><a href="http://neave.com/webcam/html5/" target="_blank">Live Effects</a></li>
+    </ul>
+
+  </section>
+</article> 
+     </section>
+ </div> 
+
+<div class="slide normal object"> 
+<object data="http://html5-demos.appspot.com/"><header><h1>HTML5 Demos</h1></header> 
+<section class="content"> 
+</section>
+</object>
+<a href="http://html5-demos.appspot.com/" class="objectlink">HTML5-demos.com</a>
+</div> 
+ 
+  
+ 
   
 <!-- Notifications -->  
   <div class="slide" id="notifications-api">
@@ -947,7 +1060,7 @@ console.log(el.<b>classList</b>.toString() == el.className); // true</pre>
 			if (window.webkitNotifications.checkPermission() == 0) {
 			console.log('hi');
                 // note the show()
-                window.webkitNotifications.createNotification('http://standardista.com', 'Estelle Weyl', 'That\'s almost all we have. Just one more deck and we\'re done. w00t!!!').show();
+                window.webkitNotifications.createNotification('http://standardista.com', 'Estelle Weyl', 'That\'s all we have for you folks!!! Please fill out the evaluation').show();
               } else {
 				  
                 alert('You have to select "Set notification permissions for this page" first notifications to work.');
