@@ -1,0 +1,157 @@
+@charset "UTF-8";
+/* CSS Selectors */
+/* use a pseudo class to target the HTML element */
+XXXX {
+	background-color: #fff;	
+}
+body {
+	margin: 0;
+	background-color: #eaeaea;
+	background-image: -webkit-linear-gradient(#fcfcfc, #eaeaea);
+	font-family:verdana, Helvetica, Arial, sans-serif;	
+}
+p, h1, h2, h3, li, ul {
+	list-style-type: none;
+	margin: 0; padding: 0;
+	font-size: 12px;
+	margin:5px 0;
+}
+a, p, .date {
+	color: #1C7F94;
+	text-decoration: none;
+	font-size: 12px;
+}
+h1, h2, h3 {
+	color: #D6007D; 
+	font-size: 16px;
+	font-weight: normal;}
+/* make the page appear like a phone app when opened on a large monitor by enxuring that if the page is larger than 640px, it should use the following CSS:
+
+PUT A QUERY  HERE {
+	body {
+		width: 360px;
+		float:left;
+		border:1px solid;
+		box-sizing:border-box;
+	}
+} */
+
+
+/* only hit the header and footer that are direct chilren of the body */
+body  header,
+body  footer {
+	background-color: #6EC0D2;
+	color: #fff;
+	padding: 0 8px;
+}
+/* only hit the header if it's a direct child of the body */
+body  header{
+	box-shadow: 
+		inset 0 6px 8px rgba(255,255,255,0.5),
+		inset 0 -6px 12px rgba(0,0,0,0.3);
+	text-shadow: 0 0 3px rgba(0,0,0,0.5);
+	font-size: 14px;
+	line-height: 26px;
+}
+section header {
+	border-bottom: 1px solid #069;
+	padding: 7px 10px;
+}
+	section h2 {
+		
+	}
+	section li {
+		padding: 1px 10px;	
+	}
+ 	h2 .date { 
+		float: right;
+	}
+section aside {
+	border-radius: 10px;
+	box-shadow: 0 5px 3px rgba(0,0,0,0.5);
+	margin: 10px;
+	border-top: 1px solid #fff;
+	padding: 8px;
+	background-color: #ccc;
+	background-image: -webkit-linear-gradient(
+		rgba(255,255,255,0.2) 50%,
+		rgba(255,255,255,0.0) 50%,
+		rgba(255,255,255,1.0)
+	);
+}
+aside * {
+	margin-top: 0;
+	margin-bottom: 0;	
+	text-shadow: 0 0 1px currentColor;
+}	
+aside p {
+	color: #333;	
+}
+aside a {
+	color: #D6007D;
+	text-decoration: underline;	
+}
+nav {
+ 	background-color: #09758B;
+	padding: 5px 8px;
+	background-image: -webkit-linear-gradient(
+		rgba(255,255,255,0.5),
+		rgba(255,255,255,0.1));
+	width:100%; float:left;
+	box-sizing:border-box;
+	
+}
+nav ul {
+	border-radius: 5px;
+	background-color: #09758B;
+	padding: 5px 8px;
+	background-image: -webkit-linear-gradient(bottom,
+		rgba(255,255,255,0.5),
+		rgba(255,255,255,0.1));
+	padding: 0;
+	width:100%; float:left;
+	box-sizing:border-box;
+	box-shadow: inset -1px 0 5px rgba(0,0,0,0.4);
+}
+nav li {
+	margin:0; padding: 0;
+	float: left;
+	width: 25%;	
+	box-sizing: border-box;
+	text-align: center;
+	color: #ffffff;
+	text-shadow: 0 0 2px #09758B;
+	border-right: 1px solid #09758B;
+	border-left: 1px solid #A4D9F4;
+	padding: 6px 0; line-height:2.5em;
+}
+/* Use selectors to:
+1) make the second li have smaller line height 
+2) remove the left border from the first li
+3) remove the right border from the last li
+
+nav li{
+	line-height: 1.25em;	
+}
+nav li{
+	border-right: none;	
+}
+nav li{
+	border-left: none;	
+}
+
+*/
+nav li.active {background-color: #09758B;
+	background-image: -webkit-linear-gradient(
+		rgba(255,255,255,0.7) 30%,
+		rgba(255,255,255,0.5) 50%,
+		rgba(255,255,255,0.3));
+	border: none;
+	border-radius: 5px;
+	box-shadow: inset 1px 1px 5px rgba(0,0,0,0.6);
+}
+
+/* only the list item to the right of the active link should have no left border
+xxx { border-left: none;}
+
+*/

@@ -1,0 +1,147 @@
+@charset "UTF-8";
+/* CSS Document */
+html {
+	background-color: #fff;	
+}
+body {
+	margin: 0;
+	background-color: #eaeaea;
+	/* Give the background a gradient from #fcfcfc to #eaeaea */
+	
+	font-family:verdana, Helvetica, Arial, sans-serif;	
+}
+p, h1, h2, h3, li, ul {
+	list-style-type: none;
+	margin: 0; padding: 0;
+	font-size: 12px;
+	margin:5px 0;
+}
+a, p, .date {
+	color: #1C7F94;
+	text-decoration: none;
+	font-size: 12px;
+}
+h1, h2, h3 {
+	color: #D6007D; 
+	font-size: 16px;
+	font-weight: normal;}
+@media screen and (min-width: 540px) {
+	body {
+		width: 360px;
+		float:left;
+		border:1px solid;
+		box-sizing:border-box;
+	}
+}
+
+body > header,
+body > footer {
+	background-color: #6EC0D2;
+	color: #fff;
+	padding: 0 8px;
+}
+
+body > header{
+	/* make the header look like it's convex */
+	
+	/* add some shoadow on the text */
+	
+	font-size: 14px;
+	line-height: 26px;
+}
+section header {
+	border-bottom: 1px solid #069;
+	padding: 7px 10px;
+}
+	section h2 {
+		
+	}
+	section li {
+		padding: 1px 10px;	
+	}
+ 	h2 .date { 
+		float: right;
+	}
+section aside {
+	/* make the corners round */
+	
+	/* give it a shadow */
+	
+	margin: 10px;
+	border-top: 1px solid #fff;
+	padding: 8px;
+	background-color: #ccc;
+	/* create the effect for the background color */
+	
+	
+	
+}
+aside * {
+	margin-top: 0;
+	margin-bottom: 0;	
+	/* make the text appear fatter, but not bold*/
+}	
+aside p {
+	color: #333;	
+}
+aside a {
+	color: #D6007D;
+	text-decoration: underline;	
+}
+nav {
+ 	background-color: #09758B;
+	padding: 5px 8px;
+	/* make the background transition from lighter to darker */
+	
+	
+	width:100%; float:left;
+	/* change the box model so it's not wider than 100% */
+	
+}
+nav ul {
+	border-radius: 5px;
+	background-color: #09758B;
+	padding: 5px 8px;
+	/* make the background transition from darker to lighter */
+	
+	
+	padding: 0;
+	width:100%; float:left;
+	/* change the box model so it's not wider than 100% */
+	
+	/* make the navigation look sunken */
+	
+	
+}
+nav li {
+	margin:0; padding: 0;
+	float: left;
+	width: 25%;	
+	/* change the box model so 4 * 25% = 100% */
+	
+	text-align: center;
+	color: #ffffff;
+	/*make the text pop */
+	
+	border-right: 1px solid #09758B;
+	border-left: 1px solid #A4D9F4;
+	padding: 6px 0; line-height:2.5em;
+}
+
+nav li:nth-of-type(2){
+	line-height: 1.25em;	
+}
+nav li:last-of-type{
+	border-right: none;	
+}
+nav li:first-of-type{
+	border-left: none;	
+}
+nav li.active {
+	background-color: #09758B;
+	border: none;
+	/* give us 1) gradient, 2) rounded corners of 5px, 3) a pop */
+}
+
+nav li.active + li { border-left: none;}
+
